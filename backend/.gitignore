@@ -1,0 +1,74 @@
+# dependencies
+node_modules/
+
+# logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# env files
+.env
+.env.*
+!.env.example
+
+# build / production
+dist/
+build/
+.next/
+out/
+coverage/
+
+# cache
+.cache/
+.parcel-cache/
+.turbo/
+.vite/
+.eslintcache
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# runtime files
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# temporary files
+tmp/
+temp/
+
+# uploads (если не хочешь хранить загруженные файлы)
+uploads/
+public/uploads/
+
+# local databases / json data if needed
+*.sqlite
+*.sqlite3
+
+# test output
+.nyc_output/
+
+# misc
+*.tgz
+
+# next.js
+.next/
+out/
+
+# react
+build/
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "6bdc2f7a-a04a-40ac-a5a7-93983106034d",
+    "name": "superadmin",
+    "email": "superadmin@gmail.com",
+    "password": "$2a$10$JYjh5SAysVDgMvdWpJdfUOmN9fj1EQI5rzm3Zfv1hqxG8r0F0T/QS",
+    "role": "admin",
+    "isBanned": false,
+    "failedLoginAttempts": 0,
+    "lockUntil": null,
+    "createdAt": "2026-03-06T11:45:16.651Z",
+    "updatedAt": "2026-03-06T11:45:16.651Z"
+  },
+  {
+    "id": "ef91e537-c0d8-449f-a64c-2ddc2f70a09b",
+    "name": "Petros",
+    "email": "mail@mail.ru",
+    "password": "$2a$10$6i4fLSHcO5vXhk93ORNhR.NZxHq81WKJUMzLQzLxw.SsFsmtXK6R.",
+    "role": "user",
+    "isBanned": false,
+    "failedLoginAttempts": 0,
+    "lockUntil": null,
+    "createdAt": "2026-03-06T11:50:51.794Z",
+    "updatedAt": "2026-03-06T11:56:13.633Z"
+  }
+]
