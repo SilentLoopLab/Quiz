@@ -22,5 +22,29 @@
     "lockUntil": null,
     "createdAt": "2026-03-06T11:50:51.794Z",
     "updatedAt": "2026-03-06T11:56:13.633Z"
+  },
+  {
+    "id": "8940accc-5b1e-4324-b901-0a824c07d37e",
+    "name": "poghos",
+    "email": "poghosyan@gmail.con",
+    "password": "$2a$10$2bXX3Xj59vB4/efA5jPhsOxWHL0DPVWRKdO6ixQjKzksJUc9tQYWu",
+    "role": "user",
+    "isBanned": false,
+    "failedLoginAttempts": 0,
+    "lockUntil": null,
+    "createdAt": "2026-03-13T12:19:49.514Z",
+    "updatedAt": "2026-03-13T12:19:49.514Z"
+  },
+  {
+    "id": "d6bd5608-02f0-4a91-8e56-40e66b3a5e22",
+    "name": "poghos",
+    "email": "poghosyan@gmail.com",
+    "password": "$2a$10$njMl2Jo33LvVeo66D3Ndl.BiOU/yLecCRrInUE8ZnZah70qdfVUJS",
+    "role": "user",
+    "isBanned": false,
+    "failedLoginAttempts": 0,
+    "lockUntil": null,
+    "createdAt": "2026-03-13T12:20:45.039Z",
+    "updatedAt": "2026-03-13T12:25:56.872Z"
   }
 ]
