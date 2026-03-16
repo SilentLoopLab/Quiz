@@ -1,7 +1,10 @@
 "use client";
+
+import type { FormEvent } from "react";
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import LoginButton from "./LoginButton";
 import { useAuthStore } from "../../store/authStore";
 
 type LoginFieldErrors = {
@@ -27,15 +30,33 @@ export default function LoginForm() {
   const [fieldErrors, setFieldErrors] = useState<LoginFieldErrors>({});
   const [formError, setFormError] = useState("");
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  function clearFieldError(field: keyof LoginFieldErrors) {
+    setFieldErrors((current) =>
+      current[field] ? { ...current, [field]: undefined } : current,
+    );
+  }
+
+  function handleEmailChange(value: string) {
+    setEmail(value);
+    setFormError("");
+    clearFieldError("email");
+  }
+
+  function handlePasswordChange(value: string) {
+    setPassword(value);
+    setFormError("");
+    clearFieldError("password");
+  }
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    const trimmedEmail = email.trim();
+    const trimmedPassword = password.trim();
+    const nextFieldErrors: LoginFieldErrors = {};
 
     setFieldErrors({});
     setFormError("");
-
-    const nextFieldErrors: LoginFieldErrors = {};
-    const trimmedEmail = email.trim();
-    const trimmedPassword = password.trim();
 
     if (!trimmedEmail) {
       nextFieldErrors.email = "Email is required";
@@ -78,102 +99,81 @@ export default function LoginForm() {
 
       setFormError(message);
     }
-  };
+  }
 
   return (
     <form
       onSubmit={handleSubmit}
-      className="relative z-10 w-full max-w-md space-y-6 rounded-3xl border border-slate-700/70 bg-slate-900/80 p-7 shadow-[0_34px_72px_-30px_rgba(2,6,23,0.95)] backdrop-blur-xl sm:p-8"
+      className="w-full max-w-md rounded-2xl border border-indigo-300/10 bg-indigo-900/30 p-8 text-white shadow-lg"
     >
-      <div className="space-y-2">
-        <span className="inline-flex rounded-full border border-cyan-300/30 bg-cyan-300/10 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.22em] text-cyan-200">
-          Quiz Portal
-        </span>
-        <h1 className="text-2xl font-semibold tracking-tight text-slate-50">
-          Login
-        </h1>
-        <p className="text-sm text-slate-400">
-          Continue where you left off and enter your quiz dashboard.
-        </p>
-      </div>
+      <h1 className="mb-2 text-3xl font-semibold">Welcome back</h1>
+      <p className="mb-6 text-sm leading-6 text-indigo-100/75">
+        Sign in with your preferred method and continue your quizzes with a
+        cleaner, faster workspace.
+      </p>
 
       {formError ? (
-        <div className="rounded-xl border border-rose-500/40 bg-rose-500/10 px-4 py-3 text-sm text-rose-200">
+        <p className="mb-4 rounded-xl border border-red-300/10 bg-red-950/30 px-4 py-3 text-sm text-red-200">
           {formError}
-        </div>
+        </p>
       ) : null}
 
-      <div className="space-y-4">
-        <label className="block space-y-2">
-          <span className="text-xs font-medium uppercase tracking-[0.14em] text-slate-400">
-            Email
-          </span>
-          <input
-            type="email"
-            placeholder="Email"
-            autoComplete="username"
-            value={email}
-            onChange={(e) => {
-              setEmail(e.target.value);
-              setFormError("");
-              if (fieldErrors.email) {
-                setFieldErrors((current) => ({ ...current, email: undefined }));
-              }
-            }}
-            className={`w-full rounded-xl border bg-slate-950/80 px-4 py-3 text-sm text-slate-100 placeholder:text-slate-500 transition focus:outline-none focus:ring-2 ${
-              fieldErrors.email
-                ? "border-rose-500/70 focus:border-rose-400/70 focus:ring-rose-400/20"
-                : "border-slate-700 focus:border-cyan-300/70 focus:ring-cyan-400/25"
-            }`}
-          />
-          {fieldErrors.email ? (
-            <p className="text-sm text-rose-300">{fieldErrors.email}</p>
-          ) : null}
-        </label>
+      <LoginButton
+        label="Continue with Google"
+        description="Jump straight into your dashboard with a verified Google account."
+      />
 
-        <label className="block space-y-2">
-          <span className="text-xs font-medium uppercase tracking-[0.14em] text-slate-400">
-            Password
-          </span>
+      <p className="my-5 text-sm text-indigo-100/65">Or use email</p>
+
+      <div className="mb-4">
+        <label className="block">
+          <span className="mb-2 block text-sm text-indigo-100/80">Email</span>
           <input
-            type="password"
-            placeholder="Password"
-            autoComplete="current-password"
-            value={password}
-            onChange={(e) => {
-              setPassword(e.target.value);
-              setFormError("");
-              if (fieldErrors.password) {
-                setFieldErrors((current) => ({ ...current, password: undefined }));
-              }
-            }}
-            className={`w-full rounded-xl border bg-slate-950/80 px-4 py-3 text-sm text-slate-100 placeholder:text-slate-500 transition focus:outline-none focus:ring-2 ${
-              fieldErrors.password
-                ? "border-rose-500/70 focus:border-rose-400/70 focus:ring-rose-400/20"
-                : "border-slate-700 focus:border-cyan-300/70 focus:ring-cyan-400/25"
-            }`}
+            autoComplete="username"
+            onChange={(event) => handleEmailChange(event.target.value)}
+            placeholder="you@example.com"
+            type="email"
+            value={email}
+            className="w-full rounded-xl border border-indigo-200/25 bg-indigo-950/50 px-4 py-3 text-white outline-none transition placeholder:text-indigo-100/40 focus:border-indigo-100/50"
           />
-          {fieldErrors.password ? (
-            <p className="text-sm text-rose-300">{fieldErrors.password}</p>
-          ) : null}
         </label>
+        {fieldErrors.email ? (
+          <p className="mt-2 text-sm text-red-200">{fieldErrors.email}</p>
+        ) : null}
+      </div>
+
+      <div className="mb-6">
+        <label className="block">
+          <span className="mb-2 block text-sm text-indigo-100/80">Password</span>
+          <input
+            autoComplete="current-password"
+            onChange={(event) => handlePasswordChange(event.target.value)}
+            placeholder="Enter your password"
+            type="password"
+            value={password}
+            className="w-full rounded-xl border border-indigo-200/25 bg-indigo-950/50 px-4 py-3 text-white outline-none transition placeholder:text-indigo-100/40 focus:border-indigo-100/50"
+          />
+        </label>
+        {fieldErrors.password ? (
+          <p className="mt-2 text-sm text-red-200">{fieldErrors.password}</p>
+        ) : null}
       </div>
 
       <button
         type="submit"
         disabled={isLoading}
-        className="w-full rounded-xl bg-gradient-to-r from-cyan-300 via-cyan-200 to-emerald-200 py-3 text-sm font-semibold text-slate-900 transition hover:brightness-105 focus:outline-none focus:ring-2 focus:ring-cyan-300/80 focus:ring-offset-2 focus:ring-offset-slate-900"
+        className="w-full cursor-pointer rounded-xl bg-indigo-200 px-4 py-3 font-medium text-indigo-950 transition hover:bg-indigo-100 disabled:cursor-not-allowed disabled:opacity-60"
       >
         {isLoading ? "Loading..." : "Login"}
       </button>
 
-      <p className="text-center text-sm text-slate-400">
-        Don't have an account?{" "}
+      <p className="mt-5 text-sm text-indigo-100/75">
+        Don&apos;t have an account?{" "}
         <Link
           href="/register"
-          className="font-medium text-cyan-200 underline underline-offset-4 transition hover:text-cyan-100"
+          className="cursor-pointer font-medium text-indigo-200 transition hover:text-white"
         >
-          Register
+          Create one
         </Link>
       </p>
     </form>

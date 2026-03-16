@@ -1,5 +1,5 @@
 import "./globals.css";
-import AuthSessionBootstrap from "../components/auth/AuthSessionBootstrap";
+import AppProviders from "../components/providers/AppProviders";
 
 export default function RootLayout({
     children,
@@ -9,8 +9,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body>
-                <AuthSessionBootstrap />
-                {children}
+                <AppProviders>{children}</AppProviders>
             </body>
         </html>
     );

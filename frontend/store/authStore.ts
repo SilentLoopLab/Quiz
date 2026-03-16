@@ -15,6 +15,7 @@ const AUTH_STORAGE_KEY = "quizz-auth-storage";
 
 interface AuthStore extends AuthState {
     login: (payload: LoginDto) => Promise<AuthResponse>;
+    loginWithGoogle: (token: string) => Promise<AuthResponse>;
     register: (payload: RegisterDto) => Promise<AuthResponse>;
     logout: () => void;
     getMe: () => Promise<User | null>;
@@ -37,6 +38,31 @@ export const useAuthStore = create<AuthStore>()(
 
                 try {
                     const authData = await authService.login(payload);
+
+                    set({
+                        user: authData.user,
+                        token: authData.token,
+                        isAuth: true,
+                        isLoading: false,
+                    });
+
+                    return authData;
+                } catch (error) {
+                    const { message } = getApiErrorDetails(error);
+
+                    set({
+                        isLoading: false,
+                    });
+
+                    throw new Error(message);
+                }
+            },
+
+            loginWithGoogle: async (token) => {
+                set({ isLoading: true });
+
+                try {
+                    const authData = await authService.loginWithGoogle(token);
 
                     set({
                         user: authData.user,
