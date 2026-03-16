@@ -1,4 +1,5 @@
 const generateId = require("../utils/generateId");
+const { normalizeUser } = require("../utils/normalizeUser");
 const { updateUserById } = require("./user.service");
 
 const MAX_FAILED_LOGIN_ATTEMPTS = 3;
@@ -26,7 +27,7 @@ function buildAuthUser({
 }) {
   const timestamp = nowIso();
 
-  return {
+  return normalizeUser({
     id: generateId(),
     name,
     email,
@@ -39,7 +40,7 @@ function buildAuthUser({
     lockUntil: null,
     createdAt: timestamp,
     updatedAt: timestamp,
-  };
+  });
 }
 
 async function resetLoginState(userId) {

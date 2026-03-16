@@ -1,16 +1,37 @@
 const path = require("path");
 const { readJsonFile, writeJsonFile } = require("../utils/file");
 const normalizeEmail = require("../utils/normalizeEmail");
+const { normalizeUser } = require("../utils/normalizeUser");
 
 const usersFilePath = path.join(__dirname, "..", "data", "users.json");
 
-async function readUsers() {
+function normalizeUsers(users) {
+  return users.map((user) => normalizeUser(user));
+}
+
+async function readStoredUsers() {
   const users = await readJsonFile(usersFilePath, []);
   return Array.isArray(users) ? users : [];
 }
 
+async function readUsers() {
+  const users = await readStoredUsers();
+  return normalizeUsers(users);
+}
+
 async function writeUsers(users) {
-  await writeJsonFile(usersFilePath, users);
+  await writeJsonFile(usersFilePath, normalizeUsers(users));
+}
+
+async function syncUsersMetadata() {
+  const users = await readStoredUsers();
+  const normalizedUsers = normalizeUsers(users);
+
+  if (JSON.stringify(users) !== JSON.stringify(normalizedUsers)) {
+    await writeJsonFile(usersFilePath, normalizedUsers);
+  }
+
+  return normalizedUsers;
 }
 
 async function findUserByEmail(email) {
@@ -31,9 +52,10 @@ async function findUserById(id) {
 
 async function createUser(user) {
   const users = await readUsers();
-  users.push(user);
+  const normalizedUser = normalizeUser(user);
+  users.push(normalizedUser);
   await writeUsers(users);
-  return user;
+  return normalizedUser;
 }
 
 async function updateUserById(userId, updater) {
@@ -51,15 +73,17 @@ async function updateUserById(userId, updater) {
     return null;
   }
 
-  users[index] = nextUser;
+  const normalizedUser = normalizeUser(nextUser);
+  users[index] = normalizedUser;
   await writeUsers(users);
 
-  return nextUser;
+  return normalizedUser;
 }
 
 module.exports = {
   readUsers,
   writeUsers,
+  syncUsersMetadata,
   findUserByEmail,
   findUserById,
   createUser,

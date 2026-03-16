@@ -2,6 +2,7 @@ require("dotenv").config();
 
 const app = require("./app");
 const { seedSuperAdmin } = require("./services/superadmin.service");
+const { syncUsersMetadata } = require("./services/user.service");
 const getJwtSecret = require("./utils/getJwtSecret");
 
 const PORT = process.env.PORT || 4000;
@@ -9,6 +10,7 @@ const PORT = process.env.PORT || 4000;
 async function startServer() {
   try {
     getJwtSecret();
+    await syncUsersMetadata();
     await seedSuperAdmin();
 
     app.listen(PORT, () => {

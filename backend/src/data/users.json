@@ -5,6 +5,7 @@
     "email": "superadmin@gmail.com",
     "password": "$2a$10$JYjh5SAysVDgMvdWpJdfUOmN9fj1EQI5rzm3Zfv1hqxG8r0F0T/QS",
     "role": "admin",
+    "premium": true,
     "isBanned": false,
     "failedLoginAttempts": 0,
     "lockUntil": null,
@@ -17,6 +18,7 @@
     "email": "mail@mail.ru",
     "password": "$2a$10$6i4fLSHcO5vXhk93ORNhR.NZxHq81WKJUMzLQzLxw.SsFsmtXK6R.",
     "role": "user",
+    "premium": false,
     "isBanned": false,
     "failedLoginAttempts": 0,
     "lockUntil": null,
@@ -29,6 +31,7 @@
     "email": "poghosyan@gmail.con",
     "password": "$2a$10$2bXX3Xj59vB4/efA5jPhsOxWHL0DPVWRKdO6ixQjKzksJUc9tQYWu",
     "role": "user",
+    "premium": false,
     "isBanned": false,
     "failedLoginAttempts": 0,
     "lockUntil": null,
@@ -41,6 +44,7 @@
     "email": "poghosyan@gmail.com",
     "password": "$2a$10$njMl2Jo33LvVeo66D3Ndl.BiOU/yLecCRrInUE8ZnZah70qdfVUJS",
     "role": "user",
+    "premium": false,
     "isBanned": false,
     "failedLoginAttempts": 0,
     "lockUntil": null,
@@ -55,10 +59,11 @@
     "authProvider": "google",
     "googleId": "104143817414258311559",
     "role": "user",
+    "premium": false,
     "isBanned": false,
     "failedLoginAttempts": 0,
     "lockUntil": null,
     "createdAt": "2026-03-16T13:29:31.760Z",
-    "updatedAt": "2026-03-16T13:31:07.198Z"
+    "updatedAt": "2026-03-16T14:09:18.249Z"
   }
 ]

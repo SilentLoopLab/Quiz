@@ -8,6 +8,7 @@ function sanitizeUser(user) {
     name: user.name,
     email: user.email,
     role: user.role,
+    premium: user.premium === true,
     createdAt: user.createdAt,
     updatedAt: user.updatedAt,
   };
