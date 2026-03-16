@@ -16,7 +16,14 @@ function nowIso() {
   return new Date().toISOString();
 }
 
-function buildAuthUser({ name, email, passwordHash, role = "user" }) {
+function buildAuthUser({
+  name,
+  email,
+  passwordHash = null,
+  role = "user",
+  authProvider = "local",
+  googleId = null,
+}) {
   const timestamp = nowIso();
 
   return {
@@ -24,6 +31,8 @@ function buildAuthUser({ name, email, passwordHash, role = "user" }) {
     name,
     email,
     password: passwordHash,
+    authProvider,
+    googleId,
     role,
     isBanned: false,
     failedLoginAttempts: 0,

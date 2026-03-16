@@ -53,7 +53,20 @@ function validateLoginInput({ email, password }) {
   };
 }
 
+function validateGoogleLoginInput({ code }) {
+  const normalizedCode = normalizeString(code);
+
+  if (!normalizedCode) {
+    throw createHttpError(400, "Google authorization code is required");
+  }
+
+  return {
+    normalizedCode,
+  };
+}
+
 module.exports = {
   validateRegisterInput,
   validateLoginInput,
+  validateGoogleLoginInput,
 };

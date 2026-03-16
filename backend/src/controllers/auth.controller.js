@@ -1,4 +1,9 @@
-const { registerUser, loginUser, getCurrentUser } = require("../services/auth.service");
+const {
+  registerUser,
+  loginUser,
+  loginWithGoogleUser,
+  getCurrentUser,
+} = require("../services/auth.service");
 
 function handleError(res, error) {
   const statusCode = error.statusCode || 500;
@@ -43,8 +48,21 @@ async function me(req, res) {
   }
 }
 
+async function google(req, res) {
+  try {
+    const result = await loginWithGoogleUser({
+      code: req.body?.code,
+    });
+
+    return res.status(200).json(result);
+  } catch (error) {
+    return handleError(res, error);
+  }
+}
+
 module.exports = {
   register,
   login,
+  google,
   me,
 };
