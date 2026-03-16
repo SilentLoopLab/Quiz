@@ -34,7 +34,27 @@ function GoogleMark() {
   );
 }
 
-export default function LoginButton({
+function DisabledLoginButton({
+  label = "Continue with Google",
+}: Pick<LoginButtonProps, "label">) {
+  return (
+    <section className="space-y-3">
+      <button
+        type="button"
+        disabled
+        className="flex w-full cursor-not-allowed items-center justify-center gap-3 rounded-xl border border-indigo-200/25 bg-indigo-950/50 px-4 py-3 text-sm font-medium text-white opacity-60"
+      >
+        <GoogleMark /> {label}
+      </button>
+      <p className="text-sm text-indigo-100/75">
+        Google sign-in is not configured. Set `NEXT_PUBLIC_GOOGLE_CLIENT_ID` in
+        the frontend env.
+      </p>
+    </section>
+  );
+}
+
+function EnabledLoginButton({
   label = "Continue with Google",
   description = "Use your Google account for a faster, verified sign-in.",
   redirectTo = "/home",
@@ -45,11 +65,12 @@ export default function LoginButton({
   const [errorMessage, setErrorMessage] = useState("");
 
   const googleLogin = useGoogleLogin({
-    onSuccess: async (tokenResponse) => {
+    flow: "auth-code",
+    onSuccess: async (codeResponse) => {
       setErrorMessage("");
 
       try {
-        await loginWithGoogle(tokenResponse.access_token);
+        await loginWithGoogle(codeResponse.code);
         router.push(redirectTo);
       } catch (error) {
         setErrorMessage(
@@ -81,4 +102,14 @@ export default function LoginButton({
       {errorMessage ? <p className="text-sm text-red-200">{errorMessage}</p> : null}
     </section>
   );
+}
+
+export default function LoginButton(props: LoginButtonProps) {
+  const googleClientId = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID?.trim();
+
+  if (!googleClientId) {
+    return <DisabledLoginButton label={props.label} />;
+  }
+
+  return <EnabledLoginButton {...props} />;
 }
