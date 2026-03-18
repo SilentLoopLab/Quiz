@@ -22,6 +22,7 @@ const {
   validateRegisterInput,
   validateLoginInput,
   validateGoogleLoginInput,
+  validateProfileUpdateInput,
 } = require("./auth.validation");
 
 const GOOGLE_TOKEN_ENDPOINT = "https://oauth2.googleapis.com/token";
@@ -247,9 +248,51 @@ async function getCurrentUser(userId) {
   };
 }
 
+async function updateCurrentUserProfile(userId, payload) {
+  const user = await findUserById(userId);
+
+  if (!user) {
+    throw createHttpError(401, "Unauthorized");
+  }
+
+  const {
+    normalizedName,
+    normalizedEmail,
+    normalizedImage,
+    normalizedBio,
+    normalizedLocation,
+    normalizedPhone,
+  } = validateProfileUpdateInput(payload);
+  const existingUser = await findUserByEmail(normalizedEmail);
+
+  if (existingUser && existingUser.id !== userId) {
+    throw createHttpError(400, "Email already exists");
+  }
+
+  const updatedUser = await updateUserById(userId, (currentUser) => ({
+    ...currentUser,
+    name: normalizedName,
+    email: normalizedEmail,
+    image: normalizedImage,
+    bio: normalizedBio,
+    location: normalizedLocation,
+    phone: normalizedPhone,
+    updatedAt: new Date().toISOString(),
+  }));
+
+  if (!updatedUser) {
+    throw createHttpError(401, "Unauthorized");
+  }
+
+  return {
+    user: sanitizeUser(updatedUser),
+  };
+}
+
 module.exports = {
   registerUser,
   loginUser,
   loginWithGoogleUser,
   getCurrentUser,
+  updateCurrentUserProfile,
 };

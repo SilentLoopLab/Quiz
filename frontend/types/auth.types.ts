@@ -4,9 +4,14 @@ export interface User {
   id: string;
   name: string;
   email: string;
+  image?: string | null;
+  bio: string;
+  location: string;
+  phone: string;
   role: UserRole;
   createdAt?: string;
   updatedAt?: string;
+  premium: boolean;
 }
 
 export interface LoginDto {
@@ -20,6 +25,15 @@ export interface RegisterDto {
   password: string;
 }
 
+export interface UpdateProfileDto {
+  name: string;
+  email: string;
+  image: string;
+  bio: string;
+  location: string;
+  phone: string;
+}
+
 export interface AuthResponse {
   user: User;
   token: string;
@@ -30,4 +44,5 @@ export interface AuthState {
   token: string | null;
   isAuth: boolean;
   isLoading: boolean;
+  hasHydrated: boolean;
 }

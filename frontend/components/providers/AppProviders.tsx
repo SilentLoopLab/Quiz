@@ -5,17 +5,21 @@ import { GoogleOAuthProvider } from "@react-oauth/google";
 import { useAuthSessionBootstrap } from "../../hooks/useAuthSessionBootstrap";
 
 interface AppProvidersProps {
-  children: ReactNode;
+    children: ReactNode;
 }
 
 export default function AppProviders({ children }: AppProvidersProps) {
-  useAuthSessionBootstrap();
+    useAuthSessionBootstrap();
 
-  const googleClientId = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID?.trim();
+    const googleClientId = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID?.trim();
 
-  if (!googleClientId) {
-    return <>{children}</>;
-  }
+    if (!googleClientId) {
+        return <>{children}</>;
+    }
 
-  return <GoogleOAuthProvider clientId={googleClientId}>{children}</GoogleOAuthProvider>;
+    return (
+        <GoogleOAuthProvider clientId={googleClientId}>
+            {children}
+        </GoogleOAuthProvider>
+    );
 }

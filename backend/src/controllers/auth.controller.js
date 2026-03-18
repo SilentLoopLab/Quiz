@@ -3,6 +3,7 @@ const {
   loginUser,
   loginWithGoogleUser,
   getCurrentUser,
+  updateCurrentUserProfile,
 } = require("../services/auth.service");
 
 function handleError(res, error) {
@@ -48,6 +49,23 @@ async function me(req, res) {
   }
 }
 
+async function updateMe(req, res) {
+  try {
+    const result = await updateCurrentUserProfile(req.auth.id, {
+      name: req.body?.name,
+      email: req.body?.email,
+      image: req.body?.image,
+      bio: req.body?.bio,
+      location: req.body?.location,
+      phone: req.body?.phone,
+    });
+
+    return res.status(200).json(result);
+  } catch (error) {
+    return handleError(res, error);
+  }
+}
+
 async function google(req, res) {
   try {
     const result = await loginWithGoogleUser({
@@ -65,4 +83,5 @@ module.exports = {
   login,
   google,
   me,
+  updateMe,
 };

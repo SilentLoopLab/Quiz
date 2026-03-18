@@ -1,5 +1,14 @@
-import { redirect } from "next/navigation";
+"use client";
+
+import { useEffect } from "react";
+import { getStoredAuthToken } from "../lib/authStorage";
 
 export default function Page() {
-  redirect("/login");
+    useEffect(() => {
+        const token = getStoredAuthToken();
+
+        window.location.replace(token ? "/home" : "/login");
+    }, []);
+
+    return null;
 }
