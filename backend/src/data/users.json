@@ -144,12 +144,23 @@
     "failedLoginAttempts": 0,
     "lockUntil": null,
     "createdAt": "2026-03-16T13:29:31.760Z",
-    "updatedAt": "2026-03-23T16:00:34.159Z",
+    "updatedAt": "2026-03-23T16:39:11.708Z",
     "bio": "I'm a Full Stack Developer.",
     "location": "Yerevan, Armenia",
     "phone": "+37495300897",
     "image": "https://res.cloudinary.com/dou4mbq4y/image/upload/v1773835615/photos/i3ie52dih9iwdeygglom.png",
     "refreshSessions": [
+      {
+        "id": "c61330a0-7bdb-407d-a47c-b5a376f2215c",
+        "tokenHash": "67a58be4ba416f05c3fa684dd95d378928e38d00d57d649e18598778cc09d571",
+        "previousTokenHash": "1e44df83e3c6874d472f7527725a3b5a2a6a71c936ead833175259f8a682a7d7",
+        "createdAt": "2026-03-23T16:15:24.274Z",
+        "lastUsedAt": "2026-03-23T16:39:11.708Z",
+        "rotatedAt": "2026-03-23T16:39:11.708Z",
+        "expiresAt": "2026-03-30T16:39:11.000Z",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+        "ip": "::1"
+      },
       {
         "id": "21afd54e-672b-4e03-b390-1da7bb9222f5",
         "tokenHash": "65e4bf3f61f44fbd9858f565ad3070c0198a866d23aeecfe79089a6df1cba8cc",

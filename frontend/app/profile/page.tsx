@@ -116,12 +116,12 @@ export default function ProfilePage() {
                 </article>
 
                 <div className="mt-6 grid gap-3 sm:grid-cols-3">
-                    <button
-                        type="button"
+                    <Link
+                        href="/quizzes/create"
                         className="cursor-pointer rounded-xl border border-indigo-200/15 bg-indigo-950/40 px-4 py-3 text-left font-medium text-white transition hover:bg-indigo-950/70"
                     >
                         Add Quiz
-                    </button>
+                    </Link>
 
                     <button
                         type="button"
