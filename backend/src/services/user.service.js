@@ -74,6 +74,11 @@ async function updateUserById(userId, updater) {
   }
 
   const normalizedUser = normalizeUser(nextUser);
+
+  if (JSON.stringify(users[index]) === JSON.stringify(normalizedUser)) {
+    return normalizedUser;
+  }
+
   users[index] = normalizedUser;
   await writeUsers(users);
 

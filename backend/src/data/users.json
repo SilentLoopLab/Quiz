@@ -10,7 +10,20 @@
     "failedLoginAttempts": 0,
     "lockUntil": null,
     "createdAt": "2026-03-06T11:45:16.651Z",
-    "updatedAt": "2026-03-18T11:49:55.496Z"
+    "updatedAt": "2026-03-23T13:45:35.571Z",
+    "refreshSessions": [
+      {
+        "id": "82fea419-5dfe-4b81-8716-6200e437a4dd",
+        "tokenHash": "a301d42bb79d09eb63b54d3d2d0fbe9261ea5353880e095e0b87aff8cb807dac",
+        "previousTokenHash": "",
+        "createdAt": "2026-03-23T13:45:35.570Z",
+        "lastUsedAt": "2026-03-23T13:45:35.570Z",
+        "rotatedAt": "",
+        "expiresAt": "2026-03-30T13:45:35.000Z",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+        "ip": "::1"
+      }
+    ]
   },
   {
     "id": "ef91e537-c0d8-449f-a64c-2ddc2f70a09b",
@@ -23,7 +36,8 @@
     "failedLoginAttempts": 0,
     "lockUntil": null,
     "createdAt": "2026-03-06T11:50:51.794Z",
-    "updatedAt": "2026-03-06T11:56:13.633Z"
+    "updatedAt": "2026-03-06T11:56:13.633Z",
+    "refreshSessions": []
   },
   {
     "id": "8940accc-5b1e-4324-b901-0a824c07d37e",
@@ -36,7 +50,8 @@
     "failedLoginAttempts": 0,
     "lockUntil": null,
     "createdAt": "2026-03-13T12:19:49.514Z",
-    "updatedAt": "2026-03-13T12:19:49.514Z"
+    "updatedAt": "2026-03-13T12:19:49.514Z",
+    "refreshSessions": []
   },
   {
     "id": "d6bd5608-02f0-4a91-8e56-40e66b3a5e22",
@@ -49,7 +64,8 @@
     "failedLoginAttempts": 0,
     "lockUntil": null,
     "createdAt": "2026-03-13T12:20:45.039Z",
-    "updatedAt": "2026-03-13T12:25:56.872Z"
+    "updatedAt": "2026-03-13T12:25:56.872Z",
+    "refreshSessions": []
   },
   {
     "id": "41d19e3c-7cf0-4782-bc36-5a421b4cb884",
@@ -64,10 +80,34 @@
     "failedLoginAttempts": 0,
     "lockUntil": null,
     "createdAt": "2026-03-16T13:29:31.760Z",
-    "updatedAt": "2026-03-18T12:37:35.760Z",
+    "updatedAt": "2026-03-23T13:51:23.905Z",
     "bio": "I'm a Full Stack Developer.",
     "location": "Yerevan, Armenia",
     "phone": "+37495300897",
-    "image": "https://res.cloudinary.com/dou4mbq4y/image/upload/v1773835615/photos/i3ie52dih9iwdeygglom.png"
+    "image": "https://res.cloudinary.com/dou4mbq4y/image/upload/v1773835615/photos/i3ie52dih9iwdeygglom.png",
+    "refreshSessions": [
+      {
+        "id": "7293308a-c44a-4151-9ce7-bec943163a0c",
+        "tokenHash": "4a926777c368394cc630400f6abe8499de0304b937d22ca2cab96b83bbc6ff2b",
+        "previousTokenHash": "",
+        "createdAt": "2026-03-23T13:51:23.904Z",
+        "lastUsedAt": "2026-03-23T13:51:23.904Z",
+        "rotatedAt": "",
+        "expiresAt": "2026-03-30T13:51:23.000Z",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+        "ip": "::1"
+      },
+      {
+        "id": "49136e77-9acc-48b6-9a99-35ca0b1505c8",
+        "tokenHash": "2b41c544b68fed10628383ded7bc43d42e84c4b875b5668dd7389ccd02374e9a",
+        "previousTokenHash": "",
+        "createdAt": "2026-03-23T13:23:46.424Z",
+        "lastUsedAt": "2026-03-23T13:23:46.424Z",
+        "rotatedAt": "",
+        "expiresAt": "2026-03-30T13:23:46.000Z",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+        "ip": "::1"
+      }
+    ]
   }
 ]

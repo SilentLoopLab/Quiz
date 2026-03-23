@@ -6,7 +6,26 @@ const cdnRoutes = require("./routes/cdn.routes");
 
 const app = express();
 
-app.use(cors());
+function createCorsOptions() {
+  const frontendOrigin = process.env.FRONTEND_ORIGIN?.trim();
+
+  return {
+    credentials: true,
+    origin(origin, callback) {
+      if (!origin) {
+        return callback(null, true);
+      }
+
+      if (!frontendOrigin || origin === frontendOrigin) {
+        return callback(null, origin);
+      }
+
+      return callback(new Error("Not allowed by CORS"));
+    },
+  };
+}
+
+app.use(cors(createCorsOptions()));
 app.use(express.json());
 app.use("/api/auth", authRoutes);
 app.use("/api/uploads", uploadRoutes);

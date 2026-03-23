@@ -1,5 +1,4 @@
 const bcrypt = require("bcryptjs");
-const generateToken = require("../utils/generateToken");
 const sanitizeUser = require("../utils/sanitizeUser");
 const normalizeEmail = require("../utils/normalizeEmail");
 const normalizeString = require("../utils/normalizeString");
@@ -9,6 +8,11 @@ const {
   createUser,
   updateUserById,
 } = require("./user.service");
+const {
+  issueRefreshSession,
+  rotateRefreshSession,
+  revokeRefreshSession,
+} = require("./refresh-token.service");
 const {
   createHttpError,
   buildAuthUser,
@@ -27,6 +31,17 @@ const {
 
 const GOOGLE_TOKEN_ENDPOINT = "https://oauth2.googleapis.com/token";
 const GOOGLE_USERINFO_ENDPOINT = "https://openidconnect.googleapis.com/v1/userinfo";
+
+async function buildAuthenticatedResponse(user, sessionContext = {}) {
+  const session = await issueRefreshSession(user.id, sessionContext);
+
+  return {
+    user: sanitizeUser(session.user),
+    token: session.accessToken,
+    refreshToken: session.refreshToken,
+    refreshTokenExpiresAt: session.refreshTokenExpiresAt,
+  };
+}
 
 function getGoogleClientId() {
   const clientId = process.env.GOOGLE_CLIENT_ID?.trim();
@@ -147,7 +162,7 @@ async function upsertGoogleUser(profile) {
   );
 }
 
-async function registerUser(payload) {
+async function registerUser(payload, sessionContext = {}) {
   const { normalizedName, normalizedEmail, rawPassword } = validateRegisterInput(payload);
   const existingUser = await findUserByEmail(normalizedEmail);
 
@@ -165,13 +180,10 @@ async function registerUser(payload) {
     })
   );
 
-  return {
-    user: sanitizeUser(createdUser),
-    token: generateToken({ id: createdUser.id, role: createdUser.role }),
-  };
+  return buildAuthenticatedResponse(createdUser, sessionContext);
 }
 
-async function loginUser(payload) {
+async function loginUser(payload, sessionContext = {}) {
   const { normalizedEmail, rawPassword } = validateLoginInput(payload);
   const user = await findUserByEmail(normalizedEmail);
 
@@ -214,22 +226,16 @@ async function loginUser(payload) {
       ? await resetLoginState(account.id)
       : account;
 
-  return {
-    user: sanitizeUser(safeLoginUser),
-    token: generateToken({ id: safeLoginUser.id, role: safeLoginUser.role }),
-  };
+  return buildAuthenticatedResponse(safeLoginUser, sessionContext);
 }
 
-async function loginWithGoogleUser(payload) {
+async function loginWithGoogleUser(payload, sessionContext = {}) {
   const { normalizedCode } = validateGoogleLoginInput(payload);
   const accessToken = await exchangeGoogleCode(normalizedCode);
   const profile = await fetchGoogleProfile(accessToken);
   const user = await upsertGoogleUser(profile);
 
-  return {
-    user: sanitizeUser(user),
-    token: generateToken({ id: user.id, role: user.role }),
-  };
+  return buildAuthenticatedResponse(user, sessionContext);
 }
 
 async function getCurrentUser(userId) {
@@ -289,10 +295,31 @@ async function updateCurrentUserProfile(userId, payload) {
   };
 }
 
+async function refreshAuthenticatedUser(refreshToken, sessionContext = {}) {
+  const session = await rotateRefreshSession(refreshToken, sessionContext);
+
+  return {
+    user: sanitizeUser(session.user),
+    token: session.accessToken,
+    refreshToken: session.refreshToken,
+    refreshTokenExpiresAt: session.refreshTokenExpiresAt,
+  };
+}
+
+async function logoutAuthenticatedUser(refreshToken) {
+  await revokeRefreshSession(refreshToken);
+
+  return {
+    message: "Logged out",
+  };
+}
+
 module.exports = {
   registerUser,
   loginUser,
   loginWithGoogleUser,
   getCurrentUser,
   updateCurrentUserProfile,
+  refreshAuthenticatedUser,
+  logoutAuthenticatedUser,
 };

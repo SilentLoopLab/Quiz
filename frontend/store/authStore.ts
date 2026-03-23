@@ -1,6 +1,7 @@
 "use client";
 import { create } from "zustand";
 import { createJSONStorage, persist } from "zustand/middleware";
+import { AUTH_STORAGE_KEY, getStoredAuthToken } from "../lib/authStorage";
 import { authService } from "../services/auth.service";
 import { getApiErrorDetails } from "../services/api";
 import type {
@@ -12,16 +13,15 @@ import type {
     User,
 } from "../types/auth.types";
 
-export const AUTH_STORAGE_KEY = "quizz-auth-storage";
-
 interface AuthStore extends AuthState {
     login: (payload: LoginDto) => Promise<AuthResponse>;
     loginWithGoogle: (token: string) => Promise<AuthResponse>;
     register: (payload: RegisterDto) => Promise<AuthResponse>;
-    logout: () => void;
+    logout: () => Promise<void>;
     getMe: () => Promise<User | null>;
     updateProfile: (payload: UpdateProfileDto) => Promise<User>;
     setHasHydrated: (value: boolean) => void;
+    syncTokenFromStorage: () => void;
 }
 
 const initialAuthState = {
@@ -43,6 +43,32 @@ export const useAuthStore = create<AuthStore>()(
 
             setHasHydrated: (value) => {
                 set({ hasHydrated: value });
+            },
+
+            syncTokenFromStorage: () => {
+                const storedToken = getStoredAuthToken();
+
+                if (!storedToken) {
+                    set({
+                        ...initialAuthState,
+                        hasHydrated: true,
+                    });
+
+                    return;
+                }
+
+                set((state) => {
+                    if (state.token === storedToken && state.hasHydrated) {
+                        return state;
+                    }
+
+                    return {
+                        ...state,
+                        token: storedToken,
+                        isAuth: true,
+                        hasHydrated: true,
+                    };
+                });
             },
 
             login: async (payload) => {
@@ -126,15 +152,23 @@ export const useAuthStore = create<AuthStore>()(
                 }
             },
 
-            logout: () => {
-                set({
-                    ...initialAuthState,
-                    hasHydrated: true,
-                });
+            logout: async () => {
+                set({ isLoading: true });
+
+                try {
+                    await authService.logout();
+                } catch {
+                    // Local logout should still complete even if the server is unavailable.
+                } finally {
+                    set({
+                        ...initialAuthState,
+                        hasHydrated: true,
+                    });
+                }
             },
 
             getMe: async () => {
-                const { token } = get();
+                const token = get().token ?? getStoredAuthToken();
 
                 if (!token) {
                     set({
@@ -148,10 +182,11 @@ export const useAuthStore = create<AuthStore>()(
                 set({ isLoading: true });
 
                 try {
-                    const user = await authService.getMe(token);
+                    const user = await authService.getMe();
 
                     set({
                         user,
+                        token: getStoredAuthToken() ?? token,
                         isAuth: true,
                         isLoading: false,
                         hasHydrated: true,
@@ -169,7 +204,7 @@ export const useAuthStore = create<AuthStore>()(
             },
 
             updateProfile: async (payload) => {
-                const { token } = get();
+                const token = get().token ?? getStoredAuthToken();
 
                 if (!token) {
                     throw new Error("Unauthorized");
@@ -178,13 +213,11 @@ export const useAuthStore = create<AuthStore>()(
                 set({ isLoading: true });
 
                 try {
-                    const user = await authService.updateProfile(
-                        token,
-                        payload,
-                    );
+                    const user = await authService.updateProfile(payload);
 
                     set({
                         user,
+                        token: getStoredAuthToken() ?? token,
                         isAuth: true,
                         isLoading: false,
                         hasHydrated: true,

@@ -1,10 +1,9 @@
-import { getStoredAuthToken } from "../lib/authStorage";
 import type {
     UploadPhotosFieldName,
     UploadPhotosOptions,
     UploadPhotosResponse,
 } from "../types/cdn.types";
-import { api, getApiErrorDetails } from "./api";
+import { api, getApiErrorDetails, withAuthRequest } from "./api";
 
 const DEFAULT_UPLOAD_ERROR_MESSAGE = "Please select at least one image.";
 
@@ -41,19 +40,17 @@ export const cdnService = {
             formData.append(fieldName, file);
         }
 
-        const token = options.token ?? getStoredAuthToken();
-
         try {
             const response = await api.post<UploadPhotosResponse>(
                 "/api/cdn/photos",
                 formData,
-                {
-                    headers: token
+                withAuthRequest({
+                    headers: options.token
                         ? {
-                              Authorization: `Bearer ${token}`,
+                              Authorization: `Bearer ${options.token}`,
                           }
                         : undefined,
-                },
+                }),
             );
 
             return response.data;

@@ -32,8 +32,8 @@ export default function AppSidebar() {
     const displayName = user?.name || "Guest User";
     const displayEmail = user?.email || "No email";
 
-    function handleLogout() {
-        logout();
+    async function handleLogout() {
+        await logout();
         router.push("/login");
     }
     function handleChangeProfile() {

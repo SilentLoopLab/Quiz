@@ -1,4 +1,8 @@
-import { api } from "./api";
+import {
+    api,
+    withAuthRequest,
+    withSkippedAuthRefresh,
+} from "./api";
 import type {
     AuthResponse,
     LoginDto,
@@ -41,26 +45,32 @@ export const authService = {
         return response.data;
     },
 
-    async getMe(token: string): Promise<User> {
-        const response = await api.get<MeResponse>("/api/auth/me", {
-            headers: {
-                Authorization: `Bearer ${token}`,
-            },
-        });
+    async getMe(): Promise<User> {
+        const response = await api.get<MeResponse>(
+            "/api/auth/me",
+            withAuthRequest(),
+        );
 
         return normalizeMeResponse(response.data);
     },
 
-    async updateProfile(
-        token: string,
-        payload: UpdateProfileDto,
-    ): Promise<User> {
-        const response = await api.patch<MeResponse>("/api/auth/me", payload, {
-            headers: {
-                Authorization: `Bearer ${token}`,
-            },
-        });
+    async updateProfile(payload: UpdateProfileDto): Promise<User> {
+        const response = await api.patch<MeResponse>(
+            "/api/auth/me",
+            payload,
+            withAuthRequest(),
+        );
 
         return normalizeMeResponse(response.data);
+    },
+
+    async logout(): Promise<{ message: string }> {
+        const response = await api.post<{ message: string }>(
+            "/api/auth/logout",
+            undefined,
+            withSkippedAuthRefresh(),
+        );
+
+        return response.data;
     },
 };
