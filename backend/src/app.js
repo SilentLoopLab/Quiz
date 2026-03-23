@@ -1,6 +1,8 @@
 const express = require("express");
 const cors = require("cors");
 const authRoutes = require("./routes/auth.routes");
+const billingRoutes = require("./routes/billing.routes");
+const billingWebhookRoutes = require("./routes/billing-webhook.routes");
 const uploadRoutes = require("./routes/upload.routes");
 const cdnRoutes = require("./routes/cdn.routes");
 
@@ -26,8 +28,14 @@ function createCorsOptions() {
 }
 
 app.use(cors(createCorsOptions()));
+app.use(
+  "/api/billing/stripe/webhook",
+  express.raw({ type: "application/json" }),
+  billingWebhookRoutes
+);
 app.use(express.json());
 app.use("/api/auth", authRoutes);
+app.use("/api/billing", billingRoutes);
 app.use("/api/uploads", uploadRoutes);
 app.use("/api/cdn", cdnRoutes);
 

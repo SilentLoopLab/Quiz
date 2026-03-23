@@ -1,3 +1,5 @@
+const { isUserPremium } = require("./normalizeUser");
+
 function sanitizeUser(user) {
   if (!user) {
     return null;
@@ -12,7 +14,10 @@ function sanitizeUser(user) {
     location: typeof user.location === "string" ? user.location : "",
     phone: typeof user.phone === "string" ? user.phone : "",
     role: user.role,
-    premium: user.premium === true,
+    premium: isUserPremium(user),
+    premiumPlan: typeof user.premiumPlan === "string" ? user.premiumPlan : "",
+    premiumStartedAt: typeof user.premiumStartedAt === "string" ? user.premiumStartedAt : "",
+    premiumExpiresAt: typeof user.premiumExpiresAt === "string" ? user.premiumExpiresAt : "",
     createdAt: user.createdAt,
     updatedAt: user.updatedAt,
   };

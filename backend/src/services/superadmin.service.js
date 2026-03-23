@@ -18,7 +18,6 @@ function shouldFixMetadata(user) {
   if (user.name !== SUPERADMIN_NAME) return true;
   if (normalizeEmail(user.email) !== SUPERADMIN_EMAIL) return true;
   if (user.role !== SUPERADMIN_ROLE) return true;
-  if (user.premium !== true) return true;
   if (user.isBanned !== false) return true;
   if (typeof user.createdAt !== "string" || !user.createdAt) return true;
   if (typeof user.updatedAt !== "string" || !user.updatedAt) return true;
@@ -69,7 +68,6 @@ async function seedSuperAdmin() {
     name: SUPERADMIN_NAME,
     email: SUPERADMIN_EMAIL,
     role: SUPERADMIN_ROLE,
-    premium: true,
     isBanned: false,
     password,
     createdAt: existingUser.createdAt || now,

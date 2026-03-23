@@ -1,6 +1,7 @@
 const path = require("path");
 const { readJsonFile, writeJsonFile } = require("../utils/file");
 const normalizeEmail = require("../utils/normalizeEmail");
+const normalizeString = require("../utils/normalizeString");
 const { normalizeUser } = require("../utils/normalizeUser");
 
 const usersFilePath = path.join(__dirname, "..", "data", "users.json");
@@ -50,6 +51,37 @@ async function findUserById(id) {
   return users.find((user) => user.id === id) || null;
 }
 
+async function findUserByStripeCustomerId(stripeCustomerId) {
+  const normalizedStripeCustomerId = normalizeString(stripeCustomerId);
+
+  if (!normalizedStripeCustomerId) {
+    return null;
+  }
+
+  const users = await readUsers();
+
+  return (
+    users.find((user) => normalizeString(user.stripeCustomerId) === normalizedStripeCustomerId) ||
+    null
+  );
+}
+
+async function findUserByStripeSubscriptionId(stripeSubscriptionId) {
+  const normalizedStripeSubscriptionId = normalizeString(stripeSubscriptionId);
+
+  if (!normalizedStripeSubscriptionId) {
+    return null;
+  }
+
+  const users = await readUsers();
+
+  return (
+    users.find(
+      (user) => normalizeString(user.stripeSubscriptionId) === normalizedStripeSubscriptionId
+    ) || null
+  );
+}
+
 async function createUser(user) {
   const users = await readUsers();
   const normalizedUser = normalizeUser(user);
@@ -91,6 +123,8 @@ module.exports = {
   syncUsersMetadata,
   findUserByEmail,
   findUserById,
+  findUserByStripeCustomerId,
+  findUserByStripeSubscriptionId,
   createUser,
   updateUserById,
 };

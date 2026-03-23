@@ -12,6 +12,10 @@ export interface User {
   createdAt?: string;
   updatedAt?: string;
   premium: boolean;
+  premiumPlan: string;
+  premiumStartedAt: string;
+  premiumExpiresAt: string;
+  stripeSubscriptionStatus?: string;
 }
 
 export interface LoginDto {

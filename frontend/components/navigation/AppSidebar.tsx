@@ -3,15 +3,8 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { resolveProfileImage } from "../../lib/profileImage";
+import PremiumBadge from "../premium/PremiumBadge";
 import { useAuthStore } from "../../store/authStore";
-
-const navItems = [
-    { href: "/home", label: "Home" },
-    { href: "/profile", label: "Profile" },
-    { href: "/quizzes", label: "All Quizzes" },
-    { href: "/premium", label: "Upgrade to Premium" },
-    { href: "/login", label: "Change Profile" },
-];
 
 function getNavItemClassName(isActive: boolean) {
     return [
@@ -27,6 +20,15 @@ export default function AppSidebar() {
     const router = useRouter();
     const user = useAuthStore((state) => state.user);
     const logout = useAuthStore((state) => state.logout);
+    const navItems = [
+        { href: "/home", label: "Home" },
+        { href: "/profile", label: "Profile" },
+        { href: "/quizzes", label: "All Quizzes" },
+        ...(user?.premium
+            ? []
+            : [{ href: "/premium", label: "Upgrade to Premium" }]),
+        { href: "/login", label: "Change Profile" },
+    ];
 
     const profileImageSrc = resolveProfileImage(user?.image);
     const displayName = user?.name || "Guest User";
@@ -58,6 +60,9 @@ export default function AppSidebar() {
                         <p className="truncate text-sm text-indigo-100/60">
                             {displayEmail}
                         </p>
+                        {user?.premium ? (
+                            <PremiumBadge className="mt-2" />
+                        ) : null}
                     </div>
                 </div>
             </div>

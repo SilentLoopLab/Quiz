@@ -4,6 +4,8 @@ import Link from "next/link";
 import { useState } from "react";
 import EditProfileModal from "../../components/editProfile/EditProfileModal";
 import AppShell from "../../components/navigation/AppShell";
+import PremiumBadge from "../../components/premium/PremiumBadge";
+import { formatPremiumDate } from "../../lib/premium";
 import {
     DEFAULT_PROFILE_IMAGE_URL,
     resolveProfileImage,
@@ -29,6 +31,7 @@ export default function ProfilePage() {
     }
 
     const profileImageSrc = resolveProfileImage(user.image);
+    const premiumExpiresAt = formatPremiumDate(user.premiumExpiresAt);
 
     return (
         <AppShell>
@@ -49,12 +52,20 @@ export default function ProfilePage() {
                             <p className="text-sm uppercase tracking-[0.24em] text-indigo-200/60">
                                 Profile
                             </p>
-                            <h1 className="mt-3 text-3xl font-semibold">
-                                {user.name}
-                            </h1>
+                            <div className="mt-3 flex flex-wrap items-center gap-3">
+                                <h1 className="text-3xl font-semibold">
+                                    {user.name}
+                                </h1>
+                                {user.premium ? <PremiumBadge /> : null}
+                            </div>
                             <p className="mt-2 text-sm text-indigo-100/70">
                                 {user.email}
                             </p>
+                            {user.premium && premiumExpiresAt ? (
+                                <p className="mt-2 text-sm text-amber-100/80">
+                                    Premium active until {premiumExpiresAt}
+                                </p>
+                            ) : null}
                         </div>
                     </div>
 
@@ -119,12 +130,14 @@ export default function ProfilePage() {
                         Edit my Quizzes
                     </button>
 
-                    <Link
-                        href="/premium"
-                        className="cursor-pointer rounded-xl border border-indigo-200/15 bg-indigo-950/40 px-4 py-3 text-left font-medium text-white transition hover:bg-indigo-950/70"
-                    >
-                        Upgrade to Premium
-                    </Link>
+                    {!user.premium ? (
+                        <Link
+                            href="/premium"
+                            className="cursor-pointer rounded-xl border border-indigo-200/15 bg-indigo-950/40 px-4 py-3 text-left font-medium text-white transition hover:bg-indigo-950/70"
+                        >
+                            Upgrade to Premium
+                        </Link>
+                    ) : null}
                 </div>
             </section>
 
