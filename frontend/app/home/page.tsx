@@ -7,12 +7,19 @@ import {
     QuizCollection,
     TopicFilters,
 } from "../../components/quizDiscovery";
+import { useAuthReady } from "../../hooks/useAuthReady";
 import { usePublicQuizCatalog } from "../../hooks/usePublicQuizCatalog";
 import { useQuizHomeFeed } from "../../hooks/useQuizHomeFeed";
 
 export default function HomePage() {
-    const homeFeed = useQuizHomeFeed();
-    const quizCatalog = usePublicQuizCatalog({ limit: 6 });
+    const authReady = useAuthReady();
+    const homeFeed = useQuizHomeFeed({
+        enabled: authReady,
+    });
+    const quizCatalog = usePublicQuizCatalog({
+        limit: 6,
+        enabled: authReady && homeFeed.hasResolved,
+    });
     const homeFilters = Array.from(
         new Set([
             "All",
@@ -30,28 +37,23 @@ export default function HomePage() {
                         Home
                     </p>
                     <h1 className="mt-4 text-3xl font-semibold text-white sm:text-4xl">
-                        Welcome back to Quizz
+                        Home
                     </h1>
-                    <p className="mt-3 max-w-2xl text-sm leading-7 text-indigo-100/65 sm:text-base">
-                        Discover quizzes by topic. Home shows All plus the top
-                        three themes returned by backend insights, while quiz
-                        cards still load from the public catalog page by page.
-                    </p>
                 </div>
 
                 <div className="mt-6 rounded-[1.5rem] border border-indigo-200/10 bg-indigo-950/35 p-5">
                     <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
                         <div>
                             <p className="text-sm uppercase tracking-[0.24em] text-indigo-200/55">
-                                Quiz Categories
+                                Topics
                             </p>
                             <h2 className="mt-3 text-2xl font-semibold text-white">
-                                Browse quizzes by popular topics
+                                Popular topics
                             </h2>
                             <p className="mt-3 text-sm leading-7 text-indigo-100/65">
                                 {quizCatalog.counts
-                                    ? `${quizCatalog.counts.filteredQuizzes} quizzes for the current filter`
-                                    : "Loading topic insights from backend."}
+                                    ? `${quizCatalog.counts.filteredQuizzes} quizzes`
+                                    : "Loading quizzes..."}
                             </p>
                         </div>
 
@@ -72,7 +74,11 @@ export default function HomePage() {
                     <TopicFilters
                         activeTopic={quizCatalog.activeTopic || "All"}
                         filters={homeFilters}
-                        isLoading={homeFeed.isLoading || quizCatalog.isLoading}
+                        isLoading={
+                            !authReady ||
+                            homeFeed.isLoading ||
+                            quizCatalog.isLoading
+                        }
                         onTopicChange={(topic) =>
                             quizCatalog.setActiveTopic(
                                 topic === "All" ? "" : topic,
@@ -81,16 +87,16 @@ export default function HomePage() {
                     />
 
                     <QuizCollection
-                        emptyDescription="This theme exists, but there are no public quizzes for it yet."
-                        emptyTitle="No quizzes for this topic"
+                        emptyDescription="No quizzes yet."
+                        emptyTitle="No quizzes"
                         error={quizCatalog.error}
-                        isLoading={quizCatalog.isLoading}
+                        isLoading={!authReady || quizCatalog.isLoading}
                         onQuizDeleted={quizCatalog.removeQuiz}
                         quizzes={quizCatalog.quizzes}
                     />
 
                     <PaginationControls
-                        isLoading={quizCatalog.isLoading}
+                        isLoading={!authReady || quizCatalog.isLoading}
                         onPageChange={quizCatalog.goToPage}
                         pagination={quizCatalog.pagination}
                     />

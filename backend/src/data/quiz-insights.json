@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-03-24T12:19:00.000Z",
+  "generatedAt": "2026-03-24T12:17:00.000Z",
   "totals": {
-    "totalQuizzes": 46,
-    "publicQuizzes": 28,
-    "privateQuizzes": 18,
-    "premiumQuizzes": 12,
-    "freeQuizzes": 16
+    "totalQuizzes": 40,
+    "publicQuizzes": 23,
+    "privateQuizzes": 17,
+    "premiumQuizzes": 10,
+    "freeQuizzes": 13
   },
   "availableTopics": [
     "Arts",
@@ -37,8 +37,8 @@
   "popularTopics": [
     {
       "topic": "Programming",
-      "quizCount": 17,
-      "premiumQuizCount": 14,
+      "quizCount": 16,
+      "premiumQuizCount": 13,
       "freeQuizCount": 3
     },
     {
@@ -54,12 +54,6 @@
       "freeQuizCount": 1
     },
     {
-      "topic": "Marketing",
-      "quizCount": 2,
-      "premiumQuizCount": 2,
-      "freeQuizCount": 0
-    },
-    {
       "topic": "Arts",
       "quizCount": 1,
       "premiumQuizCount": 0,
@@ -70,12 +64,6 @@
       "quizCount": 1,
       "premiumQuizCount": 1,
       "freeQuizCount": 0
-    },
-    {
-      "topic": "Comedy",
-      "quizCount": 1,
-      "premiumQuizCount": 0,
-      "freeQuizCount": 1
     },
     {
       "topic": "Cooking",
@@ -94,12 +82,6 @@
       "quizCount": 1,
       "premiumQuizCount": 1,
       "freeQuizCount": 0
-    },
-    {
-      "topic": "Environment",
-      "quizCount": 1,
-      "premiumQuizCount": 0,
-      "freeQuizCount": 1
     },
     {
       "topic": "Fashion",
@@ -144,13 +126,13 @@
       "freeQuizCount": 0
     },
     {
-      "topic": "Mathematics",
+      "topic": "Marketing",
       "quizCount": 1,
       "premiumQuizCount": 1,
       "freeQuizCount": 0
     },
     {
-      "topic": "Medicin",
+      "topic": "Mathematics",
       "quizCount": 1,
       "premiumQuizCount": 1,
       "freeQuizCount": 0
@@ -178,20 +160,14 @@
       "quizCount": 1,
       "premiumQuizCount": 0,
       "freeQuizCount": 1
-    },
-    {
-      "topic": "Writing",
-      "quizCount": 1,
-      "premiumQuizCount": 0,
-      "freeQuizCount": 1
     }
   ],
   "featuredQuizIds": [
-    "a0b1c2d3-e4f5-3b4c-7p8q-9r0s1t2u3v4w",
-    "d9a0b1c2-d3e4-2a3b-6o7p-8q9r0s1t2u3v",
     "b7c8d9a0-b1c2-0e1f-4m5n-6o7p8q9r0s1t",
-    "a6b7c8d9-a0b1-9d0a-3l4m-5n6o7p8q9r0s",
-    "e4f5a6b7-c8d9-7b8c-1j2k-3l4m5n6o7p8q",
-    "c2d3e4f5-a6b7-5f6a-9h0i-1j2k3l4m5n6o"
+    "b1c2d3e4-f5a6-4e5f-8g9h-0i1j2k3l4m5n",
+    "a0b1c2d3-e4f5-3d4e-7f8g-9h0i1j2k3l4m",
+    "f6a7b8c9-a0b1-9f0a-3b4c-5d6e7f8g9h0i",
+    "d4e5f6a7-b8c9-7d8e-1f2a-3b4c5d6e7f8g",
+    "c3d4e5f6-a7b8-6c7d-0e1f-2a3b4c5d6e7f"
   ]
 }

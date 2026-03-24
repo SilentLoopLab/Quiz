@@ -9,6 +9,7 @@ const {
   getPlayableQuizById,
   getPlayableQuizByShareToken,
   submitQuizAttempt,
+  submitQuizAttemptByShareToken,
   updateQuiz,
 } = require("../services/quiz.service");
 
@@ -141,6 +142,20 @@ async function submit(req, res) {
   }
 }
 
+async function submitByShareToken(req, res) {
+  try {
+    const result = await submitQuizAttemptByShareToken(
+      req.params.shareToken,
+      req.body,
+      req.authUser || null
+    );
+
+    return res.status(200).json(result);
+  } catch (error) {
+    return handleError(res, error);
+  }
+}
+
 module.exports = {
   create,
   home,
@@ -152,5 +167,6 @@ module.exports = {
   getById,
   getByShareToken,
   submit,
+  submitByShareToken,
   update,
 };

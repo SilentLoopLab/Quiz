@@ -58,8 +58,8 @@ export function AccessSection({
                                         }`}
                                     >
                                         {accessType === "public"
-                                            ? "Visible to everyone who can access quizzes."
-                                            : "Restricted access for premium users."}
+                                            ? "Everyone can open it."
+                                            : "Open by private link."}
                                     </span>
                                 </button>
                             );
@@ -111,7 +111,7 @@ export function AccessSection({
                                         : "text-indigo-100/65"
                                 }`}
                             >
-                                Only premium users can open this quiz.
+                                Premium users only.
                             </span>
                             {!isPremiumUser ? (
                                 <span className="mt-3 inline-flex rounded-full border border-amber-300/20 bg-amber-400/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-amber-100">
@@ -125,8 +125,8 @@ export function AccessSection({
 
             {!isPremiumUser ? (
                 <p className="rounded-xl border border-amber-300/10 bg-amber-500/10 px-4 py-3 text-sm text-amber-100/85">
-                    Private quizzes and premium-only quizzes are available only
-                    for premium users.
+                    Premium lets you create private quizzes and open premium
+                    quizzes.
                 </p>
             ) : null}
         </>

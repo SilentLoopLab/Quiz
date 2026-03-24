@@ -48,13 +48,6 @@ export function useMyQuizzes() {
     }, []);
 
     async function deleteQuiz(quizId: string) {
-        if (
-            typeof window !== "undefined" &&
-            !window.confirm("Delete this quiz?")
-        ) {
-            return;
-        }
-
         setDeletingQuizId(quizId);
         setError("");
 
@@ -63,12 +56,14 @@ export function useMyQuizzes() {
             setQuizzes((current) =>
                 current.filter((quiz) => quiz.id !== quizId),
             );
+            return true;
         } catch (deleteError) {
             setError(
                 deleteError instanceof Error
                     ? deleteError.message
                     : "Failed to delete quiz.",
             );
+            return false;
         } finally {
             setDeletingQuizId("");
         }

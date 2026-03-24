@@ -1,7 +1,6 @@
 import type {
     QuizAccessType,
     QuizAnswerMode,
-    QuizCategory,
     QuizCategoryMode,
     QuizDifficulty,
     QuizDraft,
@@ -12,17 +11,6 @@ import type {
 
 export const QUIZ_BUILDER_STORAGE_KEY = "quizz-quiz-builder-storage";
 export const QUIZ_AUTOMATIC_TOTAL_POINTS = 100;
-
-export const quizCategoryOptions: QuizCategory[] = [
-    "Programming",
-    "Science",
-    "Medicine",
-    "Driving",
-    "History",
-    "Business",
-    "Languages",
-    "General",
-];
 
 export const quizDifficultyOptions: QuizDifficulty[] = [
     "Easy",
@@ -39,13 +27,13 @@ export const quizCategoryModeOptions: Array<{
 }> = [
     {
         value: "preset",
-        label: "Suggested topics",
-        description: "Choose from the topics already available in the app.",
+        label: "Saved topics",
+        description: "Use an existing topic.",
     },
     {
         value: "custom",
         label: "Custom topic",
-        description: "Write your own topic for this quiz.",
+        description: "Add a new topic.",
     },
 ];
 
@@ -56,13 +44,13 @@ export const quizAnswerModeOptions: Array<{
 }> = [
     {
         value: "single",
-        label: "Single correct answer",
-        description: "Each question can have only one correct option.",
+        label: "Single answer",
+        description: "One correct option.",
     },
     {
         value: "multiple",
-        label: "Multiple correct answers",
-        description: "Questions can contain several correct options.",
+        label: "Multiple answers",
+        description: "More than one correct option.",
     },
 ];
 
@@ -74,14 +62,12 @@ export const quizScoringModeOptions: Array<{
     {
         value: "automatic",
         label: "Automatic 100 points",
-        description:
-            "The quiz total stays 100 and points are distributed automatically by the number of questions.",
+        description: "Total stays 100.",
     },
     {
         value: "manual",
-        label: "Manual per question",
-        description:
-            "You assign points for each question manually, and the total becomes the sum of those values.",
+        label: "Manual points",
+        description: "Set points per question.",
     },
 ];
 
@@ -92,15 +78,13 @@ export const quizManualPointsModeOptions: Array<{
 }> = [
     {
         value: "integer",
-        label: "Whole numbers only",
-        description:
-            "Question points move in whole numbers like 1, 2, 3, 10.",
+        label: "Whole numbers",
+        description: "1, 2, 3",
     },
     {
         value: "decimal",
-        label: "Allow decimals",
-        description:
-            "Question points can use decimal values like 1.5, 2.25, 10.75.",
+        label: "Decimals",
+        description: "1.5, 2.25",
     },
 ];
 
@@ -108,7 +92,7 @@ export function createQuizDraft(): QuizDraft {
     return {
         title: "",
         categoryMode: "preset",
-        presetCategory: "Programming",
+        presetCategory: "",
         customCategory: "",
         difficulty: "Medium",
         answerMode: "single",
@@ -130,6 +114,8 @@ export function normalizeQuizDraft(draft: QuizDraft): QuizDraft {
         ...fallbackDraft,
         ...draft,
         title: draft.title?.trim() ?? fallbackDraft.title,
+        presetCategory:
+            draft.presetCategory?.trim() ?? fallbackDraft.presetCategory,
         customCategory:
             draft.customCategory?.trim() ?? fallbackDraft.customCategory,
         imageName: draft.imageName?.trim() ?? fallbackDraft.imageName,
@@ -144,7 +130,7 @@ export function resolveQuizCategory(
         return draft.customCategory.trim();
     }
 
-    return draft.presetCategory;
+    return draft.presetCategory.trim();
 }
 
 export function buildQuizPreview(draft: QuizDraft) {
@@ -167,15 +153,11 @@ export function buildQuizPreview(draft: QuizDraft) {
 }
 
 export function buildQuizDraftFromManageQuiz(quiz: QuizManageQuiz): QuizDraft {
-    const presetCategory = quizCategoryOptions.find(
-        (category) => category === quiz.category,
-    );
-
     return {
         title: quiz.title,
-        categoryMode: presetCategory ? "preset" : "custom",
-        presetCategory: presetCategory ?? quizCategoryOptions[0],
-        customCategory: presetCategory ? "" : quiz.category,
+        categoryMode: quiz.category.trim() ? "preset" : "custom",
+        presetCategory: quiz.category,
+        customCategory: "",
         difficulty: quiz.difficulty,
         answerMode: quiz.answerMode,
         shuffleQuestions: quiz.shuffleQuestions,

@@ -6,12 +6,25 @@ import type { QuizHomeFeedResponse } from "../types/quiz.types";
 
 const DEFAULT_ERROR_MESSAGE = "Failed to load the home quiz feed.";
 
-export function useQuizHomeFeed() {
+interface UseQuizHomeFeedOptions {
+    enabled?: boolean;
+}
+
+export function useQuizHomeFeed({
+    enabled = true,
+}: UseQuizHomeFeedOptions = {}) {
     const [data, setData] = useState<QuizHomeFeedResponse | null>(null);
     const [error, setError] = useState("");
-    const [isLoading, setIsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(enabled);
+    const [hasResolved, setHasResolved] = useState(false);
 
     useEffect(() => {
+        if (!enabled) {
+            setIsLoading(false);
+            setHasResolved(false);
+            return;
+        }
+
         let isCancelled = false;
 
         async function loadHomeFeed() {
@@ -35,20 +48,22 @@ export function useQuizHomeFeed() {
             } finally {
                 if (!isCancelled) {
                     setIsLoading(false);
+                    setHasResolved(true);
                 }
             }
         }
 
-        loadHomeFeed();
+        void loadHomeFeed();
 
         return () => {
             isCancelled = true;
         };
-    }, []);
+    }, [enabled]);
 
     return {
         data,
         error,
+        hasResolved,
         isLoading,
     };
 }

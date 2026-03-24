@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import AppShell from "../../../components/navigation/AppShell";
 import { billingService } from "../../../services/billing.service";
@@ -10,7 +10,7 @@ import { useAuthStore } from "../../../store/authStore";
 const DEFAULT_CONFIRM_ERROR_MESSAGE =
     "Failed to confirm premium purchase. Please try again.";
 
-export default function BillingSuccessPage() {
+function BillingSuccessContent() {
     const router = useRouter();
     const searchParams = useSearchParams();
     const setCurrentUser = useAuthStore((state) => state.setCurrentUser);
@@ -62,37 +62,57 @@ export default function BillingSuccessPage() {
     }, [router, sessionId, setCurrentUser]);
 
     return (
-        <AppShell>
-            <section className="rounded-[2rem] border border-indigo-200/15 bg-indigo-900/45 p-6 shadow-xl sm:p-8">
-                <div className="rounded-[1.5rem] border border-indigo-200/10 bg-indigo-950/35 p-6">
-                    <p className="text-sm uppercase tracking-[0.3em] text-indigo-200/55">
-                        Billing
-                    </p>
-                    <h1 className="mt-4 text-3xl font-semibold text-white sm:text-4xl">
-                        Confirming Premium access
-                    </h1>
+        <section className="rounded-[2rem] border border-indigo-200/15 bg-indigo-900/45 p-6 shadow-xl sm:p-8">
+            <div className="rounded-[1.5rem] border border-indigo-200/10 bg-indigo-950/35 p-6">
+                <p className="text-sm uppercase tracking-[0.3em] text-indigo-200/55">
+                    Billing
+                </p>
+                <h1 className="mt-4 text-3xl font-semibold text-white sm:text-4xl">
+                    Updating Premium
+                </h1>
 
-                    {errorMessage ? (
-                        <>
-                            <p className="mt-3 max-w-2xl text-sm leading-7 text-red-200 sm:text-base">
-                                {errorMessage}
-                            </p>
-
-                            <Link
-                                href="/premium"
-                                className="mt-6 inline-flex rounded-2xl border border-indigo-200/15 bg-indigo-950/45 px-5 py-3 text-sm font-semibold text-white transition hover:bg-indigo-950/70"
-                            >
-                                Back to Premium
-                            </Link>
-                        </>
-                    ) : (
-                        <p className="mt-3 max-w-2xl text-sm leading-7 text-indigo-100/65 sm:text-base">
-                            Payment succeeded. We are confirming your premium
-                            subscription and updating your account now.
+                {errorMessage ? (
+                    <>
+                        <p className="mt-3 max-w-2xl text-sm leading-7 text-red-200 sm:text-base">
+                            {errorMessage}
                         </p>
-                    )}
-                </div>
-            </section>
+
+                        <Link
+                            href="/premium"
+                            className="mt-6 inline-flex rounded-2xl border border-indigo-200/15 bg-indigo-950/45 px-5 py-3 text-sm font-semibold text-white transition hover:bg-indigo-950/70"
+                        >
+                            Back to Premium
+                        </Link>
+                    </>
+                ) : (
+                    <p className="mt-3 max-w-2xl text-sm leading-7 text-indigo-100/65 sm:text-base">
+                        Payment received. Updating your access.
+                    </p>
+                )}
+            </div>
+        </section>
+    );
+}
+
+function BillingSuccessFallback() {
+    return (
+        <section className="rounded-[2rem] border border-indigo-200/15 bg-indigo-900/45 p-6 text-center shadow-xl sm:p-8">
+            <p className="text-sm uppercase tracking-[0.3em] text-indigo-200/55">
+                Billing
+            </p>
+            <h1 className="mt-4 text-3xl font-semibold text-white sm:text-4xl">
+                Updating Premium
+            </h1>
+        </section>
+    );
+}
+
+export default function BillingSuccessPage() {
+    return (
+        <AppShell>
+            <Suspense fallback={<BillingSuccessFallback />}>
+                <BillingSuccessContent />
+            </Suspense>
         </AppShell>
     );
 }

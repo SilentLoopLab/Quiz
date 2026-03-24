@@ -10,11 +10,10 @@ export default function BillingCancelPage() {
                         Billing
                     </p>
                     <h1 className="mt-4 text-3xl font-semibold text-white sm:text-4xl">
-                        Premium checkout was cancelled
+                        Checkout cancelled
                     </h1>
                     <p className="mt-3 max-w-2xl text-sm leading-7 text-indigo-100/65 sm:text-base">
-                        No payment was completed. You can return to the premium
-                        page and start the checkout again whenever you want.
+                        No payment was made.
                     </p>
 
                     <Link

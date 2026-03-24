@@ -7,10 +7,15 @@ import {
     QuizCollection,
     TopicFilters,
 } from "../../components/quizDiscovery";
+import { useAuthReady } from "../../hooks/useAuthReady";
 import { usePublicQuizCatalog } from "../../hooks/usePublicQuizCatalog";
 
 export default function QuizzesPage() {
-    const quizCatalog = usePublicQuizCatalog({ limit: 8 });
+    const authReady = useAuthReady();
+    const quizCatalog = usePublicQuizCatalog({
+        limit: 8,
+        enabled: authReady,
+    });
     const filters = ["All", ...quizCatalog.availableTopics];
 
     return (
@@ -25,12 +30,6 @@ export default function QuizzesPage() {
                             <h1 className="mt-4 text-3xl font-semibold text-white sm:text-4xl">
                                 All Quizzes
                             </h1>
-                            <p className="mt-3 max-w-2xl text-sm leading-7 text-indigo-100/65 sm:text-base">
-                                Backend returns every registered theme for
-                                these filter buttons, while quiz cards
-                                themselves still come from the public catalog
-                                page by page.
-                            </p>
                         </div>
 
                         <Link
@@ -46,24 +45,24 @@ export default function QuizzesPage() {
                     <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
                         <div>
                             <p className="text-sm uppercase tracking-[0.24em] text-indigo-200/55">
-                                Topic Filter
+                                Topics
                             </p>
                             <h2 className="mt-3 text-2xl font-semibold text-white">
-                                Browse all available topics
+                                All topics
                             </h2>
                         </div>
 
                         <p className="text-sm text-indigo-100/65">
                             {quizCatalog.counts
-                                ? `${quizCatalog.counts.filteredQuizzes} of ${quizCatalog.counts.totalQuizzes} public quizzes`
-                                : "Loading topics from backend."}
+                                ? `${quizCatalog.counts.filteredQuizzes} of ${quizCatalog.counts.totalQuizzes} quizzes`
+                                : "Loading quizzes..."}
                         </p>
                     </div>
 
                     <TopicFilters
                         activeTopic={quizCatalog.activeTopic || "All"}
                         filters={filters}
-                        isLoading={quizCatalog.isLoading}
+                        isLoading={!authReady || quizCatalog.isLoading}
                         onTopicChange={(topic) =>
                             quizCatalog.setActiveTopic(
                                 topic === "All" ? "" : topic,
@@ -72,16 +71,16 @@ export default function QuizzesPage() {
                     />
 
                     <QuizCollection
-                        emptyDescription="This theme exists, but there are no public quizzes in it yet."
-                        emptyTitle="No quizzes in this topic"
+                        emptyDescription="No quizzes yet."
+                        emptyTitle="No quizzes"
                         error={quizCatalog.error}
-                        isLoading={quizCatalog.isLoading}
+                        isLoading={!authReady || quizCatalog.isLoading}
                         onQuizDeleted={quizCatalog.removeQuiz}
                         quizzes={quizCatalog.quizzes}
                     />
 
                     <PaginationControls
-                        isLoading={quizCatalog.isLoading}
+                        isLoading={!authReady || quizCatalog.isLoading}
                         onPageChange={quizCatalog.goToPage}
                         pagination={quizCatalog.pagination}
                     />

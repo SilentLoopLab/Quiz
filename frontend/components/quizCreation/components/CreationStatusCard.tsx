@@ -31,18 +31,12 @@ export function CreationStatusCard({
             {createdQuiz ? (
                 <div className="mt-4 rounded-[1.5rem] border border-emerald-300/15 bg-emerald-950/20 p-5">
                     <p className="text-sm uppercase tracking-[0.24em] text-emerald-100/60">
-                        Quiz Saved
+                        Saved
                     </p>
                     <h2 className="mt-3 text-xl font-semibold text-white">
                         {createdQuiz.title}
                     </h2>
                     <div className="mt-4 space-y-2 text-sm text-emerald-100/80">
-                        <p>
-                            <span className="text-emerald-100/55">
-                                Quiz ID:
-                            </span>{" "}
-                            {createdQuiz.id}
-                        </p>
                         <p>
                             <span className="text-emerald-100/55">
                                 Total points:

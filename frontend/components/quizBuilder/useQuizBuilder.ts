@@ -3,13 +3,11 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import {
-    buildQuizDraftFromManageQuiz,
     buildQuizPreview,
     normalizeQuizDraft,
     resolveQuizCategory,
 } from "../../lib/quizBuilder";
 import { cdnService } from "../../services/cdn.service";
-import { quizService } from "../../services/quiz.service";
 import { useAuthStore } from "../../store/authStore";
 import { useQuizBuilderStore } from "../../store/quizBuilderStore";
 import type {
@@ -23,7 +21,8 @@ import type {
     QuizManualPointsMode,
     QuizScoringMode,
 } from "../../types/quiz.types";
-import { buildQuestionDraftsFromManageQuiz } from "../quizCreation/helpers";
+import { useQuizEditorSession } from "../quizEditor";
+import { useQuizTopics } from "./useQuizTopics";
 
 const SETTINGS_VALIDATION_MESSAGE =
     "Add a quiz title before saving quiz settings.";
@@ -50,18 +49,11 @@ export function useQuizBuilder({
     const router = useRouter();
     const user = useAuthStore((state) => state.user);
     const draft = useQuizBuilderStore((state) => state.draft);
-    const hasHydrated = useQuizBuilderStore((state) => state.hasHydrated);
-    const isSettingsSaved = useQuizBuilderStore((state) => state.isSettingsSaved);
-    const storeMode = useQuizBuilderStore((state) => state.mode);
-    const editingQuizId = useQuizBuilderStore((state) => state.editingQuizId);
     const saveSettingsDraft = useQuizBuilderStore(
         (state) => state.saveSettingsDraft,
     );
     const setDraftField = useQuizBuilderStore((state) => state.setDraftField);
     const resetStoredDraft = useQuizBuilderStore((state) => state.resetDraft);
-    const startEditSession = useQuizBuilderStore(
-        (state) => state.startEditSession,
-    );
     const [builderError, setBuilderError] = useState("");
     const [builderMessage, setBuilderMessage] = useState("");
     const [imagePreviewUrl, setImagePreviewUrl] = useState("");
@@ -69,11 +61,26 @@ export function useQuizBuilder({
         null,
     );
     const [isSavingSettings, setIsSavingSettings] = useState(false);
-    const [isBootstrappingEdit, setIsBootstrappingEdit] = useState(
-        mode === "edit",
-    );
     const isPremiumUser = user?.premium === true;
-    const isEditing = mode === "edit";
+    const {
+        clearSessionError,
+        hasHydrated,
+        isBootstrappingEdit,
+        isEditing,
+        sessionError,
+        sessionVersion,
+        storeMode,
+    } = useQuizEditorSession({
+        mode,
+        quizId,
+        loadErrorMessage: "Failed to load quiz settings.",
+        missingQuizIdMessage: "Quiz ID is required to edit the quiz.",
+    });
+    const {
+        availableTopics,
+        isLoadingTopics,
+        topicsError,
+    } = useQuizTopics(draft.presetCategory);
 
     useEffect(() => {
         return () => {
@@ -84,89 +91,27 @@ export function useQuizBuilder({
     }, [imagePreviewUrl]);
 
     useEffect(() => {
-        if (!hasHydrated) {
+        if (!hasHydrated || isEditing || storeMode !== "edit") {
             return;
         }
 
-        if (!isEditing) {
-            if (storeMode === "edit") {
-                resetStoredDraft();
+        resetStoredDraft();
+    }, [hasHydrated, isEditing, resetStoredDraft, storeMode]);
+
+    useEffect(() => {
+        if (!isEditing || sessionVersion === 0) {
+            return;
+        }
+
+        setSelectedImageFile(null);
+        setImagePreviewUrl((currentPreviewUrl) => {
+            if (currentPreviewUrl) {
+                URL.revokeObjectURL(currentPreviewUrl);
             }
 
-            setIsBootstrappingEdit(false);
-            return;
-        }
-
-        if (!quizId) {
-            setBuilderError("Quiz ID is required to edit the quiz.");
-            setIsBootstrappingEdit(false);
-            return;
-        }
-
-        if (
-            storeMode === "edit" &&
-            editingQuizId === quizId
-        ) {
-            setIsBootstrappingEdit(false);
-            return;
-        }
-
-        let isCancelled = false;
-        const currentQuizId = quizId;
-
-        async function loadQuizForEditing() {
-            setIsBootstrappingEdit(true);
-            setBuilderError("");
-            setBuilderMessage("");
-
-            try {
-                const result = await quizService.getManageQuiz(currentQuizId);
-
-                if (isCancelled) {
-                    return;
-                }
-
-                if (imagePreviewUrl) {
-                    URL.revokeObjectURL(imagePreviewUrl);
-                    setImagePreviewUrl("");
-                }
-
-                setSelectedImageFile(null);
-                startEditSession({
-                    draft: buildQuizDraftFromManageQuiz(result.quiz),
-                    questions: buildQuestionDraftsFromManageQuiz(result.quiz),
-                    quizId: currentQuizId,
-                });
-            } catch (error) {
-                if (!isCancelled) {
-                    setBuilderError(
-                        error instanceof Error
-                            ? error.message
-                            : "Failed to load quiz settings.",
-                    );
-                }
-            } finally {
-                if (!isCancelled) {
-                    setIsBootstrappingEdit(false);
-                }
-            }
-        }
-
-        void loadQuizForEditing();
-
-        return () => {
-            isCancelled = true;
-        };
-    }, [
-        editingQuizId,
-        hasHydrated,
-        imagePreviewUrl,
-        isEditing,
-        quizId,
-        resetStoredDraft,
-        startEditSession,
-        storeMode,
-    ]);
+            return "";
+        });
+    }, [isEditing, sessionVersion]);
 
     useEffect(() => {
         if (isBootstrappingEdit || !isPremiumUser) {
@@ -189,7 +134,7 @@ export function useQuizBuilder({
             if (didNormalizePremiumFields) {
                 setBuilderError("");
                 setBuilderMessage(
-                    "Saved draft was adjusted to public settings because premium options require a premium account.",
+                    "Premium settings were changed to public.",
                 );
             }
         }
@@ -201,9 +146,31 @@ export function useQuizBuilder({
         setDraftField,
     ]);
 
+    useEffect(() => {
+        if (
+            !hasHydrated ||
+            isBootstrappingEdit ||
+            draft.categoryMode !== "preset" ||
+            draft.presetCategory.trim() ||
+            availableTopics.length === 0
+        ) {
+            return;
+        }
+
+        setDraftField("presetCategory", availableTopics[0]);
+    }, [
+        availableTopics,
+        draft.categoryMode,
+        draft.presetCategory,
+        hasHydrated,
+        isBootstrappingEdit,
+        setDraftField,
+    ]);
+
     function clearFeedback() {
         setBuilderError("");
         setBuilderMessage("");
+        clearSessionError();
     }
 
     function handleSettingsChange<Field extends keyof Omit<QuizDraft, "imageName">>(
@@ -357,16 +324,19 @@ export function useQuizBuilder({
     }
 
     return {
+        availableTopics,
         hasHydrated,
-        builderError,
+        builderError: builderError || sessionError,
         builderMessage,
         draft,
         imagePreviewUrl,
         isEditing,
         isInitializing: !hasHydrated || isBootstrappingEdit,
+        isLoadingTopics,
         isSavingSettings,
         isPremiumUser,
         preview: buildQuizPreview(draft),
+        topicsError,
         finalizeQuizSettings,
         handleAccessTypeChange,
         handleAnswerModeChange,

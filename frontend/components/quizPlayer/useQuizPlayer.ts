@@ -159,10 +159,13 @@ export function useQuizPlayer({ quizId, shareToken }: UseQuizPlayerParams) {
         setSubmitError("");
 
         try {
-            const result = await quizService.submitQuizAttempt(
-                quiz.id,
-                buildQuizSubmissionPayload(quiz, answers),
-            );
+            const payload = buildQuizSubmissionPayload(quiz, answers);
+            const result = shareToken
+                ? await quizService.submitQuizAttemptByShareToken(
+                      shareToken,
+                      payload,
+                  )
+                : await quizService.submitQuizAttempt(quiz.id, payload);
 
             setSubmissionResult(result.result);
             setQuiz((current) =>

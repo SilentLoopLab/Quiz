@@ -15,8 +15,8 @@ export function QuizCard({ onDeleteSuccess, quiz }: QuizCardProps) {
     const ctaLabel = canOpenQuiz ? "Open Quiz" : "Upgrade to Premium";
     const helperCopy =
         canOpenQuiz || !quiz.access.requiresPremium
-            ? "Open this quiz and start answering."
-            : "This quiz requires premium access before you can start it.";
+            ? "Open quiz."
+            : "Premium only.";
 
     return (
         <article

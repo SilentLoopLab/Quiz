@@ -58,7 +58,7 @@ export function QuestionOptionsEditor({
                                         event.target.value,
                                     )
                                 }
-                                placeholder="Answer option"
+                                placeholder="Option"
                                 className="min-w-0 flex-1 rounded-xl border border-indigo-200/25 bg-indigo-950/50 px-4 py-3 text-white outline-none transition placeholder:text-indigo-100/40 focus:border-indigo-100/50 disabled:cursor-not-allowed disabled:opacity-60"
                             />
 

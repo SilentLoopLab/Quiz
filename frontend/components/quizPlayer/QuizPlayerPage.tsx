@@ -234,9 +234,9 @@ export default function QuizPlayerPage({
                         <p className="mt-3 text-sm leading-7 text-indigo-100/65">
                             {submissionResult
                                 ? submissionResult.isPersisted
-                                    ? "Your latest saved attempt was loaded from backend. Review it below or start a new attempt."
-                                    : "Backend checked every answer. Review the correct and incorrect responses below."
-                                : "Submit the quiz to get your total points and see which answers were correct or incorrect."}
+                                    ? "Latest result loaded."
+                                    : "Result is below."
+                                : "Submit to see your result."}
                         </p>
 
                         {submitError ? (
@@ -248,11 +248,11 @@ export default function QuizPlayerPage({
                         {!submissionResult &&
                         missingRequiredQuestionNumbers.length > 0 ? (
                             <p className="mt-4 rounded-xl border border-amber-300/15 bg-amber-950/25 px-4 py-3 text-sm text-amber-100/85">
-                                Required question
+                                Missing required question
                                 {missingRequiredQuestionNumbers.length > 1
                                     ? "s"
                                     : ""}{" "}
-                                still missing:{" "}
+                                :{" "}
                                 {missingRequiredQuestionNumbers.join(", ")}.
                             </p>
                         ) : null}

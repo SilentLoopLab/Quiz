@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { resolveProfileImage } from "../../lib/profileImage";
@@ -20,6 +21,8 @@ export default function AppSidebar() {
     const router = useRouter();
     const user = useAuthStore((state) => state.user);
     const logout = useAuthStore((state) => state.logout);
+    const isLoading = useAuthStore((state) => state.isLoading);
+    const [isChangingProfile, setIsChangingProfile] = useState(false);
     const navItems = [
         { href: "/home", label: "Home" },
         { href: "/profile", label: "Profile" },
@@ -28,7 +31,6 @@ export default function AppSidebar() {
         ...(user?.premium
             ? []
             : [{ href: "/premium", label: "Upgrade to Premium" }]),
-        { href: "/login", label: "Change Profile" },
     ];
 
     const profileImageSrc = resolveProfileImage(user?.image);
@@ -48,8 +50,15 @@ export default function AppSidebar() {
         await logout();
         router.push("/login");
     }
-    function handleChangeProfile() {
-        router.push("/login");
+    async function handleChangeProfile() {
+        setIsChangingProfile(true);
+
+        try {
+            await logout();
+            router.replace("/login");
+        } finally {
+            setIsChangingProfile(false);
+        }
     }
     return (
         <aside className="w-full rounded-[2rem] border border-indigo-200/15 bg-indigo-900/55 p-4 text-white shadow-xl backdrop-blur-xl lg:sticky lg:top-6 lg:w-80 lg:self-start xl:w-[21rem]">
@@ -91,6 +100,17 @@ export default function AppSidebar() {
                         </Link>
                     );
                 })}
+
+                <button
+                    type="button"
+                    onClick={() => {
+                        void handleChangeProfile();
+                    }}
+                    disabled={isLoading || isChangingProfile}
+                    className={getNavItemClassName(false)}
+                >
+                    {isChangingProfile ? "Changing profile..." : "Change Profile"}
+                </button>
             </nav>
 
             <button

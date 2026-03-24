@@ -151,13 +151,13 @@ export function QuizQuestionCard({
                     onChange={(event) =>
                         onTextAnswerChange(question.id, event.target.value)
                     }
-                    placeholder="Enter first name and last name"
+                    placeholder="Full name"
                     className="mt-4 w-full rounded-xl border border-sky-300/20 bg-sky-950/40 px-4 py-3 text-white outline-none transition placeholder:text-sky-100/35 focus:border-sky-100/45 disabled:cursor-not-allowed disabled:opacity-80"
                 />
 
                 {!result && isMissingRequired ? (
                     <p className="mt-3 text-sm leading-7 text-amber-100/85">
-                        Enter the respondent name before submitting the quiz.
+                        Name is required.
                     </p>
                 ) : null}
 
@@ -167,7 +167,7 @@ export function QuizQuestionCard({
                             <span className="text-sky-100/50">
                                 Submitted name:
                             </span>{" "}
-                            {result.textAnswer || "No name was submitted"}
+                            {result.textAnswer || "No name"}
                         </p>
                     </div>
                 ) : null}
@@ -297,7 +297,7 @@ export function QuizQuestionCard({
 
             {!result && isMissingRequired ? (
                 <p className="mt-4 text-sm leading-7 text-amber-100/85">
-                    This question is required. Choose an answer before submitting.
+                    Answer is required.
                 </p>
             ) : null}
 

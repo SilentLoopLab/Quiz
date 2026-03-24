@@ -22,15 +22,18 @@ export default function QuizBuilderPage({
     quizId,
 }: QuizBuilderPageProps) {
     const {
+        availableTopics,
         builderError,
         builderMessage,
         draft,
         imagePreviewUrl,
         isEditing,
         isInitializing,
+        isLoadingTopics,
         isSavingSettings,
         isPremiumUser,
         preview,
+        topicsError,
         finalizeQuizSettings,
         handleAccessTypeChange,
         handleAnswerModeChange,
@@ -55,15 +58,8 @@ export default function QuizBuilderPage({
                     {isEditing ? "Quiz Editing" : "Quiz Builder"}
                 </p>
                 <h1 className="mt-4 text-3xl font-semibold text-white sm:text-4xl">
-                    {isEditing
-                        ? "Loading quiz settings"
-                        : "Loading saved quiz settings"}
+                    Loading settings
                 </h1>
-                <p className="mt-3 text-sm leading-7 text-indigo-100/65 sm:text-base">
-                    {isEditing
-                        ? "Restoring the saved quiz before opening the editor."
-                        : "Restoring your draft from localStorage."}
-                </p>
             </section>
         );
     }
@@ -78,13 +74,8 @@ export default function QuizBuilderPage({
                     <h1 className="mt-4 text-3xl font-semibold text-white sm:text-4xl">
                         {isEditing
                             ? "Update quiz settings"
-                            : "Configure quiz settings"}
+                            : "Quiz settings"}
                     </h1>
-                    <p className="mt-3 max-w-2xl text-sm leading-7 text-indigo-100/65 sm:text-base">
-                        {isEditing
-                            ? "Start with settings, then continue to the question editor with the same quiz data."
-                            : "Build the quiz foundation first: title, topic, answer mode, access, premium visibility, and cover image."}
-                    </p>
 
                     {builderError ? (
                         <p className="mt-4 rounded-xl border border-red-300/10 bg-red-950/30 px-4 py-3 text-sm text-red-200">
@@ -100,11 +91,14 @@ export default function QuizBuilderPage({
 
                     <div className="mt-6 space-y-5">
                         <IdentitySection
+                            availableTopics={availableTopics}
                             draft={draft}
                             handleCustomCategoryChange={handleCustomCategoryChange}
                             handlePresetCategoryChange={handlePresetCategoryChange}
                             handleSettingsChange={handleSettingsChange}
                             handleTopicModeChange={handleTopicModeChange}
+                            isLoadingTopics={isLoadingTopics}
+                            topicsError={topicsError}
                         />
                         <QuizFormatSection
                             draft={draft}

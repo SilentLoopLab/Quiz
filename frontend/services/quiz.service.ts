@@ -140,6 +140,24 @@ export const quizService = {
         }
     },
 
+    async submitQuizAttemptByShareToken(
+        shareToken: string,
+        payload: QuizSubmissionPayload,
+    ): Promise<QuizSubmissionResponse> {
+        try {
+            const response = await api.post<QuizSubmissionResponse>(
+                `/api/quizzes/shared/${shareToken}/submit`,
+                payload,
+                withAuthRequest(),
+            );
+
+            return response.data;
+        } catch (error) {
+            const { message } = getApiErrorDetails(error);
+            throw new Error(message);
+        }
+    },
+
     async updateQuiz(
         quizId: string,
         payload: QuizCreatePayload,

@@ -22,10 +22,7 @@ export function QuestionImageField({
                     <span className="block text-sm text-indigo-100/80">
                         Question image
                     </span>
-                    <p className="mt-2 text-sm leading-7 text-indigo-100/60">
-                        Optional. The preview keeps the whole image visible
-                        without cropping and scales it to fit the layout.
-                    </p>
+                    <p className="mt-2 text-sm leading-7 text-indigo-100/60">Optional</p>
                 </div>
 
                 {imagePreviewUrl ? (

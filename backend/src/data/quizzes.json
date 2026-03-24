@@ -1741,69 +1741,6 @@
     ]
   },
   {
-    "id": "d3bb1ff4-2dec-4228-a283-de443fe5afdf",
-    "ownerId": "41d19e3c-7cf0-4782-bc36-5a421b4cb884",
-    "ownerName": "Alen Yeghyan",
-    "ownerQuizCreationBlocked": true,
-    "title": "Medicine",
-    "description": "",
-    "category": "Medicin",
-    "difficulty": "Hard",
-    "answerMode": "multiple",
-    "shuffleQuestions": true,
-    "shuffleAnswers": true,
-    "scoringMode": "manual",
-    "manualPointsMode": "integer",
-    "accessType": "private",
-    "isPremium": true,
-    "status": "published",
-    "shareToken": "bf094df4b6c0df00abd111cef8a068bfe0ed0fc90c37feec",
-    "imageName": "",
-    "imageUrl": "",
-    "totalPoints": 100,
-    "questionCount": 1,
-    "createdAt": "2026-03-24T11:09:08.151Z",
-    "updatedAt": "2026-03-24T11:43:18.558Z",
-    "publishedAt": "2026-03-24T11:09:08.151Z",
-    "questions": [
-      {
-        "id": "2ba9ee65-fe1e-4f13-a4db-9b48a762943f",
-        "kind": "respondent_name",
-        "prompt": "First name and last name",
-        "required": true,
-        "shuffleEligible": false,
-        "responseType": "full_name",
-        "imageName": "",
-        "imageUrl": "",
-        "points": 0,
-        "options": []
-      },
-      {
-        "id": "001d4364-d648-4392-8d07-063c3b806df0",
-        "kind": "choice",
-        "prompt": "How is Hipocrat",
-        "required": true,
-        "shuffleEligible": true,
-        "responseType": "choice",
-        "imageName": "",
-        "imageUrl": "",
-        "points": 100,
-        "options": [
-          {
-            "id": "8d26985b-04b6-4478-b8a0-ffa703f9de1a",
-            "text": "Medici",
-            "isCorrect": true
-          },
-          {
-            "id": "f1302553-4dc9-4ea4-b026-eb0093c3c898",
-            "text": "Yog",
-            "isCorrect": false
-          }
-        ]
-      }
-    ]
-  },
-  {
     "id": "a1b2c3d4-e5f6-4a5b-8c9d-0e1f2a3b4c5d",
     "ownerId": "ef91e537-c0d8-449f-a64c-2ddc2f70a09b",
     "ownerName": "Petros",
@@ -1870,7 +1807,7 @@
     "id": "b2c3d4e5-f6a7-5b6c-9d0e-1f2a3b4c5d6e",
     "ownerId": "8940accc-5b1e-4324-b901-0a824c07d37e",
     "ownerName": "poghos",
-    "ownerQuizCreationBlocked": false,
+    "ownerQuizCreationBlocked": true,
     "title": "Grammar and Vocabulary",
     "description": "English language test",
     "category": "Languages",
@@ -2127,7 +2064,7 @@
     "id": "a7b8c9a0-b1c2-0a1b-4c5d-6e7f8g9h0i1j",
     "ownerId": "8940accc-5b1e-4324-b901-0a824c07d37e",
     "ownerName": "poghos",
-    "ownerQuizCreationBlocked": false,
+    "ownerQuizCreationBlocked": true,
     "title": "Cooking and Culinary Arts",
     "description": "Basic cooking techniques",
     "category": "Cooking",
@@ -2376,74 +2313,6 @@
     ]
   },
   {
-    "id": "c2d3e4f5-a6b7-5f6a-9h0i-1j2k3l4m5n6o",
-    "ownerId": "8940accc-5b1e-4324-b901-0a824c07d37e",
-    "ownerName": "poghos",
-    "ownerQuizCreationBlocked": false,
-    "title": "Environmental Science",
-    "description": "Ecology and environmental issues",
-    "category": "Environment",
-    "difficulty": "Medium",
-    "answerMode": "multiple",
-    "shuffleQuestions": true,
-    "shuffleAnswers": true,
-    "scoringMode": "automatic",
-    "manualPointsMode": "integer",
-    "accessType": "public",
-    "isPremium": false,
-    "status": "published",
-    "shareToken": "",
-    "imageName": "",
-    "imageUrl": "",
-    "totalPoints": 100,
-    "questionCount": 1,
-    "createdAt": "2026-03-24T12:11:00.000Z",
-    "updatedAt": "2026-03-24T12:11:00.000Z",
-    "publishedAt": "2026-03-24T12:11:00.000Z",
-    "questions": [
-      {
-        "id": "q35-respondent-name",
-        "kind": "respondent_name",
-        "prompt": "First name and last name",
-        "required": true,
-        "shuffleEligible": false,
-        "responseType": "full_name",
-        "imageName": "",
-        "imageUrl": "",
-        "points": 0,
-        "options": []
-      },
-      {
-        "id": "q35-choice-1",
-        "kind": "choice",
-        "prompt": "What is the greenhouse effect?",
-        "required": true,
-        "shuffleEligible": true,
-        "responseType": "choice",
-        "imageName": "",
-        "imageUrl": "",
-        "points": 100,
-        "options": [
-          {
-            "id": "q35-opt-1",
-            "text": "Trapping of heat in atmosphere",
-            "isCorrect": true
-          },
-          {
-            "id": "q35-opt-2",
-            "text": "Growing plants in greenhouse",
-            "isCorrect": false
-          },
-          {
-            "id": "q35-opt-3",
-            "text": "Solar panel technology",
-            "isCorrect": false
-          }
-        ]
-      }
-    ]
-  },
-  {
     "id": "d3e4f5a6-b7c8-6a7b-0i1j-2k3l4m5n6o7p",
     "ownerId": "d6bd5608-02f0-4a91-8e56-40e66b3a5e22",
     "ownerName": "poghos",
@@ -2500,69 +2369,6 @@
           {
             "id": "q36-opt-2",
             "text": "Rate of Increase",
-            "isCorrect": false
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "e4f5a6b7-c8d9-7b8c-1j2k-3l4m5n6o7p8q",
-    "ownerId": "9ccf1507-4dc2-4018-9eb8-52b27804776b",
-    "ownerName": "Petros",
-    "ownerQuizCreationBlocked": false,
-    "title": "Digital Marketing",
-    "description": "Online marketing strategies",
-    "category": "Marketing",
-    "difficulty": "Medium",
-    "answerMode": "multiple",
-    "shuffleQuestions": true,
-    "shuffleAnswers": true,
-    "scoringMode": "automatic",
-    "manualPointsMode": "integer",
-    "accessType": "public",
-    "isPremium": true,
-    "status": "published",
-    "shareToken": "",
-    "imageName": "",
-    "imageUrl": "",
-    "totalPoints": 100,
-    "questionCount": 1,
-    "createdAt": "2026-03-24T12:13:00.000Z",
-    "updatedAt": "2026-03-24T12:13:00.000Z",
-    "publishedAt": "2026-03-24T12:13:00.000Z",
-    "questions": [
-      {
-        "id": "q37-respondent-name",
-        "kind": "respondent_name",
-        "prompt": "First name and last name",
-        "required": true,
-        "shuffleEligible": false,
-        "responseType": "full_name",
-        "imageName": "",
-        "imageUrl": "",
-        "points": 0,
-        "options": []
-      },
-      {
-        "id": "q37-choice-1",
-        "kind": "choice",
-        "prompt": "What does SEO stand for?",
-        "required": true,
-        "shuffleEligible": true,
-        "responseType": "choice",
-        "imageName": "",
-        "imageUrl": "",
-        "points": 100,
-        "options": [
-          {
-            "id": "q37-opt-1",
-            "text": "Search Engine Optimization",
-            "isCorrect": true
-          },
-          {
-            "id": "q37-opt-2",
-            "text": "Social Engine Operator",
             "isCorrect": false
           }
         ]
@@ -2633,73 +2439,10 @@
     ]
   },
   {
-    "id": "a6b7c8d9-a0b1-9d0a-3l4m-5n6o7p8q9r0s",
-    "ownerId": "ef91e537-c0d8-449f-a64c-2ddc2f70a09b",
-    "ownerName": "Petros",
-    "ownerQuizCreationBlocked": true,
-    "title": "Creative Writing",
-    "description": "Story writing and fiction",
-    "category": "Writing",
-    "difficulty": "Medium",
-    "answerMode": "multiple",
-    "shuffleQuestions": true,
-    "shuffleAnswers": true,
-    "scoringMode": "automatic",
-    "manualPointsMode": "integer",
-    "accessType": "public",
-    "isPremium": false,
-    "status": "published",
-    "shareToken": "",
-    "imageName": "",
-    "imageUrl": "",
-    "totalPoints": 100,
-    "questionCount": 1,
-    "createdAt": "2026-03-24T12:15:00.000Z",
-    "updatedAt": "2026-03-24T12:15:00.000Z",
-    "publishedAt": "2026-03-24T12:15:00.000Z",
-    "questions": [
-      {
-        "id": "q39-respondent-name",
-        "kind": "respondent_name",
-        "prompt": "First name and last name",
-        "required": true,
-        "shuffleEligible": false,
-        "responseType": "full_name",
-        "imageName": "",
-        "imageUrl": "",
-        "points": 0,
-        "options": []
-      },
-      {
-        "id": "q39-choice-1",
-        "kind": "choice",
-        "prompt": "What is the structure of a story?",
-        "required": true,
-        "shuffleEligible": true,
-        "responseType": "choice",
-        "imageName": "",
-        "imageUrl": "",
-        "points": 100,
-        "options": [
-          {
-            "id": "q39-opt-1",
-            "text": "Beginning, middle, end",
-            "isCorrect": true
-          },
-          {
-            "id": "q39-opt-2",
-            "text": "Just dialogue",
-            "isCorrect": false
-          }
-        ]
-      }
-    ]
-  },
-  {
     "id": "b7c8d9a0-b1c2-0e1f-4m5n-6o7p8q9r0s1t",
     "ownerId": "8940accc-5b1e-4324-b901-0a824c07d37e",
     "ownerName": "poghos",
-    "ownerQuizCreationBlocked": false,
+    "ownerQuizCreationBlocked": true,
     "title": "Fashion Design",
     "description": "Fashion trends and clothing design",
     "category": "Fashion",
@@ -2815,132 +2558,6 @@
           {
             "id": "q41-opt-2",
             "text": "Export, Test, Link",
-            "isCorrect": false
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "d9a0b1c2-d3e4-2a3b-6o7p-8q9r0s1t2u3v",
-    "ownerId": "9ccf1507-4dc2-4018-9eb8-52b27804776b",
-    "ownerName": "Petros",
-    "ownerQuizCreationBlocked": false,
-    "title": "Stand-up Comedy",
-    "description": "Comedy writing and performance",
-    "category": "Comedy",
-    "difficulty": "Hard",
-    "answerMode": "single",
-    "shuffleQuestions": true,
-    "shuffleAnswers": true,
-    "scoringMode": "automatic",
-    "manualPointsMode": "integer",
-    "accessType": "public",
-    "isPremium": false,
-    "status": "published",
-    "shareToken": "",
-    "imageName": "",
-    "imageUrl": "",
-    "totalPoints": 100,
-    "questionCount": 1,
-    "createdAt": "2026-03-24T12:18:00.000Z",
-    "updatedAt": "2026-03-24T12:18:00.000Z",
-    "publishedAt": "2026-03-24T12:18:00.000Z",
-    "questions": [
-      {
-        "id": "q42-respondent-name",
-        "kind": "respondent_name",
-        "prompt": "First name and last name",
-        "required": true,
-        "shuffleEligible": false,
-        "responseType": "full_name",
-        "imageName": "",
-        "imageUrl": "",
-        "points": 0,
-        "options": []
-      },
-      {
-        "id": "q42-choice-1",
-        "kind": "choice",
-        "prompt": "What is the setup-punchline structure?",
-        "required": true,
-        "shuffleEligible": true,
-        "responseType": "choice",
-        "imageName": "",
-        "imageUrl": "",
-        "points": 100,
-        "options": [
-          {
-            "id": "q42-opt-1",
-            "text": "Basic joke structure",
-            "isCorrect": true
-          },
-          {
-            "id": "q42-opt-2",
-            "text": "Comedy equipment",
-            "isCorrect": false
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "a0b1c2d3-e4f5-3b4c-7p8q-9r0s1t2u3v4w",
-    "ownerId": "6bdc2f7a-a04a-40ac-a5a7-93983106034d",
-    "ownerName": "superadmin",
-    "ownerQuizCreationBlocked": false,
-    "title": "Cybersecurity Essentials",
-    "description": "Information security and protection",
-    "category": "Programming",
-    "difficulty": "Hard",
-    "answerMode": "multiple",
-    "shuffleQuestions": true,
-    "shuffleAnswers": true,
-    "scoringMode": "automatic",
-    "manualPointsMode": "integer",
-    "accessType": "public",
-    "isPremium": true,
-    "status": "published",
-    "shareToken": "",
-    "imageName": "",
-    "imageUrl": "",
-    "totalPoints": 100,
-    "questionCount": 1,
-    "createdAt": "2026-03-24T12:19:00.000Z",
-    "updatedAt": "2026-03-24T12:19:00.000Z",
-    "publishedAt": "2026-03-24T12:19:00.000Z",
-    "questions": [
-      {
-        "id": "q43-respondent-name",
-        "kind": "respondent_name",
-        "prompt": "First name and last name",
-        "required": true,
-        "shuffleEligible": false,
-        "responseType": "full_name",
-        "imageName": "",
-        "imageUrl": "",
-        "points": 0,
-        "options": []
-      },
-      {
-        "id": "q43-choice-1",
-        "kind": "choice",
-        "prompt": "What is encryption?",
-        "required": true,
-        "shuffleEligible": true,
-        "responseType": "choice",
-        "imageName": "",
-        "imageUrl": "",
-        "points": 100,
-        "options": [
-          {
-            "id": "q43-opt-1",
-            "text": "Converting data to unreadable form",
-            "isCorrect": true
-          },
-          {
-            "id": "q43-opt-2",
-            "text": "Deleting files",
             "isCorrect": false
           }
         ]

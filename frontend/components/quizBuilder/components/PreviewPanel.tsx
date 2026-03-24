@@ -1,7 +1,18 @@
 "use client";
 
 interface PreviewPanelProps {
-    preview: unknown;
+    preview: {
+        accessType: string;
+        answerMode: string;
+        category: string;
+        difficulty: string;
+        imageName?: string;
+        isPremium: boolean;
+        scoringMode: string;
+        shuffleAnswers: boolean;
+        shuffleQuestions: boolean;
+        title: string;
+    };
 }
 
 export function PreviewPanel({ preview }: PreviewPanelProps) {
@@ -11,24 +22,21 @@ export function PreviewPanel({ preview }: PreviewPanelProps) {
                 Preview
             </p>
             <h2 className="mt-4 text-2xl font-semibold text-white">
-                Quiz settings
+                Summary
             </h2>
-            <p className="mt-3 text-sm leading-7 text-indigo-100/65">
-                This preview reflects the settings state in real time.
-            </p>
-
-            <pre className="mt-6 overflow-x-auto rounded-2xl border border-indigo-200/10 bg-indigo-950/60 p-4 text-xs leading-6 text-indigo-100/85">
-                {JSON.stringify(preview, null, 2)}
-            </pre>
-
-            <div className="mt-6 rounded-2xl border border-emerald-300/10 bg-emerald-950/20 p-4">
-                <p className="text-sm font-semibold text-emerald-100">
-                    Local draft persistence
-                </p>
-                <p className="mt-2 text-sm leading-7 text-emerald-100/75">
-                    These settings are stored with Zustand in localStorage, so
-                    the draft stays after page refresh.
-                </p>
+            <div className="mt-5 space-y-3 text-sm text-indigo-100/75">
+                <p><span className="text-indigo-100/50">Title:</span> {preview.title || "Untitled"}</p>
+                <p><span className="text-indigo-100/50">Topic:</span> {preview.category || "Not selected"}</p>
+                <p><span className="text-indigo-100/50">Difficulty:</span> {preview.difficulty}</p>
+                <p><span className="text-indigo-100/50">Answers:</span> {preview.answerMode}</p>
+                <p><span className="text-indigo-100/50">Scoring:</span> {preview.scoringMode}</p>
+                <p><span className="text-indigo-100/50">Access:</span> {preview.accessType}</p>
+                <p><span className="text-indigo-100/50">Premium:</span> {preview.isPremium ? "Yes" : "No"}</p>
+                <p><span className="text-indigo-100/50">Shuffle questions:</span> {preview.shuffleQuestions ? "Yes" : "No"}</p>
+                <p><span className="text-indigo-100/50">Shuffle answers:</span> {preview.shuffleAnswers ? "Yes" : "No"}</p>
+                {preview.imageName ? (
+                    <p><span className="text-indigo-100/50">Cover:</span> {preview.imageName}</p>
+                ) : null}
             </div>
         </aside>
     );

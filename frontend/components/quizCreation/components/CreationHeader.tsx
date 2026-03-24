@@ -23,13 +23,8 @@ export function CreationHeader({
                     {isEditing ? "Quiz Editing" : "Quiz Creation"}
                 </p>
                 <h1 className="mt-4 text-3xl font-semibold text-white sm:text-4xl">
-                    {isEditing ? "Update quiz questions" : "Build your questions"}
+                    {isEditing ? "Edit questions" : "Questions"}
                 </h1>
-                <p className="mt-3 max-w-2xl text-sm leading-7 text-indigo-100/65 sm:text-base">
-                    {isEditing
-                        ? "First update settings, then adjust the question content and save the full quiz again."
-                        : "Settings are already saved in Zustand. Here you only work on the question content."}
-                </p>
             </div>
 
             {isLocked ? (

@@ -78,7 +78,7 @@ export function QuestionActions({
                 disabled={isCreatingQuiz}
                 className="rounded-2xl border border-indigo-200/15 bg-indigo-950/40 px-5 py-3 text-sm font-semibold text-white transition hover:bg-indigo-950/70 disabled:cursor-not-allowed disabled:opacity-70"
             >
-                Review Quiz Draft
+                Check Quiz
             </button>
             <button
                 type="button"

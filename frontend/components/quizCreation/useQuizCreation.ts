@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import {
-    buildQuizDraftFromManageQuiz,
     normalizeQuizDraft,
     resolveQuizCategory,
 } from "../../lib/quizBuilder";
@@ -15,9 +14,9 @@ import type {
     QuizManageQuiz,
     QuizQuestionDraft,
 } from "../../types/quiz.types";
+import { useQuizEditorSession } from "../quizEditor";
 import {
     buildQuizCreationPayload,
-    buildQuestionDraftsFromManageQuiz,
     buildQuestionPointsPreview,
     createInitialQuizQuestions,
     createQuestionDraft,
@@ -51,31 +50,35 @@ export function useQuizCreation({
 }: UseQuizCreationOptions = {}) {
     const router = useRouter();
     const draft = useQuizBuilderStore((state) => state.draft);
-    const hasHydrated = useQuizBuilderStore((state) => state.hasHydrated);
     const isSettingsSaved = useQuizBuilderStore(
         (state) => state.isSettingsSaved,
     );
-    const storeMode = useQuizBuilderStore((state) => state.mode);
-    const editingQuizId = useQuizBuilderStore((state) => state.editingQuizId);
     const questions = useQuizBuilderStore((state) => state.questions);
     const setQuestions = useQuizBuilderStore((state) => state.setQuestions);
-    const startEditSession = useQuizBuilderStore(
-        (state) => state.startEditSession,
-    );
     const [creationError, setCreationError] = useState("");
     const [creationMessage, setCreationMessage] = useState("");
     const [createdQuiz, setCreatedQuiz] = useState<QuizManageQuiz | null>(null);
     const [isCreatingQuiz, setIsCreatingQuiz] = useState(false);
-    const [isBootstrappingEdit, setIsBootstrappingEdit] = useState(
-        mode === "edit",
-    );
     const [questionErrors, setQuestionErrors] =
         useState<QuizQuestionValidationMap>({});
     const questionsRef = useRef<QuizQuestionDraft[]>(questions);
-    const isEditing = mode === "edit";
     const settingsRoute = getSettingsRoute(mode, quizId);
-    const hasMatchingEditSession =
-        storeMode === "edit" && editingQuizId === quizId;
+    const {
+        clearSessionError,
+        hasHydrated,
+        hasMatchingEditSession,
+        isBootstrappingEdit,
+        isEditing,
+        loadEditSession,
+        sessionError,
+        storeMode,
+    } = useQuizEditorSession({
+        mode,
+        quizId,
+        loadErrorMessage: "Failed to load quiz questions.",
+        missingQuizIdMessage: "Quiz ID is required to edit quiz questions.",
+        requireQuestions: true,
+    });
     const isLocked = createdQuiz !== null;
 
     const normalizedDraft = normalizeQuizDraft(draft);
@@ -95,87 +98,26 @@ export function useQuizCreation({
         (!isEditing || hasMatchingEditSession);
 
     useEffect(() => {
-        if (!hasHydrated) {
+        if (!hasHydrated || isEditing) {
             return;
         }
 
-        if (!isEditing) {
-            if (storeMode === "edit") {
-                router.replace(settingsRoute);
-                return;
-            }
-
-            if (isSettingsSaved && questions.length === 0) {
-                setQuestions(createInitialQuizQuestions());
-            }
-
-            setIsBootstrappingEdit(false);
+        if (storeMode === "edit") {
+            router.replace(settingsRoute);
             return;
         }
 
-        if (!quizId) {
-            setCreationError("Quiz ID is required to edit quiz questions.");
-            setIsBootstrappingEdit(false);
-            return;
+        if (isSettingsSaved && questions.length === 0) {
+            setQuestions(createInitialQuizQuestions());
         }
-
-        if (hasMatchingEditSession && questions.length > 0) {
-            setIsBootstrappingEdit(false);
-            return;
-        }
-
-        let isCancelled = false;
-        const currentQuizId = quizId;
-
-        async function loadQuizForEditing() {
-            setIsBootstrappingEdit(true);
-            setCreationError("");
-            setCreationMessage("");
-
-            try {
-                const result = await quizService.getManageQuiz(currentQuizId);
-
-                if (isCancelled) {
-                    return;
-                }
-
-                startEditSession({
-                    draft: buildQuizDraftFromManageQuiz(result.quiz),
-                    questions: buildQuestionDraftsFromManageQuiz(result.quiz),
-                    quizId: currentQuizId,
-                });
-            } catch (error) {
-                if (!isCancelled) {
-                    setCreationError(
-                        error instanceof Error
-                            ? error.message
-                            : "Failed to load quiz questions.",
-                    );
-                }
-            } finally {
-                if (!isCancelled) {
-                    setIsBootstrappingEdit(false);
-                }
-            }
-        }
-
-        void loadQuizForEditing();
-
-        return () => {
-            isCancelled = true;
-        };
     }, [
-        editingQuizId,
         hasHydrated,
-        hasMatchingEditSession,
         isEditing,
         isSettingsSaved,
         questions.length,
-        quizId,
         router,
         setQuestions,
         settingsRoute,
-        startEditSession,
         storeMode,
     ]);
 
@@ -209,6 +151,7 @@ export function useQuizCreation({
         setCreationError("");
         setCreationMessage("");
         setCreatedQuiz(null);
+        clearSessionError();
 
         if (!questionId) {
             return;
@@ -440,23 +383,15 @@ export function useQuizCreation({
         if (isEditing && quizId) {
             setCreationMessage("Restoring saved quiz questions...");
 
-            try {
-                const result = await quizService.getManageQuiz(quizId);
+            const restoredQuiz = await loadEditSession({
+                loadErrorMessage: "Failed to restore quiz questions.",
+            });
 
-                startEditSession({
-                    draft: buildQuizDraftFromManageQuiz(result.quiz),
-                    questions: buildQuestionDraftsFromManageQuiz(result.quiz),
-                    quizId,
-                });
+            if (restoredQuiz) {
                 setCreationMessage(
-                    `Questions from "${result.quiz.title}" were restored.`,
+                    `Questions from "${restoredQuiz.title}" were restored.`,
                 );
-            } catch (error) {
-                setCreationError(
-                    error instanceof Error
-                        ? error.message
-                        : "Failed to restore quiz questions.",
-                );
+            } else {
                 setCreationMessage("");
             }
 
@@ -506,7 +441,7 @@ export function useQuizCreation({
 
         setCreationError("");
         setCreationMessage(
-            showReadyMessage ? "Quiz draft is valid and ready to be saved." : "",
+            showReadyMessage ? "Quiz is ready." : "",
         );
         return true;
     }
@@ -560,8 +495,8 @@ export function useQuizCreation({
         setCreationError("");
         setCreationMessage(
             isEditing
-                ? "Uploading images and updating the quiz..."
-                : "Uploading images and saving the quiz...",
+                ? "Saving changes..."
+                : "Saving quiz...",
         );
 
         try {
@@ -578,8 +513,8 @@ export function useQuizCreation({
             setCreatedQuiz(result.quiz);
             setCreationMessage(
                 isEditing
-                    ? `Quiz "${result.quiz.title}" was updated.`
-                    : `Quiz "${result.quiz.title}" was saved.`,
+                    ? "Changes saved."
+                    : "Quiz saved.",
             );
         } catch (error) {
             setCreationError(
@@ -598,7 +533,7 @@ export function useQuizCreation({
     return {
         canCreateQuiz,
         createdQuiz,
-        creationError,
+        creationError: creationError || sessionError,
         creationMessage,
         editorMode: mode,
         hasHydrated,
@@ -606,7 +541,6 @@ export function useQuizCreation({
         isEditing,
         isInitializing: !hasHydrated || isBootstrappingEdit,
         isLocked,
-        payloadPreview: buildQuizCreationPayload(normalizedDraft, questions),
         questionPointsPreview,
         questionErrors,
         questions,

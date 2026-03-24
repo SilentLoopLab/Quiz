@@ -11,6 +11,7 @@ import type {
 const DEFAULT_ERROR_MESSAGE = "Failed to load quizzes.";
 
 interface UsePublicQuizCatalogOptions {
+    enabled?: boolean;
     initialTopic?: string;
     limit: number;
 }
@@ -38,16 +39,22 @@ function scrollPageToTop() {
 }
 
 export function usePublicQuizCatalog({
+    enabled = true,
     initialTopic = "",
     limit,
 }: UsePublicQuizCatalogOptions) {
     const [activeTopic, setActiveTopicState] = useState(initialTopic);
     const [data, setData] = useState<QuizPublicListResponse | null>(null);
     const [error, setError] = useState("");
-    const [isLoading, setIsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(enabled);
     const [page, setPage] = useState(1);
 
     useEffect(() => {
+        if (!enabled) {
+            setIsLoading(false);
+            return;
+        }
+
         let isCancelled = false;
 
         async function loadQuizzes() {
@@ -79,12 +86,12 @@ export function usePublicQuizCatalog({
             }
         }
 
-        loadQuizzes();
+        void loadQuizzes();
 
         return () => {
             isCancelled = true;
         };
-    }, [activeTopic, limit, page]);
+    }, [activeTopic, enabled, limit, page]);
 
     function setActiveTopic(topic: string) {
         setActiveTopicState(topic);

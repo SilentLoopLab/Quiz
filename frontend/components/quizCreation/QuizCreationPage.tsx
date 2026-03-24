@@ -2,12 +2,10 @@
 
 import { useQuizCreation } from "./useQuizCreation";
 import {
-    BackendResponsePanel,
     ChoiceQuestionCard,
     CreationHeader,
     CreationStatusCard,
     IdentityQuestionCard,
-    PayloadPreviewPanel,
     QuestionActions,
     SavedSettingsPanel,
 } from "./components";
@@ -33,7 +31,6 @@ export default function QuizCreationPage({
         isInitializing,
         isCreatingQuiz,
         isLocked,
-        payloadPreview,
         questionPointsPreview,
         questionErrors,
         questions,
@@ -64,15 +61,8 @@ export default function QuizCreationPage({
                     {isEditing ? "Quiz Editing" : "Quiz Creation"}
                 </p>
                 <h1 className="mt-4 text-3xl font-semibold text-white sm:text-4xl">
-                    {isEditing
-                        ? "Loading quiz editor"
-                        : "Loading saved quiz settings"}
+                    Loading questions
                 </h1>
-                <p className="mt-3 text-sm leading-7 text-indigo-100/65 sm:text-base">
-                    {isEditing
-                        ? "Restoring the saved quiz before opening the question editor."
-                        : "Restoring the saved settings before opening the question editor."}
-                </p>
             </section>
         );
     }
@@ -84,12 +74,8 @@ export default function QuizCreationPage({
                     {isEditing ? "Quiz Editing" : "Quiz Creation"}
                 </p>
                 <h1 className="mt-4 text-3xl font-semibold text-white sm:text-4xl">
-                    Redirecting to quiz settings
+                    Redirecting
                 </h1>
-                <p className="mt-3 text-sm leading-7 text-indigo-100/65 sm:text-base">
-                    Save the quiz settings first, then continue with question
-                    creation.
-                </p>
             </section>
         );
     }
@@ -210,8 +196,6 @@ export default function QuizCreationPage({
                         questionSettings={questionSettings}
                         totalPoints={questionPointsPreview.totalPoints}
                     />
-                    <PayloadPreviewPanel payloadPreview={payloadPreview} />
-                    <BackendResponsePanel createdQuiz={createdQuiz} />
                 </aside>
             </div>
         </section>

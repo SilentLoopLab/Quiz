@@ -49,8 +49,8 @@ export default function BuyPremium() {
 
                     <p className="mt-3 max-w-2xl text-sm leading-7 text-indigo-100/65 sm:text-base">
                         {user.premium
-                            ? "Your account already has premium access. You can keep using the premium workspace until your current billing window ends."
-                            : "Start a one-month premium subscription for $20 and unlock premium access across your account."}
+                            ? "Create private quizzes and open premium quizzes."
+                            : "Create private quizzes and open premium quizzes."}
                     </p>
 
                     {errorMessage ? (
@@ -65,11 +65,7 @@ export default function BuyPremium() {
                                 Plan
                             </p>
                             <p className="mt-3 text-lg font-semibold text-white">
-                                One month premium access
-                            </p>
-                            <p className="mt-2 text-sm text-indigo-100/65">
-                                Premium monthly subscription billed at $20 via
-                                Stripe checkout.
+                                $20 / month
                             </p>
                         </article>
 
@@ -83,7 +79,7 @@ export default function BuyPremium() {
                             <p className="mt-2 text-sm text-indigo-100/65">
                                 {user.premium && premiumExpiresAt
                                     ? `Access valid until ${premiumExpiresAt}.`
-                                    : "Upgrade once and the backend will activate your premium window for the current monthly period."}
+                                    : "Premium is not active."}
                             </p>
                         </article>
                     </div>
@@ -91,12 +87,12 @@ export default function BuyPremium() {
                     {user.premium ? (
                         <div className="mt-6 rounded-2xl border border-amber-300/15 bg-amber-500/10 p-5 text-sm text-amber-50">
                             <p className="font-semibold text-white">
-                                Premium membership is already enabled.
+                                Premium is active.
                             </p>
                             <p className="mt-2 text-amber-100/80">
                                 {premiumStartedAt && premiumExpiresAt
                                     ? `Started on ${premiumStartedAt} and active through ${premiumExpiresAt}.`
-                                    : "Your account already has premium access, so the upgrade button is hidden until the current premium window ends."}
+                                    : "You already have premium access."}
                             </p>
                         </div>
                     ) : (
@@ -109,7 +105,7 @@ export default function BuyPremium() {
                             className="mt-6 rounded-2xl bg-indigo-100 px-5 py-3 text-sm font-semibold text-indigo-950 transition hover:bg-white disabled:cursor-not-allowed disabled:opacity-60"
                         >
                             {isSubmitting
-                                ? "Redirecting to checkout..."
+                                ? "Opening checkout..."
                                 : "Upgrade to Premium"}
                         </button>
                     )}

@@ -33,7 +33,7 @@ export function SavedSettingsPanel({
     return (
         <div className="rounded-[1.5rem] border border-indigo-200/10 bg-indigo-950/35 p-6">
             <p className="text-sm uppercase tracking-[0.24em] text-indigo-200/55">
-                Saved Settings
+                Settings
             </p>
             <h2 className="mt-4 text-2xl font-semibold text-white">
                 {questionSettings.title}
@@ -43,14 +43,14 @@ export function SavedSettingsPanel({
                 <p><span className="text-indigo-100/50">Category:</span> {questionSettings.category}</p>
                 <p><span className="text-indigo-100/50">Difficulty:</span> {questionSettings.difficulty}</p>
                 <p><span className="text-indigo-100/50">Answer mode:</span> {questionSettings.answerMode}</p>
-                <p><span className="text-indigo-100/50">First question:</span> Required full name field, always fixed first</p>
-                <p><span className="text-indigo-100/50">Shuffle questions:</span> {questionSettings.shuffleQuestions ? "Enabled" : "Disabled"}</p>
-                <p><span className="text-indigo-100/50">Shuffle answers:</span> {questionSettings.shuffleAnswers ? "Enabled" : "Disabled"}</p>
+                <p><span className="text-indigo-100/50">First question:</span> Name</p>
+                <p><span className="text-indigo-100/50">Shuffle questions:</span> {questionSettings.shuffleQuestions ? "Yes" : "No"}</p>
+                <p><span className="text-indigo-100/50">Shuffle answers:</span> {questionSettings.shuffleAnswers ? "Yes" : "No"}</p>
                 <p>
                     <span className="text-indigo-100/50">Scoring:</span>{" "}
                     {questionSettings.scoringMode === "automatic"
-                        ? `Automatic, total ${formatPoints(totalPoints)} points`
-                        : `Manual, total ${formatPoints(totalPoints)} points`}
+                        ? `Automatic, ${formatPoints(totalPoints)} points`
+                        : `Manual, ${formatPoints(totalPoints)} points`}
                 </p>
                 {questionSettings.scoringMode === "manual" ? (
                     <p>

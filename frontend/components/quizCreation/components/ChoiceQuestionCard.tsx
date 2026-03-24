@@ -66,8 +66,8 @@ export function ChoiceQuestionCard({
                     </p>
                     <p className="mt-2 text-sm text-indigo-100/65">
                         {answerMode === "single"
-                            ? "Choose one correct answer."
-                            : "Choose one or more correct answers."}
+                            ? "Single answer"
+                            : "Multiple answers"}
                     </p>
                 </div>
 
@@ -118,7 +118,7 @@ export function ChoiceQuestionCard({
                     disabled={isLocked}
                     value={question.prompt}
                     onChange={(event) => onPromptChange(event.target.value)}
-                    placeholder="What does useEffect do in React?"
+                    placeholder="Type question"
                     rows={3}
                     className="w-full rounded-xl border border-indigo-200/25 bg-indigo-950/50 px-4 py-3 text-white outline-none transition placeholder:text-indigo-100/40 focus:border-indigo-100/50 disabled:cursor-not-allowed disabled:opacity-60"
                 />
@@ -127,12 +127,6 @@ export function ChoiceQuestionCard({
             {errors?.prompt ? (
                 <p className="mt-2 text-sm text-red-200">{errors.prompt}</p>
             ) : null}
-
-            <p className="mt-3 text-sm leading-7 text-indigo-100/60">
-                {question.isRequired
-                    ? "This question must be answered by the quiz taker."
-                    : "This question can be skipped by the quiz taker."}
-            </p>
 
             <QuestionImageField
                 imageName={question.imageName}

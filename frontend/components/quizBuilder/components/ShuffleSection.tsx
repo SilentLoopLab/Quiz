@@ -42,7 +42,7 @@ export function ShuffleSection({
                                     : "text-indigo-100/65"
                             }`}
                         >
-                            Questions stay in the order you create them.
+                            Keep your order.
                         </span>
                     </button>
 
@@ -63,9 +63,7 @@ export function ShuffleSection({
                                     : "text-indigo-100/65"
                             }`}
                         >
-                            The app can randomize question order for quiz
-                            attempts, but the fixed full-name question stays
-                            first.
+                            Name stays first.
                         </span>
                     </button>
                 </div>
@@ -93,7 +91,7 @@ export function ShuffleSection({
                                     : "text-indigo-100/65"
                             }`}
                         >
-                            Answer options stay in the order you set manually.
+                            Keep your order.
                         </span>
                     </button>
 
@@ -114,8 +112,7 @@ export function ShuffleSection({
                                     : "text-indigo-100/65"
                             }`}
                         >
-                            The app can randomize answer options inside each
-                            question.
+                            Random order.
                         </span>
                     </button>
                 </div>

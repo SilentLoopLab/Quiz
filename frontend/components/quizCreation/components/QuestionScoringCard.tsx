@@ -40,16 +40,15 @@ export function QuestionScoringCard({
                         onChange={(event) =>
                             onManualPointsChange(event.target.value)
                         }
-                        placeholder="10"
+                        placeholder="Points"
                         className="w-full rounded-xl border border-indigo-200/25 bg-indigo-950/50 px-4 py-3 text-white outline-none transition placeholder:text-indigo-100/40 focus:border-indigo-100/50 disabled:cursor-not-allowed disabled:opacity-60"
                     />
                 </label>
                 <p className="mt-3 text-sm leading-7 text-indigo-100/60">
-                    The quiz total becomes the sum of all manual question
-                    points.
+                    Total = sum of all question points.
                     {manualPointsMode === "integer"
                         ? " Whole numbers only."
-                        : " Decimals are allowed."}
+                        : " Decimals allowed."}
                 </p>
                 {error ? <p className="mt-2 text-sm text-red-200">{error}</p> : null}
             </div>
@@ -59,11 +58,10 @@ export function QuestionScoringCard({
     return (
         <div className="mt-5 rounded-[1.5rem] border border-indigo-200/10 bg-indigo-950/25 p-4">
             <p className="text-sm text-indigo-100/80">
-                Automatic scoring is active.
+                Automatic scoring
             </p>
             <p className="mt-2 text-sm leading-7 text-indigo-100/60">
-                This question currently gives {formatPoints(questionPoints ?? 0)}{" "}
-                points from the fixed total of {formatPoints(totalPoints)}.
+                {formatPoints(questionPoints ?? 0)} of {formatPoints(totalPoints)} points.
             </p>
         </div>
     );

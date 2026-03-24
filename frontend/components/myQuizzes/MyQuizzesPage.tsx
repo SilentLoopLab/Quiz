@@ -1,11 +1,15 @@
 "use client";
 
 import Link from "next/link";
+import { useState } from "react";
 import AppShell from "../navigation/AppShell";
+import type { QuizSummary } from "../../types/quiz.types";
+import { DeleteQuizModal } from "./DeleteQuizModal";
 import { MyQuizCard } from "./MyQuizCard";
 import { useMyQuizzes } from "./useMyQuizzes";
 
 export default function MyQuizzesPage() {
+    const [quizToDelete, setQuizToDelete] = useState<QuizSummary | null>(null);
     const {
         deletingQuizId,
         error,
@@ -16,6 +20,28 @@ export default function MyQuizzesPage() {
 
     return (
         <AppShell>
+            <DeleteQuizModal
+                isDeleting={deletingQuizId === quizToDelete?.id}
+                isOpen={Boolean(quizToDelete)}
+                onCancel={() => {
+                    if (!deletingQuizId) {
+                        setQuizToDelete(null);
+                    }
+                }}
+                onConfirm={() => {
+                    if (!quizToDelete) {
+                        return;
+                    }
+
+                    void deleteQuiz(quizToDelete.id).then((wasDeleted) => {
+                        if (wasDeleted) {
+                            setQuizToDelete(null);
+                        }
+                    });
+                }}
+                quizTitle={quizToDelete?.title ?? ""}
+            />
+
             <section className="rounded-[2rem] border border-indigo-200/15 bg-indigo-900/45 p-6 shadow-xl sm:p-8">
                 <div className="rounded-[1.5rem] border border-indigo-200/10 bg-indigo-950/35 p-6">
                     <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
@@ -67,7 +93,7 @@ export default function MyQuizzesPage() {
                             <MyQuizCard
                                 key={quiz.id}
                                 isDeleting={deletingQuizId === quiz.id}
-                                onDelete={() => deleteQuiz(quiz.id)}
+                                onDelete={() => setQuizToDelete(quiz)}
                                 quiz={quiz}
                             />
                         ))}

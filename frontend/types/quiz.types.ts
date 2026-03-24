@@ -1,12 +1,4 @@
-export type QuizCategory =
-    | "Programming"
-    | "Science"
-    | "Medicine"
-    | "Driving"
-    | "History"
-    | "Business"
-    | "Languages"
-    | "General";
+export type QuizCategory = string;
 
 export type QuizCategoryMode = "preset" | "custom";
 

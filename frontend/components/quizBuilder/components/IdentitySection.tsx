@@ -2,7 +2,6 @@
 
 import {
     quizCategoryModeOptions,
-    quizCategoryOptions,
 } from "../../../lib/quizBuilder";
 import type {
     QuizCategory,
@@ -12,6 +11,7 @@ import type {
 import { getChoiceButtonClassName } from "./styles";
 
 interface IdentitySectionProps {
+    availableTopics: string[];
     draft: QuizDraft;
     handleCustomCategoryChange: (value: string) => void;
     handlePresetCategoryChange: (value: QuizCategory) => void;
@@ -20,14 +20,19 @@ interface IdentitySectionProps {
         value: QuizDraft[Field],
     ) => void;
     handleTopicModeChange: (value: QuizCategoryMode) => void;
+    isLoadingTopics: boolean;
+    topicsError: string;
 }
 
 export function IdentitySection({
+    availableTopics,
     draft,
     handleCustomCategoryChange,
     handlePresetCategoryChange,
     handleSettingsChange,
     handleTopicModeChange,
+    isLoadingTopics,
+    topicsError,
 }: IdentitySectionProps) {
     return (
         <article className="rounded-[1.75rem] border border-indigo-200/10 bg-indigo-900/30 p-5">
@@ -44,14 +49,14 @@ export function IdentitySection({
                     onChange={(event) =>
                         handleSettingsChange("title", event.target.value)
                     }
-                    placeholder="React Hooks Master"
+                    placeholder="Quiz title"
                     className="w-full rounded-xl border border-indigo-200/25 bg-indigo-950/50 px-4 py-3 text-white outline-none transition placeholder:text-indigo-100/40 focus:border-indigo-100/50"
                 />
             </label>
 
             <div className="mt-5">
                 <span className="block text-sm text-indigo-100/80">
-                    Topic source
+                    Topic type
                 </span>
                 <div className="mt-3 flex flex-wrap gap-3">
                     {quizCategoryModeOptions.map((option) => (
@@ -81,22 +86,37 @@ export function IdentitySection({
                     <span className="block text-sm text-indigo-100/80">
                         Topic
                     </span>
-                    <div className="mt-3 flex flex-wrap gap-3">
-                        {quizCategoryOptions.map((category) => (
-                            <button
-                                key={category}
-                                type="button"
-                                onClick={() =>
-                                    handlePresetCategoryChange(category)
-                                }
-                                className={getChoiceButtonClassName(
-                                    draft.presetCategory === category,
-                                )}
-                            >
-                                {category}
-                            </button>
-                        ))}
-                    </div>
+                    {availableTopics.length > 0 ? (
+                        <div className="mt-3 flex flex-wrap gap-3">
+                            {availableTopics.map((category) => (
+                                <button
+                                    key={category}
+                                    type="button"
+                                    onClick={() =>
+                                        handlePresetCategoryChange(category)
+                                    }
+                                    className={getChoiceButtonClassName(
+                                        draft.presetCategory === category,
+                                    )}
+                                >
+                                    {category}
+                                </button>
+                            ))}
+                        </div>
+                    ) : (
+                        <div className="mt-3 rounded-2xl border border-indigo-200/10 bg-indigo-950/40 px-4 py-3 text-sm leading-7 text-indigo-100/70">
+                            {isLoadingTopics
+                                ? "Loading topics..."
+                                : topicsError
+                                  ? `${topicsError} Use Custom topic.`
+                                  : "No topics yet. Use Custom topic."}
+                        </div>
+                    )}
+                    {availableTopics.length > 0 && topicsError ? (
+                        <p className="mt-3 text-sm leading-7 text-amber-100/75">
+                            {topicsError}
+                        </p>
+                    ) : null}
                 </div>
             ) : (
                 <label className="mt-5 block">
@@ -109,7 +129,7 @@ export function IdentitySection({
                         onChange={(event) =>
                             handleCustomCategoryChange(event.target.value)
                         }
-                        placeholder="Frontend Architecture"
+                        placeholder="Topic"
                         className="w-full rounded-xl border border-indigo-200/25 bg-indigo-950/50 px-4 py-3 text-white outline-none transition placeholder:text-indigo-100/40 focus:border-indigo-100/50"
                     />
                 </label>

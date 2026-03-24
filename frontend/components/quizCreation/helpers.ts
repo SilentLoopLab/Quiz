@@ -6,7 +6,6 @@ import type {
     QuizAnswerMode,
     QuizCreatePayload,
     QuizDraft,
-    QuizManageQuiz,
     QuizManualPointsMode,
     QuizQuestionDraft,
     QuizQuestionOptionDraft,
@@ -34,14 +33,6 @@ const MIN_OPTIONS_PER_QUESTION = 2;
 
 function createDraftId() {
     return `quiz-draft-${Math.random().toString(36).slice(2, 10)}`;
-}
-
-function formatManualPoints(points: number) {
-    if (!Number.isFinite(points) || points <= 0) {
-        return "";
-    }
-
-    return Number.isInteger(points) ? String(points) : String(points);
 }
 
 export function createQuestionOptionDraft(): QuizQuestionOptionDraft {
@@ -82,29 +73,6 @@ export function createQuestionDraft(): QuizQuestionDraft {
 
 export function createInitialQuizQuestions(): QuizQuestionDraft[] {
     return [createRespondentNameQuestionDraft(), createQuestionDraft()];
-}
-
-export function buildQuestionDraftsFromManageQuiz(
-    quiz: QuizManageQuiz,
-): QuizQuestionDraft[] {
-    return quiz.questions.map((question) => ({
-        id: question.id,
-        kind: question.kind,
-        prompt: question.prompt,
-        isRequired: question.required,
-        imageFile: null,
-        imageName: question.imageName,
-        imagePreviewUrl: question.imageUrl,
-        manualPoints:
-            question.kind === "choice"
-                ? formatManualPoints(question.points)
-                : "",
-        options: question.options.map((option) => ({
-            id: option.id,
-            text: option.text,
-            isCorrect: option.isCorrect,
-        })),
-    }));
 }
 
 function getScoredQuestions(questions: QuizQuestionDraft[]) {

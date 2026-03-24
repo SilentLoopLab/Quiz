@@ -86,6 +86,20 @@ function createShareToken() {
   return crypto.randomBytes(24).toString("hex");
 }
 
+function shuffleItems(items) {
+  const nextItems = Array.isArray(items) ? [...items] : [];
+
+  for (let index = nextItems.length - 1; index > 0; index -= 1) {
+    const randomIndex = crypto.randomInt(index + 1);
+    const currentItem = nextItems[index];
+
+    nextItems[index] = nextItems[randomIndex];
+    nextItems[randomIndex] = currentItem;
+  }
+
+  return nextItems;
+}
+
 function normalizeQuizOption(option) {
   if (!option || typeof option !== "object") {
     return null;
@@ -745,7 +759,12 @@ function buildQuizSummary(quiz, viewer, options = {}) {
   };
 }
 
-function buildPlayableQuestion(question) {
+function buildPlayableQuestion(question, options = {}) {
+  const questionOptions =
+    options.shuffleAnswers && question.shuffleEligible
+      ? shuffleItems(question.options)
+      : question.options;
+
   return {
     id: question.id,
     kind: question.kind,
@@ -756,7 +775,7 @@ function buildPlayableQuestion(question) {
     imageName: question.imageName,
     imageUrl: question.imageUrl,
     points: question.points,
-    options: question.options.map((option) => ({
+    options: questionOptions.map((option) => ({
       id: option.id,
       text: option.text,
     })),
@@ -783,6 +802,21 @@ function buildManageQuestion(question) {
 }
 
 function buildPlayableQuiz(quiz, viewer, latestAttempt = null) {
+  const fixedQuestions = quiz.questions.filter(
+    (question) => question.shuffleEligible !== true
+  );
+  const shufflableQuestions = quiz.questions.filter(
+    (question) => question.shuffleEligible === true
+  );
+  const playableQuestions = [
+    ...fixedQuestions,
+    ...(quiz.shuffleQuestions ? shuffleItems(shufflableQuestions) : shufflableQuestions),
+  ].map((question) =>
+    buildPlayableQuestion(question, {
+      shuffleAnswers: quiz.shuffleAnswers === true,
+    })
+  );
+
   return {
     id: quiz.id,
     ownerId: quiz.ownerId,
@@ -811,7 +845,7 @@ function buildPlayableQuiz(quiz, viewer, latestAttempt = null) {
       share: buildShareData(quiz),
     },
     latestAttempt: buildLatestQuizAttempt(latestAttempt),
-    questions: quiz.questions.map((question) => buildPlayableQuestion(question)),
+    questions: playableQuestions,
   };
 }
 
@@ -920,6 +954,35 @@ function buildSubmissionResponseResult(result, options = {}) {
     lastAttemptedAt: options.lastAttemptedAt || result.submittedAt,
     isPersisted: options.isPersisted === true,
   });
+}
+
+async function persistQuizSubmissionResult(quiz, result, viewer = null) {
+  if (!viewer?.id) {
+    return {
+      result: buildSubmissionResponseResult(result, {
+        attemptCount: 1,
+        lastAttemptedAt: result.submittedAt,
+        isPersisted: false,
+      }),
+    };
+  }
+
+  const quizAttempts = await readQuizAttempts();
+  const existingQuizAttempt = findLatestQuizAttempt(quizAttempts, quiz.id, viewer.id);
+  const persistedQuizAttempt = existingQuizAttempt
+    ? updateQuizAttemptRecord(existingQuizAttempt, result)
+    : createQuizAttemptRecord(viewer.id, result);
+  const nextQuizAttempts = existingQuizAttempt
+    ? quizAttempts.map((quizAttempt) =>
+        quizAttempt.id === existingQuizAttempt.id ? persistedQuizAttempt : quizAttempt
+      )
+    : [...quizAttempts, persistedQuizAttempt];
+
+  await writeQuizAttempts(nextQuizAttempts);
+
+  return {
+    result: buildLatestQuizAttempt(persistedQuizAttempt),
+  };
 }
 
 function normalizeOptionIdSet(values) {
@@ -1503,32 +1566,21 @@ async function submitQuizAttempt(quizId, payload, viewer = null) {
   ensureQuizPlayableAccess(quiz, viewer);
   const result = evaluateQuizSubmission(quiz, validateQuizSubmissionInput(payload));
 
-  if (!viewer?.id) {
-    return {
-      result: buildSubmissionResponseResult(result, {
-        attemptCount: 1,
-        lastAttemptedAt: result.submittedAt,
-        isPersisted: false,
-      }),
-    };
+  return persistQuizSubmissionResult(quiz, result, viewer);
+}
+
+async function submitQuizAttemptByShareToken(shareToken, payload, viewer = null) {
+  const quizzes = await readQuizzes();
+  const quiz = findQuizByShareToken(quizzes, shareToken);
+
+  if (!quiz || quiz.accessType !== "private") {
+    throw createHttpError(404, "Quiz not found");
   }
 
-  const quizAttempts = await readQuizAttempts();
-  const existingQuizAttempt = findLatestQuizAttempt(quizAttempts, quiz.id, viewer.id);
-  const persistedQuizAttempt = existingQuizAttempt
-    ? updateQuizAttemptRecord(existingQuizAttempt, result)
-    : createQuizAttemptRecord(viewer.id, result);
-  const nextQuizAttempts = existingQuizAttempt
-    ? quizAttempts.map((quizAttempt) =>
-        quizAttempt.id === existingQuizAttempt.id ? persistedQuizAttempt : quizAttempt
-      )
-    : [...quizAttempts, persistedQuizAttempt];
+  ensureQuizPlayableAccess(quiz, viewer, { allowPrivateShare: true });
+  const result = evaluateQuizSubmission(quiz, validateQuizSubmissionInput(payload));
 
-  await writeQuizAttempts(nextQuizAttempts);
-
-  return {
-    result: buildLatestQuizAttempt(persistedQuizAttempt),
-  };
+  return persistQuizSubmissionResult(quiz, result, viewer);
 }
 
 module.exports = {
@@ -1542,6 +1594,7 @@ module.exports = {
   getPlayableQuizById,
   getPlayableQuizByShareToken,
   submitQuizAttempt,
+  submitQuizAttemptByShareToken,
   syncQuizAttemptsMetadata,
   syncQuizzesMetadata,
   updateQuiz,
