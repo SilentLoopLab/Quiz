@@ -1,0 +1,197 @@
+{
+  "generatedAt": "2026-03-24T12:19:00.000Z",
+  "totals": {
+    "totalQuizzes": 46,
+    "publicQuizzes": 28,
+    "privateQuizzes": 18,
+    "premiumQuizzes": 12,
+    "freeQuizzes": 16
+  },
+  "availableTopics": [
+    "Arts",
+    "Business",
+    "Comedy",
+    "Cooking",
+    "Design",
+    "Economics",
+    "Environment",
+    "Fashion",
+    "General",
+    "Geography",
+    "Health",
+    "Health & Fitness",
+    "History",
+    "Languages",
+    "Literature",
+    "Marketing",
+    "Mathematics",
+    "Medicin",
+    "Music",
+    "Philosophy",
+    "Programming",
+    "Psychology",
+    "Science",
+    "Sports",
+    "Writing"
+  ],
+  "popularTopics": [
+    {
+      "topic": "Programming",
+      "quizCount": 17,
+      "premiumQuizCount": 14,
+      "freeQuizCount": 3
+    },
+    {
+      "topic": "General",
+      "quizCount": 3,
+      "premiumQuizCount": 1,
+      "freeQuizCount": 2
+    },
+    {
+      "topic": "Science",
+      "quizCount": 3,
+      "premiumQuizCount": 2,
+      "freeQuizCount": 1
+    },
+    {
+      "topic": "Marketing",
+      "quizCount": 2,
+      "premiumQuizCount": 2,
+      "freeQuizCount": 0
+    },
+    {
+      "topic": "Arts",
+      "quizCount": 1,
+      "premiumQuizCount": 0,
+      "freeQuizCount": 1
+    },
+    {
+      "topic": "Business",
+      "quizCount": 1,
+      "premiumQuizCount": 1,
+      "freeQuizCount": 0
+    },
+    {
+      "topic": "Comedy",
+      "quizCount": 1,
+      "premiumQuizCount": 0,
+      "freeQuizCount": 1
+    },
+    {
+      "topic": "Cooking",
+      "quizCount": 1,
+      "premiumQuizCount": 0,
+      "freeQuizCount": 1
+    },
+    {
+      "topic": "Design",
+      "quizCount": 1,
+      "premiumQuizCount": 0,
+      "freeQuizCount": 1
+    },
+    {
+      "topic": "Economics",
+      "quizCount": 1,
+      "premiumQuizCount": 1,
+      "freeQuizCount": 0
+    },
+    {
+      "topic": "Environment",
+      "quizCount": 1,
+      "premiumQuizCount": 0,
+      "freeQuizCount": 1
+    },
+    {
+      "topic": "Fashion",
+      "quizCount": 1,
+      "premiumQuizCount": 0,
+      "freeQuizCount": 1
+    },
+    {
+      "topic": "Geography",
+      "quizCount": 1,
+      "premiumQuizCount": 0,
+      "freeQuizCount": 1
+    },
+    {
+      "topic": "Health",
+      "quizCount": 1,
+      "premiumQuizCount": 0,
+      "freeQuizCount": 1
+    },
+    {
+      "topic": "Health & Fitness",
+      "quizCount": 1,
+      "premiumQuizCount": 0,
+      "freeQuizCount": 1
+    },
+    {
+      "topic": "History",
+      "quizCount": 1,
+      "premiumQuizCount": 0,
+      "freeQuizCount": 1
+    },
+    {
+      "topic": "Languages",
+      "quizCount": 1,
+      "premiumQuizCount": 1,
+      "freeQuizCount": 0
+    },
+    {
+      "topic": "Literature",
+      "quizCount": 1,
+      "premiumQuizCount": 1,
+      "freeQuizCount": 0
+    },
+    {
+      "topic": "Mathematics",
+      "quizCount": 1,
+      "premiumQuizCount": 1,
+      "freeQuizCount": 0
+    },
+    {
+      "topic": "Medicin",
+      "quizCount": 1,
+      "premiumQuizCount": 1,
+      "freeQuizCount": 0
+    },
+    {
+      "topic": "Music",
+      "quizCount": 1,
+      "premiumQuizCount": 1,
+      "freeQuizCount": 0
+    },
+    {
+      "topic": "Philosophy",
+      "quizCount": 1,
+      "premiumQuizCount": 0,
+      "freeQuizCount": 1
+    },
+    {
+      "topic": "Psychology",
+      "quizCount": 1,
+      "premiumQuizCount": 0,
+      "freeQuizCount": 1
+    },
+    {
+      "topic": "Sports",
+      "quizCount": 1,
+      "premiumQuizCount": 0,
+      "freeQuizCount": 1
+    },
+    {
+      "topic": "Writing",
+      "quizCount": 1,
+      "premiumQuizCount": 0,
+      "freeQuizCount": 1
+    }
+  ],
+  "featuredQuizIds": [
+    "a0b1c2d3-e4f5-3b4c-7p8q-9r0s1t2u3v4w",
+    "d9a0b1c2-d3e4-2a3b-6o7p-8q9r0s1t2u3v",
+    "b7c8d9a0-b1c2-0e1f-4m5n-6o7p8q9r0s1t",
+    "a6b7c8d9-a0b1-9d0a-3l4m-5n6o7p8q9r0s",
+    "e4f5a6b7-c8d9-7b8c-1j2k-3l4m5n6o7p8q",
+    "c2d3e4f5-a6b7-5f6a-9h0i-1j2k3l4m5n6o"
+  ]
+}

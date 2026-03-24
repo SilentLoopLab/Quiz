@@ -15,6 +15,9 @@ export interface User {
   premiumPlan: string;
   premiumStartedAt: string;
   premiumExpiresAt: string;
+  quizCreationBlocked?: boolean;
+  quizCreationBlockedAt?: string;
+  quizCreationBlockReason?: string;
   stripeSubscriptionStatus?: string;
 }
 

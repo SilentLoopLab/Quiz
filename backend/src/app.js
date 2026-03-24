@@ -1,8 +1,10 @@
 const express = require("express");
 const cors = require("cors");
+const adminRoutes = require("./routes/admin.routes");
 const authRoutes = require("./routes/auth.routes");
 const billingRoutes = require("./routes/billing.routes");
 const billingWebhookRoutes = require("./routes/billing-webhook.routes");
+const quizRoutes = require("./routes/quiz.routes");
 const uploadRoutes = require("./routes/upload.routes");
 const cdnRoutes = require("./routes/cdn.routes");
 
@@ -34,8 +36,10 @@ app.use(
   billingWebhookRoutes
 );
 app.use(express.json());
+app.use("/api/admin", adminRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/billing", billingRoutes);
+app.use("/api/quizzes", quizRoutes);
 app.use("/api/uploads", uploadRoutes);
 app.use("/api/cdn", cdnRoutes);
 

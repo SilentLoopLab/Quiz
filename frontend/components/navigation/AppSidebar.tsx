@@ -23,6 +23,7 @@ export default function AppSidebar() {
     const navItems = [
         { href: "/home", label: "Home" },
         { href: "/profile", label: "Profile" },
+        { href: "/quizzes/mine", label: "My Quizzes" },
         { href: "/quizzes", label: "All Quizzes" },
         ...(user?.premium
             ? []
@@ -33,6 +34,15 @@ export default function AppSidebar() {
     const profileImageSrc = resolveProfileImage(user?.image);
     const displayName = user?.name || "Guest User";
     const displayEmail = user?.email || "No email";
+    const activeHref =
+        navItems
+            .filter(
+                (item) =>
+                    pathname === item.href ||
+                    pathname.startsWith(`${item.href}/`),
+            )
+            .sort((leftItem, rightItem) => rightItem.href.length - leftItem.href.length)[0]
+            ?.href || "";
 
     async function handleLogout() {
         await logout();
@@ -42,7 +52,7 @@ export default function AppSidebar() {
         router.push("/login");
     }
     return (
-        <aside className="w-full rounded-[2rem] border border-indigo-200/15 bg-indigo-900/55 p-4 text-white shadow-xl backdrop-blur-xl lg:sticky lg:top-6 lg:w-72 lg:self-start">
+        <aside className="w-full rounded-[2rem] border border-indigo-200/15 bg-indigo-900/55 p-4 text-white shadow-xl backdrop-blur-xl lg:sticky lg:top-6 lg:w-80 lg:self-start xl:w-[21rem]">
             <div className="rounded-[1.5rem] border border-indigo-200/10 bg-indigo-950/35 p-4">
                 <p className="-ml-1 text-xs uppercase tracking-[0.28em] text-indigo-200/55">
                     QUIZZ SPACE
@@ -69,9 +79,7 @@ export default function AppSidebar() {
 
             <nav className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
                 {navItems.map((item) => {
-                    const isActive =
-                        pathname === item.href ||
-                        pathname.startsWith(`${item.href}/`);
+                    const isActive = item.href === activeHref;
 
                     return (
                         <Link

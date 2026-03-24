@@ -12,8 +12,8 @@ interface AppShellProps {
 
 function AuthGuardFallback({ message }: { message: string }) {
     return (
-        <main className="min-h-screen bg-indigo-950 px-4 py-6 text-white sm:px-6 lg:px-8">
-            <div className="mx-auto flex min-h-[70vh] w-full max-w-7xl items-center justify-center">
+        <main className="min-h-screen bg-indigo-950 px-4 py-6 text-white sm:px-6 lg:px-8 xl:px-10">
+            <div className="mx-auto flex min-h-[70vh] w-full max-w-[1720px] items-center justify-center">
                 <section className="w-full max-w-md rounded-[2rem] border border-indigo-200/15 bg-indigo-900/45 p-8 text-center shadow-xl">
                     <p className="text-sm uppercase tracking-[0.24em] text-indigo-200/55">
                         Quizz
@@ -56,8 +56,8 @@ export default function AppShell({ children }: AppShellProps) {
     }
 
     return (
-        <main className="min-h-screen bg-indigo-950 px-4 py-6 text-white sm:px-6 lg:px-8">
-            <div className="mx-auto flex w-full max-w-7xl flex-col gap-6 lg:flex-row lg:items-start">
+        <main className="min-h-screen bg-indigo-950 px-4 py-6 text-white sm:px-6 lg:px-8 xl:px-10">
+            <div className="mx-auto flex w-full max-w-[1720px] flex-col gap-6 lg:flex-row lg:items-start lg:gap-8 xl:gap-10">
                 <AppSidebar />
                 <div className="min-w-0 flex-1">{children}</div>
             </div>

@@ -5,9 +5,13 @@ import type {
     QuizCategoryMode,
     QuizDifficulty,
     QuizDraft,
+    QuizManageQuiz,
+    QuizManualPointsMode,
+    QuizScoringMode,
 } from "../types/quiz.types";
 
 export const QUIZ_BUILDER_STORAGE_KEY = "quizz-quiz-builder-storage";
+export const QUIZ_AUTOMATIC_TOTAL_POINTS = 100;
 
 export const quizCategoryOptions: QuizCategory[] = [
     "Programming",
@@ -62,6 +66,44 @@ export const quizAnswerModeOptions: Array<{
     },
 ];
 
+export const quizScoringModeOptions: Array<{
+    value: QuizScoringMode;
+    label: string;
+    description: string;
+}> = [
+    {
+        value: "automatic",
+        label: "Automatic 100 points",
+        description:
+            "The quiz total stays 100 and points are distributed automatically by the number of questions.",
+    },
+    {
+        value: "manual",
+        label: "Manual per question",
+        description:
+            "You assign points for each question manually, and the total becomes the sum of those values.",
+    },
+];
+
+export const quizManualPointsModeOptions: Array<{
+    value: QuizManualPointsMode;
+    label: string;
+    description: string;
+}> = [
+    {
+        value: "integer",
+        label: "Whole numbers only",
+        description:
+            "Question points move in whole numbers like 1, 2, 3, 10.",
+    },
+    {
+        value: "decimal",
+        label: "Allow decimals",
+        description:
+            "Question points can use decimal values like 1.5, 2.25, 10.75.",
+    },
+];
+
 export function createQuizDraft(): QuizDraft {
     return {
         title: "",
@@ -70,18 +112,28 @@ export function createQuizDraft(): QuizDraft {
         customCategory: "",
         difficulty: "Medium",
         answerMode: "single",
+        shuffleQuestions: false,
+        shuffleAnswers: false,
+        scoringMode: "automatic",
+        manualPointsMode: "integer",
         accessType: "public",
         isPremium: false,
         imageName: "",
+        imageUrl: "",
     };
 }
 
 export function normalizeQuizDraft(draft: QuizDraft): QuizDraft {
+    const fallbackDraft = createQuizDraft();
+
     return {
+        ...fallbackDraft,
         ...draft,
-        title: draft.title.trim(),
-        customCategory: draft.customCategory.trim(),
-        imageName: draft.imageName.trim(),
+        title: draft.title?.trim() ?? fallbackDraft.title,
+        customCategory:
+            draft.customCategory?.trim() ?? fallbackDraft.customCategory,
+        imageName: draft.imageName?.trim() ?? fallbackDraft.imageName,
+        imageUrl: draft.imageUrl?.trim() ?? fallbackDraft.imageUrl,
     };
 }
 
@@ -103,8 +155,36 @@ export function buildQuizPreview(draft: QuizDraft) {
         category: resolveQuizCategory(normalizedDraft),
         difficulty: normalizedDraft.difficulty,
         answerMode: normalizedDraft.answerMode,
+        shuffleQuestions: normalizedDraft.shuffleQuestions,
+        shuffleAnswers: normalizedDraft.shuffleAnswers,
+        scoringMode: normalizedDraft.scoringMode,
+        manualPointsMode: normalizedDraft.manualPointsMode,
         accessType: normalizedDraft.accessType,
         isPremium: normalizedDraft.isPremium,
         imageName: normalizedDraft.imageName || undefined,
+        imageUrl: normalizedDraft.imageUrl || undefined,
+    };
+}
+
+export function buildQuizDraftFromManageQuiz(quiz: QuizManageQuiz): QuizDraft {
+    const presetCategory = quizCategoryOptions.find(
+        (category) => category === quiz.category,
+    );
+
+    return {
+        title: quiz.title,
+        categoryMode: presetCategory ? "preset" : "custom",
+        presetCategory: presetCategory ?? quizCategoryOptions[0],
+        customCategory: presetCategory ? "" : quiz.category,
+        difficulty: quiz.difficulty,
+        answerMode: quiz.answerMode,
+        shuffleQuestions: quiz.shuffleQuestions,
+        shuffleAnswers: quiz.shuffleAnswers,
+        scoringMode: quiz.scoringMode,
+        manualPointsMode: quiz.manualPointsMode,
+        accessType: quiz.accessType,
+        isPremium: quiz.isPremium,
+        imageName: quiz.imageName,
+        imageUrl: quiz.imageUrl,
     };
 }

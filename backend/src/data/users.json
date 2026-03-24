@@ -9,8 +9,41 @@
     "failedLoginAttempts": 0,
     "lockUntil": null,
     "createdAt": "2026-03-06T11:45:16.651Z",
-    "updatedAt": "2026-03-23T15:55:29.389Z",
+    "updatedAt": "2026-03-24T14:20:00.251Z",
     "refreshSessions": [
+      {
+        "id": "f9795cbf-f951-40c5-9b8f-5fde34da0d1c",
+        "tokenHash": "7f448de28c4fab2ce8d5d0cadf458b88ee4990850b45fd1fca91d6bce090f5d1",
+        "previousTokenHash": "",
+        "createdAt": "2026-03-24T14:20:00.250Z",
+        "lastUsedAt": "2026-03-24T14:20:00.250Z",
+        "rotatedAt": "",
+        "expiresAt": "2026-03-31T14:20:00.000Z",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+        "ip": "::1"
+      },
+      {
+        "id": "fcc951d7-57c1-42ad-819c-dc5dac3ace45",
+        "tokenHash": "c0ab88eb5ce3652487aaf632cfe60510c0731904359a7796afac824a153cadec",
+        "previousTokenHash": "",
+        "createdAt": "2026-03-24T14:15:11.619Z",
+        "lastUsedAt": "2026-03-24T14:15:11.619Z",
+        "rotatedAt": "",
+        "expiresAt": "2026-03-31T14:15:11.000Z",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+        "ip": "::1"
+      },
+      {
+        "id": "6d436f5e-99a6-4114-980f-2edb418af053",
+        "tokenHash": "9e988310ae3fd0342eaffad05427a4a432b589ea5dada74435fd3badc39b6be5",
+        "previousTokenHash": "d01daee2f7e456fd8be62e063ae55d024537be1d9327b8fbbab6705327046fa2",
+        "createdAt": "2026-03-24T13:07:01.253Z",
+        "lastUsedAt": "2026-03-24T14:07:09.648Z",
+        "rotatedAt": "2026-03-24T14:07:09.648Z",
+        "expiresAt": "2026-03-31T14:07:09.000Z",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+        "ip": "::1"
+      },
       {
         "id": "768b8c69-83fa-4cf0-8365-15fac7c73943",
         "tokenHash": "20104e4a2ea5863a81df0dc16550fe9e492a3e04a0a84bef750f08ca4cd7ceb2",
@@ -32,28 +65,6 @@
         "expiresAt": "2026-03-30T15:37:43.000Z",
         "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
         "ip": "::1"
-      },
-      {
-        "id": "eb12cf47-5d4c-4f1c-81c5-29ca9e01e4a2",
-        "tokenHash": "973bf7f56a0e76a79ed5cd32a1908dd3399d18760d38de41af164eba0865b11e",
-        "previousTokenHash": "9313915a93ce22575a7697fa7fda9ea910169ed8f18464ef7d73961258ebfca0",
-        "createdAt": "2026-03-23T14:38:16.353Z",
-        "lastUsedAt": "2026-03-23T15:23:21.972Z",
-        "rotatedAt": "2026-03-23T15:23:21.972Z",
-        "expiresAt": "2026-03-30T15:23:21.000Z",
-        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
-        "ip": "::1"
-      },
-      {
-        "id": "82fea419-5dfe-4b81-8716-6200e437a4dd",
-        "tokenHash": "a301d42bb79d09eb63b54d3d2d0fbe9261ea5353880e095e0b87aff8cb807dac",
-        "previousTokenHash": "",
-        "createdAt": "2026-03-23T13:45:35.570Z",
-        "lastUsedAt": "2026-03-23T13:45:35.570Z",
-        "rotatedAt": "",
-        "expiresAt": "2026-03-30T13:45:35.000Z",
-        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
-        "ip": "::1"
       }
     ],
     "image": "https://res.cloudinary.com/dou4mbq4y/image/upload/v1774276848/photos/oypkaykltsyzfuzlkmir.png",
@@ -67,7 +78,11 @@
     "stripeSubscriptionId": "",
     "stripeSubscriptionStatus": "",
     "stripeCheckoutSessionIds": [],
-    "processedStripeEventIds": []
+    "processedStripeEventIds": [],
+    "quizCreationBlocked": false,
+    "quizCreationBlockedAt": "",
+    "quizCreationBlockedBy": "",
+    "quizCreationBlockReason": ""
   },
   {
     "id": "ef91e537-c0d8-449f-a64c-2ddc2f70a09b",
@@ -76,10 +91,10 @@
     "password": "$2a$10$6i4fLSHcO5vXhk93ORNhR.NZxHq81WKJUMzLQzLxw.SsFsmtXK6R.",
     "role": "user",
     "isBanned": false,
-    "failedLoginAttempts": 1,
-    "lockUntil": null,
+    "failedLoginAttempts": 3,
+    "lockUntil": "2026-03-24T12:31:22.909Z",
     "createdAt": "2026-03-06T11:50:51.794Z",
-    "updatedAt": "2026-03-23T15:58:55.757Z",
+    "updatedAt": "2026-03-24T14:10:52.179Z",
     "refreshSessions": [],
     "premiumPlan": "",
     "premiumStartedAt": "",
@@ -88,7 +103,11 @@
     "stripeSubscriptionId": "",
     "stripeSubscriptionStatus": "",
     "stripeCheckoutSessionIds": [],
-    "processedStripeEventIds": []
+    "processedStripeEventIds": [],
+    "quizCreationBlocked": true,
+    "quizCreationBlockedAt": "2026-03-24T14:10:52.179Z",
+    "quizCreationBlockedBy": "6bdc2f7a-a04a-40ac-a5a7-93983106034d",
+    "quizCreationBlockReason": ""
   },
   {
     "id": "8940accc-5b1e-4324-b901-0a824c07d37e",
@@ -109,7 +128,11 @@
     "stripeSubscriptionId": "",
     "stripeSubscriptionStatus": "",
     "stripeCheckoutSessionIds": [],
-    "processedStripeEventIds": []
+    "processedStripeEventIds": [],
+    "quizCreationBlocked": false,
+    "quizCreationBlockedAt": "",
+    "quizCreationBlockedBy": "",
+    "quizCreationBlockReason": ""
   },
   {
     "id": "d6bd5608-02f0-4a91-8e56-40e66b3a5e22",
@@ -121,8 +144,20 @@
     "failedLoginAttempts": 0,
     "lockUntil": null,
     "createdAt": "2026-03-13T12:20:45.039Z",
-    "updatedAt": "2026-03-13T12:25:56.872Z",
-    "refreshSessions": [],
+    "updatedAt": "2026-03-24T13:01:34.700Z",
+    "refreshSessions": [
+      {
+        "id": "03b45f20-557f-4667-bb3c-fa57db0240c6",
+        "tokenHash": "bdf3d0f874cd0df99df684d417fb68649eeaffea414f9453917a8f25864f3eb6",
+        "previousTokenHash": "2a1a918b2ea18659857e0cbf9b4e74841ad323c82d4593c646db014aa066556c",
+        "createdAt": "2026-03-24T12:22:05.137Z",
+        "lastUsedAt": "2026-03-24T13:01:34.700Z",
+        "rotatedAt": "2026-03-24T13:01:34.700Z",
+        "expiresAt": "2026-03-31T13:01:34.000Z",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+        "ip": "::1"
+      }
+    ],
     "premiumPlan": "",
     "premiumStartedAt": "",
     "premiumExpiresAt": "",
@@ -130,7 +165,11 @@
     "stripeSubscriptionId": "",
     "stripeSubscriptionStatus": "",
     "stripeCheckoutSessionIds": [],
-    "processedStripeEventIds": []
+    "processedStripeEventIds": [],
+    "quizCreationBlocked": false,
+    "quizCreationBlockedAt": "",
+    "quizCreationBlockedBy": "",
+    "quizCreationBlockReason": ""
   },
   {
     "id": "41d19e3c-7cf0-4782-bc36-5a421b4cb884",
@@ -144,20 +183,42 @@
     "failedLoginAttempts": 0,
     "lockUntil": null,
     "createdAt": "2026-03-16T13:29:31.760Z",
-    "updatedAt": "2026-03-23T16:39:11.708Z",
+    "updatedAt": "2026-03-24T14:17:19.452Z",
     "bio": "I'm a Full Stack Developer.",
     "location": "Yerevan, Armenia",
     "phone": "+37495300897",
     "image": "https://res.cloudinary.com/dou4mbq4y/image/upload/v1773835615/photos/i3ie52dih9iwdeygglom.png",
     "refreshSessions": [
       {
+        "id": "6ef1e17f-6e95-4614-99d9-c4c81231825c",
+        "tokenHash": "fbef6f74028306e1aa8e03809f71de323fe5327e88b813890aa782d0b0569107",
+        "previousTokenHash": "",
+        "createdAt": "2026-03-24T14:12:20.434Z",
+        "lastUsedAt": "2026-03-24T14:12:20.434Z",
+        "rotatedAt": "",
+        "expiresAt": "2026-03-31T14:12:20.000Z",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+        "ip": "::1"
+      },
+      {
+        "id": "8d07b9bf-dc24-4346-b2f7-601e42860e1e",
+        "tokenHash": "df97a24a40696d16a862e515046aa368998e44d8d5624a215840fd33039a8dfe",
+        "previousTokenHash": "d6bcbd23844833585c33532df21d60fe4055bae93748fbe0dff82f6eec456dea",
+        "createdAt": "2026-03-24T07:16:49.599Z",
+        "lastUsedAt": "2026-03-24T12:17:53.175Z",
+        "rotatedAt": "2026-03-24T12:17:53.175Z",
+        "expiresAt": "2026-03-31T12:17:53.000Z",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+        "ip": "::1"
+      },
+      {
         "id": "c61330a0-7bdb-407d-a47c-b5a376f2215c",
-        "tokenHash": "67a58be4ba416f05c3fa684dd95d378928e38d00d57d649e18598778cc09d571",
-        "previousTokenHash": "1e44df83e3c6874d472f7527725a3b5a2a6a71c936ead833175259f8a682a7d7",
+        "tokenHash": "f41d030e9f895654be1d2d17be18e15b413ebf82013ec1e5e8a843febe2e6da0",
+        "previousTokenHash": "67a58be4ba416f05c3fa684dd95d378928e38d00d57d649e18598778cc09d571",
         "createdAt": "2026-03-23T16:15:24.274Z",
-        "lastUsedAt": "2026-03-23T16:39:11.708Z",
-        "rotatedAt": "2026-03-23T16:39:11.708Z",
-        "expiresAt": "2026-03-30T16:39:11.000Z",
+        "lastUsedAt": "2026-03-24T07:16:32.896Z",
+        "rotatedAt": "2026-03-24T07:16:32.896Z",
+        "expiresAt": "2026-03-31T07:16:32.000Z",
         "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
         "ip": "::1"
       },
@@ -182,40 +243,22 @@
         "expiresAt": "2026-03-30T15:55:12.000Z",
         "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
         "ip": "::1"
-      },
-      {
-        "id": "cfd4e9c9-f863-4daa-97f1-c063884f3587",
-        "tokenHash": "772f634c259b097beaba9301efe807b23b3d529b241832774156055811849fe4",
-        "previousTokenHash": "",
-        "createdAt": "2026-03-23T15:35:18.824Z",
-        "lastUsedAt": "2026-03-23T15:35:18.824Z",
-        "rotatedAt": "",
-        "expiresAt": "2026-03-30T15:35:18.000Z",
-        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
-        "ip": "::1"
-      },
-      {
-        "id": "49136e77-9acc-48b6-9a99-35ca0b1505c8",
-        "tokenHash": "2b41c544b68fed10628383ded7bc43d42e84c4b875b5668dd7389ccd02374e9a",
-        "previousTokenHash": "",
-        "createdAt": "2026-03-23T13:23:46.424Z",
-        "lastUsedAt": "2026-03-23T13:23:46.424Z",
-        "rotatedAt": "",
-        "expiresAt": "2026-03-30T13:23:46.000Z",
-        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
-        "ip": "::1"
       }
     ],
     "premiumPlan": "stripe_monthly",
     "premiumStartedAt": "2026-03-23T15:36:54.000Z",
-    "premiumExpiresAt": "",
+    "premiumExpiresAt": "2026-04-23T15:36:54.000Z",
     "stripeCustomerId": "cus_UCZgzJOC06i3px",
     "stripeSubscriptionId": "sub_1TEAXFQs7SwqxCBnBVXv5GhH",
     "stripeSubscriptionStatus": "active",
     "stripeCheckoutSessionIds": [
       "cs_test_a12tF4wnv0Ho0xC7RNu9pFfGh0SxIE2HbcgmPmmZDwxVTFHSps4rmmniY0"
     ],
-    "processedStripeEventIds": []
+    "processedStripeEventIds": [],
+    "quizCreationBlocked": true,
+    "quizCreationBlockedAt": "2026-03-24T14:17:19.452Z",
+    "quizCreationBlockedBy": "6bdc2f7a-a04a-40ac-a5a7-93983106034d",
+    "quizCreationBlockReason": ""
   },
   {
     "id": "9ccf1507-4dc2-4018-9eb8-52b27804776b",
@@ -229,10 +272,10 @@
     "failedLoginAttempts": 0,
     "lockUntil": null,
     "createdAt": "2026-03-23T15:59:14.371Z",
-    "updatedAt": "2026-03-23T16:01:30.508Z",
+    "updatedAt": "2026-03-24T13:21:13.776Z",
     "premiumPlan": "stripe_monthly",
     "premiumStartedAt": "2026-03-23T16:01:24.000Z",
-    "premiumExpiresAt": "",
+    "premiumExpiresAt": "2026-04-23T16:01:24.000Z",
     "stripeCustomerId": "cus_UCa5i6hYN1vZ75",
     "stripeSubscriptionId": "sub_1TEAuxQs7SwqxCBnCih719m6",
     "stripeSubscriptionStatus": "active",
@@ -263,6 +306,10 @@
         "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
         "ip": "::1"
       }
-    ]
+    ],
+    "quizCreationBlocked": false,
+    "quizCreationBlockedAt": "",
+    "quizCreationBlockedBy": "",
+    "quizCreationBlockReason": ""
   }
 ]

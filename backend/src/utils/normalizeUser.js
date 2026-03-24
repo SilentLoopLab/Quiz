@@ -23,6 +23,28 @@ function isUserPremium(user) {
   return isSuperAdminUser(user) || hasActivePremiumWindow(user);
 }
 
+function parseIsoDate(value) {
+  const normalizedValue = normalizeOptionalString(value);
+
+  if (!normalizedValue) {
+    return null;
+  }
+
+  const parsedDate = new Date(normalizedValue);
+
+  if (Number.isNaN(parsedDate.getTime())) {
+    return null;
+  }
+
+  return parsedDate;
+}
+
+function addMonths(date, months) {
+  const nextDate = new Date(date);
+  nextDate.setUTCMonth(nextDate.getUTCMonth() + months);
+  return nextDate;
+}
+
 function normalizeOptionalString(value, maxLength) {
   const normalizedValue = normalizeString(value);
 
@@ -82,20 +104,11 @@ function normalizeStringArray(values, maxItems, maxLength) {
     .slice(-maxItems);
 }
 
-function hasActivePremiumWindow(user) {
-  const premiumExpiresAt = normalizeOptionalString(user.premiumExpiresAt);
-
-  if (!premiumExpiresAt) {
-    return false;
-  }
-
-  const expiresAtTimestamp = Date.parse(premiumExpiresAt);
-
-  if (Number.isNaN(expiresAtTimestamp) || expiresAtTimestamp <= Date.now()) {
-    return false;
-  }
-
-  const stripeSubscriptionStatus = normalizeOptionalString(user.stripeSubscriptionStatus, 64);
+function hasAllowedPremiumStatus(user) {
+  const stripeSubscriptionStatus = normalizeOptionalString(
+    user?.stripeSubscriptionStatus,
+    64
+  ).toLowerCase();
 
   if (!stripeSubscriptionStatus) {
     return true;
@@ -104,18 +117,63 @@ function hasActivePremiumWindow(user) {
   return ACTIVE_STRIPE_PREMIUM_STATUSES.has(stripeSubscriptionStatus);
 }
 
+function resolvePremiumExpiresAt(user) {
+  const explicitPremiumExpiresAt = parseIsoDate(user?.premiumExpiresAt);
+
+  if (explicitPremiumExpiresAt) {
+    return explicitPremiumExpiresAt.toISOString();
+  }
+
+  if (normalizeOptionalString(user?.premiumPlan, 64) !== "stripe_monthly") {
+    return "";
+  }
+
+  const premiumStartedAt = parseIsoDate(user?.premiumStartedAt);
+
+  if (!premiumStartedAt) {
+    return "";
+  }
+
+  return addMonths(premiumStartedAt, 1).toISOString();
+}
+
+function hasActivePremiumWindow(user) {
+  if (!hasAllowedPremiumStatus(user)) {
+    return false;
+  }
+
+  const premiumExpiresAt = resolvePremiumExpiresAt(user);
+
+  if (!premiumExpiresAt) {
+    return user?.premium === true;
+  }
+
+  const expiresAtTimestamp = Date.parse(premiumExpiresAt);
+
+  if (Number.isNaN(expiresAtTimestamp) || expiresAtTimestamp <= Date.now()) {
+    return false;
+  }
+
+  return true;
+}
+
 function normalizeUser(user) {
   if (!user || typeof user !== "object") {
     return user;
   }
 
   const { premium: _ignoredPremium, ...restUser } = user;
+  const premiumExpiresAt = resolvePremiumExpiresAt(user);
 
   return {
     ...restUser,
     premiumPlan: normalizeOptionalString(user.premiumPlan, 64),
     premiumStartedAt: normalizeOptionalString(user.premiumStartedAt),
-    premiumExpiresAt: normalizeOptionalString(user.premiumExpiresAt),
+    premiumExpiresAt,
+    quizCreationBlocked: user.quizCreationBlocked === true,
+    quizCreationBlockedAt: normalizeOptionalString(user.quizCreationBlockedAt),
+    quizCreationBlockedBy: normalizeOptionalString(user.quizCreationBlockedBy, 80),
+    quizCreationBlockReason: normalizeOptionalString(user.quizCreationBlockReason, 280),
     stripeCustomerId: normalizeOptionalString(user.stripeCustomerId, 255),
     stripeSubscriptionId: normalizeOptionalString(user.stripeSubscriptionId, 255),
     stripeSubscriptionStatus: normalizeOptionalString(user.stripeSubscriptionStatus, 64),
@@ -137,6 +195,7 @@ module.exports = {
   normalizeUser,
   isSuperAdminUser,
   isUserPremium,
+  resolvePremiumExpiresAt,
   SUPERADMIN_EMAIL,
   SUPERADMIN_ROLE,
 };

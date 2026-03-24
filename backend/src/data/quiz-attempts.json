@@ -1,0 +1,134 @@
+[
+  {
+    "id": "22fc122d-1c8e-4d51-a55f-74aff14c14b1",
+    "quizId": "a6b7c8d9-a0b1-9d0a-3l4m-5n6o7p8q9r0s",
+    "userId": "d6bd5608-02f0-4a91-8e56-40e66b3a5e22",
+    "attemptCount": 1,
+    "createdAt": "2026-03-24T13:01:50.076Z",
+    "updatedAt": "2026-03-24T13:01:50.076Z",
+    "latestResult": {
+      "attemptId": "22fc122d-1c8e-4d51-a55f-74aff14c14b1",
+      "attemptCount": 1,
+      "lastAttemptedAt": "2026-03-24T13:01:50.076Z",
+      "isPersisted": true,
+      "quizId": "a6b7c8d9-a0b1-9d0a-3l4m-5n6o7p8q9r0s",
+      "title": "Creative Writing",
+      "totalPoints": 100,
+      "earnedPoints": 100,
+      "percentage": 100,
+      "submittedAt": "2026-03-24T13:01:50.076Z",
+      "respondentName": "LLL",
+      "answeredQuestions": 2,
+      "totalQuestions": 2,
+      "correctQuestions": 1,
+      "incorrectQuestions": 0,
+      "unansweredQuestions": 0,
+      "questions": [
+        {
+          "questionId": "q39-respondent-name",
+          "kind": "respondent_name",
+          "prompt": "First name and last name",
+          "required": true,
+          "points": 0,
+          "earnedPoints": 0,
+          "isAnswered": true,
+          "isCorrect": null,
+          "textAnswer": "LLL",
+          "selectedOptionIds": [],
+          "correctOptionIds": [],
+          "selectedOptionTexts": [],
+          "correctOptionTexts": []
+        },
+        {
+          "questionId": "q39-choice-1",
+          "kind": "choice",
+          "prompt": "What is the structure of a story?",
+          "required": true,
+          "points": 100,
+          "earnedPoints": 100,
+          "isAnswered": true,
+          "isCorrect": true,
+          "textAnswer": "",
+          "selectedOptionIds": [
+            "q39-opt-1"
+          ],
+          "correctOptionIds": [
+            "q39-opt-1"
+          ],
+          "selectedOptionTexts": [
+            "Beginning, middle, end"
+          ],
+          "correctOptionTexts": [
+            "Beginning, middle, end"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "c297ddd4-ceb4-46a7-92d7-b864f5dd5dbd",
+    "quizId": "a6b7c8d9-a0b1-9d0a-3l4m-5n6o7p8q9r0s",
+    "userId": "6bdc2f7a-a04a-40ac-a5a7-93983106034d",
+    "attemptCount": 1,
+    "createdAt": "2026-03-24T14:20:45.136Z",
+    "updatedAt": "2026-03-24T14:20:45.136Z",
+    "latestResult": {
+      "attemptId": "c297ddd4-ceb4-46a7-92d7-b864f5dd5dbd",
+      "attemptCount": 1,
+      "lastAttemptedAt": "2026-03-24T14:20:45.136Z",
+      "isPersisted": true,
+      "quizId": "a6b7c8d9-a0b1-9d0a-3l4m-5n6o7p8q9r0s",
+      "title": "Creative Writing",
+      "totalPoints": 100,
+      "earnedPoints": 100,
+      "percentage": 100,
+      "submittedAt": "2026-03-24T14:20:45.136Z",
+      "respondentName": "LLL MMM",
+      "answeredQuestions": 2,
+      "totalQuestions": 2,
+      "correctQuestions": 1,
+      "incorrectQuestions": 0,
+      "unansweredQuestions": 0,
+      "questions": [
+        {
+          "questionId": "q39-respondent-name",
+          "kind": "respondent_name",
+          "prompt": "First name and last name",
+          "required": true,
+          "points": 0,
+          "earnedPoints": 0,
+          "isAnswered": true,
+          "isCorrect": null,
+          "textAnswer": "LLL MMM",
+          "selectedOptionIds": [],
+          "correctOptionIds": [],
+          "selectedOptionTexts": [],
+          "correctOptionTexts": []
+        },
+        {
+          "questionId": "q39-choice-1",
+          "kind": "choice",
+          "prompt": "What is the structure of a story?",
+          "required": true,
+          "points": 100,
+          "earnedPoints": 100,
+          "isAnswered": true,
+          "isCorrect": true,
+          "textAnswer": "",
+          "selectedOptionIds": [
+            "q39-opt-1"
+          ],
+          "correctOptionIds": [
+            "q39-opt-1"
+          ],
+          "selectedOptionTexts": [
+            "Beginning, middle, end"
+          ],
+          "correctOptionTexts": [
+            "Beginning, middle, end"
+          ]
+        }
+      ]
+    }
+  }
+]

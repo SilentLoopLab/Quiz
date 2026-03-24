@@ -37,6 +37,7 @@ async function authMiddleware(req, res, next) {
       id: currentUser.id,
       role: currentUser.role,
     };
+    req.authUser = currentUser;
     req.currentUser = sanitizeUser(currentUser);
 
     return next();

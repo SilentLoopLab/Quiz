@@ -123,12 +123,12 @@ export default function ProfilePage() {
                         Add Quiz
                     </Link>
 
-                    <button
-                        type="button"
+                    <Link
+                        href="/quizzes/mine"
                         className="cursor-pointer rounded-xl border border-indigo-200/15 bg-indigo-950/40 px-4 py-3 text-left font-medium text-white transition hover:bg-indigo-950/70"
                     >
-                        Edit my Quizzes
-                    </button>
+                        My Quizzes
+                    </Link>
 
                     {!user.premium ? (
                         <Link

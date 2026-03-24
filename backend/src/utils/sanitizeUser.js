@@ -18,6 +18,17 @@ function sanitizeUser(user) {
     premiumPlan: typeof user.premiumPlan === "string" ? user.premiumPlan : "",
     premiumStartedAt: typeof user.premiumStartedAt === "string" ? user.premiumStartedAt : "",
     premiumExpiresAt: typeof user.premiumExpiresAt === "string" ? user.premiumExpiresAt : "",
+    quizCreationBlocked: user.quizCreationBlocked === true,
+    quizCreationBlockedAt:
+      typeof user.quizCreationBlockedAt === "string" ? user.quizCreationBlockedAt : "",
+    quizCreationBlockReason:
+      typeof user.quizCreationBlockReason === "string"
+        ? user.quizCreationBlockReason
+        : "",
+    stripeSubscriptionStatus:
+      typeof user.stripeSubscriptionStatus === "string"
+        ? user.stripeSubscriptionStatus
+        : "",
     createdAt: user.createdAt,
     updatedAt: user.updatedAt,
   };

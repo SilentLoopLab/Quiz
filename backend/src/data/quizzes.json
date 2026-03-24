@@ -1,1 +1,2950 @@
-[]
+[
+  {
+    "id": "a938ec5e-eb69-42cc-bac5-b3f89e33cf03",
+    "ownerId": "41d19e3c-7cf0-4782-bc36-5a421b4cb884",
+    "ownerName": "Alen Yeghyan",
+    "ownerQuizCreationBlocked": true,
+    "title": "Hiiii",
+    "description": "",
+    "category": "General",
+    "difficulty": "Hard",
+    "answerMode": "multiple",
+    "shuffleQuestions": false,
+    "shuffleAnswers": true,
+    "scoringMode": "automatic",
+    "manualPointsMode": "integer",
+    "accessType": "public",
+    "isPremium": false,
+    "status": "published",
+    "shareToken": "",
+    "imageName": "",
+    "imageUrl": "",
+    "totalPoints": 100,
+    "questionCount": 1,
+    "createdAt": "2026-03-24T09:03:34.308Z",
+    "updatedAt": "2026-03-24T09:03:34.308Z",
+    "publishedAt": "2026-03-24T09:03:34.308Z",
+    "questions": [
+      {
+        "id": "c6739c4f-8a59-4c59-a688-d6db17675129",
+        "kind": "respondent_name",
+        "prompt": "First name and last name",
+        "required": true,
+        "shuffleEligible": false,
+        "responseType": "full_name",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 0,
+        "options": []
+      },
+      {
+        "id": "6e43d46c-bc35-4992-9b87-247e25a25f94",
+        "kind": "choice",
+        "prompt": "Hii",
+        "required": true,
+        "shuffleEligible": true,
+        "responseType": "choice",
+        "imageName": "pngtree-man-avatar-image-for-profile-png-image_13001877.png",
+        "imageUrl": "https://res.cloudinary.com/dou4mbq4y/image/upload/v1774343013/photos/sftap9ylhptsefjfwduv.png",
+        "points": 100,
+        "options": [
+          {
+            "id": "0036046a-044b-48ac-83b2-537ef314bd7e",
+            "text": "fas.da",
+            "isCorrect": true
+          },
+          {
+            "id": "ca6237b3-d192-491a-ba2e-ef5e9a982abe",
+            "text": "saga",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "85e17078-44d5-44f9-a968-24e9a3b78b3d",
+    "ownerId": "41d19e3c-7cf0-4782-bc36-5a421b4cb884",
+    "ownerName": "Alen Yeghyan",
+    "ownerQuizCreationBlocked": true,
+    "title": "Hiiii",
+    "description": "",
+    "category": "General",
+    "difficulty": "Hard",
+    "answerMode": "single",
+    "shuffleQuestions": true,
+    "shuffleAnswers": false,
+    "scoringMode": "manual",
+    "manualPointsMode": "integer",
+    "accessType": "private",
+    "isPremium": true,
+    "status": "published",
+    "shareToken": "4abc0196c6fe46715d04f6ab7b0abc3b30aa900bf686f63b",
+    "imageName": "pngtree-man-avatar-image-for-profile-png-image_13001877.png",
+    "imageUrl": "https://res.cloudinary.com/dou4mbq4y/image/upload/v1774343145/photos/azsripi3gcc7lencxleh.png",
+    "totalPoints": 100,
+    "questionCount": 1,
+    "createdAt": "2026-03-24T09:14:36.158Z",
+    "updatedAt": "2026-03-24T09:14:36.158Z",
+    "publishedAt": "2026-03-24T09:14:36.158Z",
+    "questions": [
+      {
+        "id": "210042b7-9894-4261-bbb7-9275b1f4cca1",
+        "kind": "respondent_name",
+        "prompt": "First name and last name",
+        "required": true,
+        "shuffleEligible": false,
+        "responseType": "full_name",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 0,
+        "options": []
+      },
+      {
+        "id": "ebc24e10-12e6-45c9-9386-b15a92b0c620",
+        "kind": "choice",
+        "prompt": "Who is first President in USA?",
+        "required": true,
+        "shuffleEligible": true,
+        "responseType": "choice",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 100,
+        "options": [
+          {
+            "id": "7fab6880-65db-4a25-be8f-4e696b36b319",
+            "text": "Abraham Lincoln",
+            "isCorrect": true
+          },
+          {
+            "id": "14cc4227-4d4e-499f-a56e-489842d88b14",
+            "text": "Ashot ter Petrosyan",
+            "isCorrect": false
+          },
+          {
+            "id": "42561e37-b751-4bfc-939c-024ca6f36b8a",
+            "text": "Vardges Dilbaryan",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "3dfebcb9-cb4d-45ab-8d42-2f92305de8f9",
+    "ownerId": "41d19e3c-7cf0-4782-bc36-5a421b4cb884",
+    "ownerName": "Alen Yeghyan",
+    "ownerQuizCreationBlocked": true,
+    "title": "HO HO HO",
+    "description": "",
+    "category": "Programming",
+    "difficulty": "Medium",
+    "answerMode": "multiple",
+    "shuffleQuestions": true,
+    "shuffleAnswers": true,
+    "scoringMode": "automatic",
+    "manualPointsMode": "integer",
+    "accessType": "private",
+    "isPremium": true,
+    "status": "published",
+    "shareToken": "2dc89ccc978dca3f3ccc2d5a6cca1572032fcca18fa9f944",
+    "imageName": "pngtree-man-avatar-image-for-profile-png-image_13001877.png",
+    "imageUrl": "https://res.cloudinary.com/dou4mbq4y/image/upload/v1774343714/photos/jznpoevq2bc2tovy4wkm.png",
+    "totalPoints": 100,
+    "questionCount": 1,
+    "createdAt": "2026-03-24T09:15:47.586Z",
+    "updatedAt": "2026-03-24T09:15:47.586Z",
+    "publishedAt": "2026-03-24T09:15:47.586Z",
+    "questions": [
+      {
+        "id": "74211c5d-f733-43f2-838b-6282e01d4ecf",
+        "kind": "respondent_name",
+        "prompt": "First name and last name",
+        "required": true,
+        "shuffleEligible": false,
+        "responseType": "full_name",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 0,
+        "options": []
+      },
+      {
+        "id": "89874e64-2cc9-4a20-81d4-cd5829fc94c1",
+        "kind": "choice",
+        "prompt": "HOHO",
+        "required": true,
+        "shuffleEligible": true,
+        "responseType": "choice",
+        "imageName": "pngtree-man-avatar-image-for-profile-png-image_13001877.png",
+        "imageUrl": "https://res.cloudinary.com/dou4mbq4y/image/upload/v1774343747/photos/pjktf6672fxypi9dngii.png",
+        "points": 100,
+        "options": [
+          {
+            "id": "a75c17a6-e8cb-4aaa-acd8-6c5bb0bcf25a",
+            "text": "HOHO",
+            "isCorrect": true
+          },
+          {
+            "id": "4e4a51f3-471d-438e-88ed-158bbcc2440f",
+            "text": "HOHO@",
+            "isCorrect": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "5738bcb1-5b2a-47d1-8d55-8f439b032858",
+    "ownerId": "41d19e3c-7cf0-4782-bc36-5a421b4cb884",
+    "ownerName": "Alen Yeghyan",
+    "ownerQuizCreationBlocked": true,
+    "title": "HO HO HO",
+    "description": "",
+    "category": "Programming",
+    "difficulty": "Medium",
+    "answerMode": "multiple",
+    "shuffleQuestions": true,
+    "shuffleAnswers": true,
+    "scoringMode": "automatic",
+    "manualPointsMode": "integer",
+    "accessType": "public",
+    "isPremium": true,
+    "status": "published",
+    "shareToken": "",
+    "imageName": "pngtree-man-avatar-image-for-profile-png-image_13001877.png",
+    "imageUrl": "https://res.cloudinary.com/dou4mbq4y/image/upload/v1774343714/photos/jznpoevq2bc2tovy4wkm.png",
+    "totalPoints": 100,
+    "questionCount": 1,
+    "createdAt": "2026-03-24T10:20:20.110Z",
+    "updatedAt": "2026-03-24T10:20:20.110Z",
+    "publishedAt": "2026-03-24T10:20:20.110Z",
+    "questions": [
+      {
+        "id": "b59cc55b-2e34-4fd8-b329-596ce1c06a28",
+        "kind": "respondent_name",
+        "prompt": "First name and last name",
+        "required": true,
+        "shuffleEligible": false,
+        "responseType": "full_name",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 0,
+        "options": []
+      },
+      {
+        "id": "c3cf34c8-e82b-4b38-a0d2-3a1755c63347",
+        "kind": "choice",
+        "prompt": "afsdag",
+        "required": true,
+        "shuffleEligible": true,
+        "responseType": "choice",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 100,
+        "options": [
+          {
+            "id": "839b83ab-76f3-4959-9642-014440a1d56a",
+            "text": "saga",
+            "isCorrect": true
+          },
+          {
+            "id": "81ab7e29-d09c-442d-9ed6-2654e394ed97",
+            "text": "sdagag",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "6a88ffc2-de46-47f9-ad81-2c8c6905ea60",
+    "ownerId": "41d19e3c-7cf0-4782-bc36-5a421b4cb884",
+    "ownerName": "Alen Yeghyan",
+    "ownerQuizCreationBlocked": true,
+    "title": "HO HO HO",
+    "description": "",
+    "category": "Programming",
+    "difficulty": "Medium",
+    "answerMode": "multiple",
+    "shuffleQuestions": true,
+    "shuffleAnswers": true,
+    "scoringMode": "automatic",
+    "manualPointsMode": "integer",
+    "accessType": "public",
+    "isPremium": true,
+    "status": "published",
+    "shareToken": "",
+    "imageName": "pngtree-man-avatar-image-for-profile-png-image_13001877.png",
+    "imageUrl": "https://res.cloudinary.com/dou4mbq4y/image/upload/v1774343714/photos/jznpoevq2bc2tovy4wkm.png",
+    "totalPoints": 100,
+    "questionCount": 1,
+    "createdAt": "2026-03-24T10:20:36.292Z",
+    "updatedAt": "2026-03-24T10:20:36.292Z",
+    "publishedAt": "2026-03-24T10:20:36.292Z",
+    "questions": [
+      {
+        "id": "c6c57d72-792c-42e6-8997-3a5034c87119",
+        "kind": "respondent_name",
+        "prompt": "First name and last name",
+        "required": true,
+        "shuffleEligible": false,
+        "responseType": "full_name",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 0,
+        "options": []
+      },
+      {
+        "id": "c4c0e768-0cfa-4e12-8db1-00bc015057a6",
+        "kind": "choice",
+        "prompt": "afsdagDSDFAS",
+        "required": true,
+        "shuffleEligible": true,
+        "responseType": "choice",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 100,
+        "options": [
+          {
+            "id": "4dcc725a-3f3a-49fd-a683-f2dd5d83787b",
+            "text": "saga",
+            "isCorrect": true
+          },
+          {
+            "id": "39545692-1148-4a55-ae4d-0b559ff982f6",
+            "text": "sdagag",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "7b1c234a-f8e5-4a3d-9c2b-1a5d6e7f8g9h",
+    "ownerId": "41d19e3c-7cf0-4782-bc36-5a421b4cb884",
+    "ownerName": "Alen Yeghyan",
+    "ownerQuizCreationBlocked": true,
+    "title": "JavaScript Fundamentals",
+    "description": "Test your knowledge of JavaScript basics",
+    "category": "Programming",
+    "difficulty": "Easy",
+    "answerMode": "single",
+    "shuffleQuestions": true,
+    "shuffleAnswers": true,
+    "scoringMode": "automatic",
+    "manualPointsMode": "integer",
+    "accessType": "public",
+    "isPremium": false,
+    "status": "published",
+    "shareToken": "",
+    "imageName": "",
+    "imageUrl": "",
+    "totalPoints": 100,
+    "questionCount": 1,
+    "createdAt": "2026-03-24T10:30:00.000Z",
+    "updatedAt": "2026-03-24T10:30:00.000Z",
+    "publishedAt": "2026-03-24T10:30:00.000Z",
+    "questions": [
+      {
+        "id": "q1-respondent-name",
+        "kind": "respondent_name",
+        "prompt": "First name and last name",
+        "required": true,
+        "shuffleEligible": false,
+        "responseType": "full_name",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 0,
+        "options": []
+      },
+      {
+        "id": "q1-choice-1",
+        "kind": "choice",
+        "prompt": "What is the correct way to declare a variable in JavaScript?",
+        "required": true,
+        "shuffleEligible": true,
+        "responseType": "choice",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 100,
+        "options": [
+          {
+            "id": "q1-opt-1",
+            "text": "var name = 'John';",
+            "isCorrect": true
+          },
+          {
+            "id": "q1-opt-2",
+            "text": "variable name = 'John';",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "8c2d345b-g9f6-5b4e-ad3c-2b6e7f8g9h0i",
+    "ownerId": "41d19e3c-7cf0-4782-bc36-5a421b4cb884",
+    "ownerName": "Alen Yeghyan",
+    "ownerQuizCreationBlocked": true,
+    "title": "Python Basics",
+    "description": "Introduction to Python programming",
+    "category": "Programming",
+    "difficulty": "Easy",
+    "answerMode": "single",
+    "shuffleQuestions": true,
+    "shuffleAnswers": true,
+    "scoringMode": "automatic",
+    "manualPointsMode": "integer",
+    "accessType": "public",
+    "isPremium": true,
+    "status": "published",
+    "shareToken": "",
+    "imageName": "",
+    "imageUrl": "",
+    "totalPoints": 100,
+    "questionCount": 1,
+    "createdAt": "2026-03-24T10:31:00.000Z",
+    "updatedAt": "2026-03-24T10:31:00.000Z",
+    "publishedAt": "2026-03-24T10:31:00.000Z",
+    "questions": [
+      {
+        "id": "q2-respondent-name",
+        "kind": "respondent_name",
+        "prompt": "First name and last name",
+        "required": true,
+        "shuffleEligible": false,
+        "responseType": "full_name",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 0,
+        "options": []
+      },
+      {
+        "id": "q2-choice-1",
+        "kind": "choice",
+        "prompt": "What is the correct syntax for printing in Python?",
+        "required": true,
+        "shuffleEligible": true,
+        "responseType": "choice",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 100,
+        "options": [
+          {
+            "id": "q2-opt-1",
+            "text": "print('Hello');",
+            "isCorrect": true
+          },
+          {
+            "id": "q2-opt-2",
+            "text": "echo 'Hello';",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "9d3e456c-h0g7-6c5f-be4d-3c7f8g9h0i1j",
+    "ownerId": "41d19e3c-7cf0-4782-bc36-5a421b4cb884",
+    "ownerName": "Alen Yeghyan",
+    "ownerQuizCreationBlocked": true,
+    "title": "World History Quiz",
+    "description": "Test your knowledge of world history",
+    "category": "History",
+    "difficulty": "Medium",
+    "answerMode": "multiple",
+    "shuffleQuestions": true,
+    "shuffleAnswers": true,
+    "scoringMode": "automatic",
+    "manualPointsMode": "integer",
+    "accessType": "public",
+    "isPremium": false,
+    "status": "published",
+    "shareToken": "",
+    "imageName": "",
+    "imageUrl": "",
+    "totalPoints": 100,
+    "questionCount": 1,
+    "createdAt": "2026-03-24T10:32:00.000Z",
+    "updatedAt": "2026-03-24T10:32:00.000Z",
+    "publishedAt": "2026-03-24T10:32:00.000Z",
+    "questions": [
+      {
+        "id": "q3-respondent-name",
+        "kind": "respondent_name",
+        "prompt": "First name and last name",
+        "required": true,
+        "shuffleEligible": false,
+        "responseType": "full_name",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 0,
+        "options": []
+      },
+      {
+        "id": "q3-choice-1",
+        "kind": "choice",
+        "prompt": "In which year did World War II end?",
+        "required": true,
+        "shuffleEligible": true,
+        "responseType": "choice",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 100,
+        "options": [
+          {
+            "id": "q3-opt-1",
+            "text": "1945",
+            "isCorrect": true
+          },
+          {
+            "id": "q3-opt-2",
+            "text": "1944",
+            "isCorrect": false
+          },
+          {
+            "id": "q3-opt-3",
+            "text": "1946",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "0e4f567d-i1h8-7d6g-cf5e-4d8g9h0i1j2k",
+    "ownerId": "41d19e3c-7cf0-4782-bc36-5a421b4cb884",
+    "ownerName": "Alen Yeghyan",
+    "ownerQuizCreationBlocked": true,
+    "title": "Biology Essentials",
+    "description": "Basic biology concepts",
+    "category": "Science",
+    "difficulty": "Medium",
+    "answerMode": "single",
+    "shuffleQuestions": true,
+    "shuffleAnswers": true,
+    "scoringMode": "automatic",
+    "manualPointsMode": "integer",
+    "accessType": "private",
+    "isPremium": true,
+    "status": "published",
+    "shareToken": "token123456789abcdef",
+    "imageName": "",
+    "imageUrl": "",
+    "totalPoints": 100,
+    "questionCount": 1,
+    "createdAt": "2026-03-24T10:33:00.000Z",
+    "updatedAt": "2026-03-24T10:33:00.000Z",
+    "publishedAt": "2026-03-24T10:33:00.000Z",
+    "questions": [
+      {
+        "id": "q4-respondent-name",
+        "kind": "respondent_name",
+        "prompt": "First name and last name",
+        "required": true,
+        "shuffleEligible": false,
+        "responseType": "full_name",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 0,
+        "options": []
+      },
+      {
+        "id": "q4-choice-1",
+        "kind": "choice",
+        "prompt": "What is the powerhouse of the cell?",
+        "required": true,
+        "shuffleEligible": true,
+        "responseType": "choice",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 100,
+        "options": [
+          {
+            "id": "q4-opt-1",
+            "text": "Mitochondria",
+            "isCorrect": true
+          },
+          {
+            "id": "q4-opt-2",
+            "text": "Nucleus",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "1f5g678e-j2i9-8e7h-dg6f-5e9h0i1j2k3l",
+    "ownerId": "41d19e3c-7cf0-4782-bc36-5a421b4cb884",
+    "ownerName": "Alen Yeghyan",
+    "ownerQuizCreationBlocked": true,
+    "title": "Mathematics Challenge",
+    "description": "Advanced math problems",
+    "category": "Mathematics",
+    "difficulty": "Hard",
+    "answerMode": "multiple",
+    "shuffleQuestions": true,
+    "shuffleAnswers": true,
+    "scoringMode": "automatic",
+    "manualPointsMode": "integer",
+    "accessType": "public",
+    "isPremium": true,
+    "status": "published",
+    "shareToken": "",
+    "imageName": "",
+    "imageUrl": "",
+    "totalPoints": 100,
+    "questionCount": 1,
+    "createdAt": "2026-03-24T10:34:00.000Z",
+    "updatedAt": "2026-03-24T10:34:00.000Z",
+    "publishedAt": "2026-03-24T10:34:00.000Z",
+    "questions": [
+      {
+        "id": "q5-respondent-name",
+        "kind": "respondent_name",
+        "prompt": "First name and last name",
+        "required": true,
+        "shuffleEligible": false,
+        "responseType": "full_name",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 0,
+        "options": []
+      },
+      {
+        "id": "q5-choice-1",
+        "kind": "choice",
+        "prompt": "What is the value of pi?",
+        "required": true,
+        "shuffleEligible": true,
+        "responseType": "choice",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 100,
+        "options": [
+          {
+            "id": "q5-opt-1",
+            "text": "3.14159",
+            "isCorrect": true
+          },
+          {
+            "id": "q5-opt-2",
+            "text": "3.14",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2g6h789f-k3j0-9f8i-eh7g-6f0i1j2k3l4m",
+    "ownerId": "41d19e3c-7cf0-4782-bc36-5a421b4cb884",
+    "ownerName": "Alen Yeghyan",
+    "ownerQuizCreationBlocked": true,
+    "title": "React Advanced",
+    "description": "Advanced React concepts",
+    "category": "Programming",
+    "difficulty": "Hard",
+    "answerMode": "single",
+    "shuffleQuestions": true,
+    "shuffleAnswers": true,
+    "scoringMode": "automatic",
+    "manualPointsMode": "integer",
+    "accessType": "private",
+    "isPremium": true,
+    "status": "published",
+    "shareToken": "react-token-abc123",
+    "imageName": "",
+    "imageUrl": "",
+    "totalPoints": 100,
+    "questionCount": 1,
+    "createdAt": "2026-03-24T10:35:00.000Z",
+    "updatedAt": "2026-03-24T10:35:00.000Z",
+    "publishedAt": "2026-03-24T10:35:00.000Z",
+    "questions": [
+      {
+        "id": "q6-respondent-name",
+        "kind": "respondent_name",
+        "prompt": "First name and last name",
+        "required": true,
+        "shuffleEligible": false,
+        "responseType": "full_name",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 0,
+        "options": []
+      },
+      {
+        "id": "q6-choice-1",
+        "kind": "choice",
+        "prompt": "What is the virtual DOM in React?",
+        "required": true,
+        "shuffleEligible": true,
+        "responseType": "choice",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 100,
+        "options": [
+          {
+            "id": "q6-opt-1",
+            "text": "A copy of the actual DOM kept in memory",
+            "isCorrect": true
+          },
+          {
+            "id": "q6-opt-2",
+            "text": "A browser extension",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "3h7i890g-l4k1-0g9j-fi8h-7g1j2k3l4m5n",
+    "ownerId": "41d19e3c-7cf0-4782-bc36-5a421b4cb884",
+    "ownerName": "Alen Yeghyan",
+    "ownerQuizCreationBlocked": true,
+    "title": "Geography Quiz",
+    "description": "Test your geography knowledge",
+    "category": "Geography",
+    "difficulty": "Easy",
+    "answerMode": "single",
+    "shuffleQuestions": true,
+    "shuffleAnswers": true,
+    "scoringMode": "automatic",
+    "manualPointsMode": "integer",
+    "accessType": "public",
+    "isPremium": false,
+    "status": "published",
+    "shareToken": "",
+    "imageName": "",
+    "imageUrl": "",
+    "totalPoints": 100,
+    "questionCount": 1,
+    "createdAt": "2026-03-24T10:36:00.000Z",
+    "updatedAt": "2026-03-24T10:36:00.000Z",
+    "publishedAt": "2026-03-24T10:36:00.000Z",
+    "questions": [
+      {
+        "id": "q7-respondent-name",
+        "kind": "respondent_name",
+        "prompt": "First name and last name",
+        "required": true,
+        "shuffleEligible": false,
+        "responseType": "full_name",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 0,
+        "options": []
+      },
+      {
+        "id": "q7-choice-1",
+        "kind": "choice",
+        "prompt": "What is the capital of France?",
+        "required": true,
+        "shuffleEligible": true,
+        "responseType": "choice",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 100,
+        "options": [
+          {
+            "id": "q7-opt-1",
+            "text": "Paris",
+            "isCorrect": true
+          },
+          {
+            "id": "q7-opt-2",
+            "text": "Lyon",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "4i8j901h-m5l2-1h0k-gj9i-8h2k3l4m5n6o",
+    "ownerId": "41d19e3c-7cf0-4782-bc36-5a421b4cb884",
+    "ownerName": "Alen Yeghyan",
+    "ownerQuizCreationBlocked": true,
+    "title": "CSS Styling",
+    "description": "CSS and web design",
+    "category": "Programming",
+    "difficulty": "Medium",
+    "answerMode": "multiple",
+    "shuffleQuestions": true,
+    "shuffleAnswers": true,
+    "scoringMode": "automatic",
+    "manualPointsMode": "integer",
+    "accessType": "private",
+    "isPremium": false,
+    "status": "published",
+    "shareToken": "css-token-def456",
+    "imageName": "",
+    "imageUrl": "",
+    "totalPoints": 100,
+    "questionCount": 1,
+    "createdAt": "2026-03-24T10:37:00.000Z",
+    "updatedAt": "2026-03-24T10:37:00.000Z",
+    "publishedAt": "2026-03-24T10:37:00.000Z",
+    "questions": [
+      {
+        "id": "q8-respondent-name",
+        "kind": "respondent_name",
+        "prompt": "First name and last name",
+        "required": true,
+        "shuffleEligible": false,
+        "responseType": "full_name",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 0,
+        "options": []
+      },
+      {
+        "id": "q8-choice-1",
+        "kind": "choice",
+        "prompt": "How do you center text in CSS?",
+        "required": true,
+        "shuffleEligible": true,
+        "responseType": "choice",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 100,
+        "options": [
+          {
+            "id": "q8-opt-1",
+            "text": "text-align: center;",
+            "isCorrect": true
+          },
+          {
+            "id": "q8-opt-2",
+            "text": "align: center;",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "5j9k012i-n6m3-2i1l-hk0j-9i3l4m5n6o7p",
+    "ownerId": "41d19e3c-7cf0-4782-bc36-5a421b4cb884",
+    "ownerName": "Alen Yeghyan",
+    "ownerQuizCreationBlocked": true,
+    "title": "Economics Basics",
+    "description": "Introduction to economics",
+    "category": "Economics",
+    "difficulty": "Medium",
+    "answerMode": "single",
+    "shuffleQuestions": true,
+    "shuffleAnswers": true,
+    "scoringMode": "automatic",
+    "manualPointsMode": "integer",
+    "accessType": "public",
+    "isPremium": true,
+    "status": "published",
+    "shareToken": "",
+    "imageName": "",
+    "imageUrl": "",
+    "totalPoints": 100,
+    "questionCount": 1,
+    "createdAt": "2026-03-24T10:38:00.000Z",
+    "updatedAt": "2026-03-24T10:38:00.000Z",
+    "publishedAt": "2026-03-24T10:38:00.000Z",
+    "questions": [
+      {
+        "id": "q9-respondent-name",
+        "kind": "respondent_name",
+        "prompt": "First name and last name",
+        "required": true,
+        "shuffleEligible": false,
+        "responseType": "full_name",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 0,
+        "options": []
+      },
+      {
+        "id": "q9-choice-1",
+        "kind": "choice",
+        "prompt": "What is inflation?",
+        "required": true,
+        "shuffleEligible": true,
+        "responseType": "choice",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 100,
+        "options": [
+          {
+            "id": "q9-opt-1",
+            "text": "Increase in general price level of goods",
+            "isCorrect": true
+          },
+          {
+            "id": "q9-opt-2",
+            "text": "Decrease in currency value",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "6k0l123j-o7n4-3j2m-il1k-0j4m5n6o7p8q",
+    "ownerId": "41d19e3c-7cf0-4782-bc36-5a421b4cb884",
+    "ownerName": "Alen Yeghyan",
+    "ownerQuizCreationBlocked": true,
+    "title": "English Literature",
+    "description": "Classic literature and authors",
+    "category": "Literature",
+    "difficulty": "Hard",
+    "answerMode": "multiple",
+    "shuffleQuestions": true,
+    "shuffleAnswers": true,
+    "scoringMode": "automatic",
+    "manualPointsMode": "integer",
+    "accessType": "private",
+    "isPremium": true,
+    "status": "published",
+    "shareToken": "lit-token-ghi789",
+    "imageName": "",
+    "imageUrl": "",
+    "totalPoints": 100,
+    "questionCount": 1,
+    "createdAt": "2026-03-24T10:39:00.000Z",
+    "updatedAt": "2026-03-24T10:39:00.000Z",
+    "publishedAt": "2026-03-24T10:39:00.000Z",
+    "questions": [
+      {
+        "id": "q10-respondent-name",
+        "kind": "respondent_name",
+        "prompt": "First name and last name",
+        "required": true,
+        "shuffleEligible": false,
+        "responseType": "full_name",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 0,
+        "options": []
+      },
+      {
+        "id": "q10-choice-1",
+        "kind": "choice",
+        "prompt": "Who wrote 'Hamlet'?",
+        "required": true,
+        "shuffleEligible": true,
+        "responseType": "choice",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 100,
+        "options": [
+          {
+            "id": "q10-opt-1",
+            "text": "William Shakespeare",
+            "isCorrect": true
+          },
+          {
+            "id": "q10-opt-2",
+            "text": "Jane Austen",
+            "isCorrect": false
+          },
+          {
+            "id": "q10-opt-3",
+            "text": "Charles Dickens",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "7l1m234k-p8o5-4k3n-jm2l-1k5n6o7p8q9r",
+    "ownerId": "41d19e3c-7cf0-4782-bc36-5a421b4cb884",
+    "ownerName": "Alen Yeghyan",
+    "ownerQuizCreationBlocked": true,
+    "title": "Database SQL",
+    "description": "SQL and database fundamentals",
+    "category": "Programming",
+    "difficulty": "Medium",
+    "answerMode": "single",
+    "shuffleQuestions": true,
+    "shuffleAnswers": true,
+    "scoringMode": "automatic",
+    "manualPointsMode": "integer",
+    "accessType": "public",
+    "isPremium": true,
+    "status": "published",
+    "shareToken": "",
+    "imageName": "",
+    "imageUrl": "",
+    "totalPoints": 100,
+    "questionCount": 1,
+    "createdAt": "2026-03-24T10:40:00.000Z",
+    "updatedAt": "2026-03-24T10:40:00.000Z",
+    "publishedAt": "2026-03-24T10:40:00.000Z",
+    "questions": [
+      {
+        "id": "q11-respondent-name",
+        "kind": "respondent_name",
+        "prompt": "First name and last name",
+        "required": true,
+        "shuffleEligible": false,
+        "responseType": "full_name",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 0,
+        "options": []
+      },
+      {
+        "id": "q11-choice-1",
+        "kind": "choice",
+        "prompt": "What does SQL stand for?",
+        "required": true,
+        "shuffleEligible": true,
+        "responseType": "choice",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 100,
+        "options": [
+          {
+            "id": "q11-opt-1",
+            "text": "Structured Query Language",
+            "isCorrect": true
+          },
+          {
+            "id": "q11-opt-2",
+            "text": "Simple Question Language",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "8m2n345l-q9p6-5l4o-kn3m-2l6o7p8q9r0s",
+    "ownerId": "41d19e3c-7cf0-4782-bc36-5a421b4cb884",
+    "ownerName": "Alen Yeghyan",
+    "ownerQuizCreationBlocked": true,
+    "title": "Physics Fundamentals",
+    "description": "Basic physics concepts",
+    "category": "General",
+    "difficulty": "Easy",
+    "answerMode": "multiple",
+    "shuffleQuestions": true,
+    "shuffleAnswers": true,
+    "scoringMode": "automatic",
+    "manualPointsMode": "integer",
+    "accessType": "private",
+    "isPremium": false,
+    "status": "published",
+    "shareToken": "physics-token-jkl012",
+    "imageName": "",
+    "imageUrl": "",
+    "totalPoints": 100,
+    "questionCount": 1,
+    "createdAt": "2026-03-24T10:41:00.000Z",
+    "updatedAt": "2026-03-24T10:41:00.000Z",
+    "publishedAt": "2026-03-24T10:41:00.000Z",
+    "questions": [
+      {
+        "id": "q12-respondent-name",
+        "kind": "respondent_name",
+        "prompt": "First name and last name",
+        "required": true,
+        "shuffleEligible": false,
+        "responseType": "full_name",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 0,
+        "options": []
+      },
+      {
+        "id": "q12-choice-1",
+        "kind": "choice",
+        "prompt": "What is the SI unit of force?",
+        "required": true,
+        "shuffleEligible": true,
+        "responseType": "choice",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 100,
+        "options": [
+          {
+            "id": "q12-opt-1",
+            "text": "Newton",
+            "isCorrect": true
+          },
+          {
+            "id": "q12-opt-2",
+            "text": "Joule",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "0o4p567n-s1r8-7n6q-mp5o-4n8q9r0s1t2u",
+    "ownerId": "41d19e3c-7cf0-4782-bc36-5a421b4cb884",
+    "ownerName": "Alen Yeghyan",
+    "ownerQuizCreationBlocked": true,
+    "title": "Marketing Basics",
+    "description": "Fundamentals of marketing",
+    "category": "Marketing",
+    "difficulty": "Easy",
+    "answerMode": "single",
+    "shuffleQuestions": true,
+    "shuffleAnswers": true,
+    "scoringMode": "automatic",
+    "manualPointsMode": "integer",
+    "accessType": "private",
+    "isPremium": true,
+    "status": "published",
+    "shareToken": "market-token-mno345",
+    "imageName": "",
+    "imageUrl": "",
+    "totalPoints": 100,
+    "questionCount": 1,
+    "createdAt": "2026-03-24T10:43:00.000Z",
+    "updatedAt": "2026-03-24T10:43:00.000Z",
+    "publishedAt": "2026-03-24T10:43:00.000Z",
+    "questions": [
+      {
+        "id": "q14-respondent-name",
+        "kind": "respondent_name",
+        "prompt": "First name and last name",
+        "required": true,
+        "shuffleEligible": false,
+        "responseType": "full_name",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 0,
+        "options": []
+      },
+      {
+        "id": "q14-choice-1",
+        "kind": "choice",
+        "prompt": "What is the marketing funnel?",
+        "required": true,
+        "shuffleEligible": true,
+        "responseType": "choice",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 100,
+        "options": [
+          {
+            "id": "q14-opt-1",
+            "text": "A model of customer journey",
+            "isCorrect": true
+          },
+          {
+            "id": "q14-opt-2",
+            "text": "A product type",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "1p5q678o-t2s9-8o7r-nq6p-5o9r0s1t2u3v",
+    "ownerId": "41d19e3c-7cf0-4782-bc36-5a421b4cb884",
+    "ownerName": "Alen Yeghyan",
+    "ownerQuizCreationBlocked": true,
+    "title": "Art History",
+    "description": "History of art and artists",
+    "category": "Arts",
+    "difficulty": "Medium",
+    "answerMode": "multiple",
+    "shuffleQuestions": true,
+    "shuffleAnswers": true,
+    "scoringMode": "automatic",
+    "manualPointsMode": "integer",
+    "accessType": "public",
+    "isPremium": false,
+    "status": "published",
+    "shareToken": "",
+    "imageName": "",
+    "imageUrl": "",
+    "totalPoints": 100,
+    "questionCount": 1,
+    "createdAt": "2026-03-24T10:44:00.000Z",
+    "updatedAt": "2026-03-24T10:44:00.000Z",
+    "publishedAt": "2026-03-24T10:44:00.000Z",
+    "questions": [
+      {
+        "id": "q15-respondent-name",
+        "kind": "respondent_name",
+        "prompt": "First name and last name",
+        "required": true,
+        "shuffleEligible": false,
+        "responseType": "full_name",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 0,
+        "options": []
+      },
+      {
+        "id": "q15-choice-1",
+        "kind": "choice",
+        "prompt": "Who painted the Mona Lisa?",
+        "required": true,
+        "shuffleEligible": true,
+        "responseType": "choice",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 100,
+        "options": [
+          {
+            "id": "q15-opt-1",
+            "text": "Leonardo da Vinci",
+            "isCorrect": true
+          },
+          {
+            "id": "q15-opt-2",
+            "text": "Michelangelo",
+            "isCorrect": false
+          },
+          {
+            "id": "q15-opt-3",
+            "text": "Raphael",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2q6r789p-u3t0-9p8s-or7q-6p0s1t2u3v4w",
+    "ownerId": "41d19e3c-7cf0-4782-bc36-5a421b4cb884",
+    "ownerName": "Alen Yeghyan",
+    "ownerQuizCreationBlocked": true,
+    "title": "Cloud Computing",
+    "description": "Cloud platforms and services",
+    "category": "Programming",
+    "difficulty": "Hard",
+    "answerMode": "single",
+    "shuffleQuestions": true,
+    "shuffleAnswers": true,
+    "scoringMode": "automatic",
+    "manualPointsMode": "integer",
+    "accessType": "private",
+    "isPremium": true,
+    "status": "published",
+    "shareToken": "cloud-token-pqr678",
+    "imageName": "",
+    "imageUrl": "",
+    "totalPoints": 100,
+    "questionCount": 1,
+    "createdAt": "2026-03-24T10:45:00.000Z",
+    "updatedAt": "2026-03-24T10:45:00.000Z",
+    "publishedAt": "2026-03-24T10:45:00.000Z",
+    "questions": [
+      {
+        "id": "q16-respondent-name",
+        "kind": "respondent_name",
+        "prompt": "First name and last name",
+        "required": true,
+        "shuffleEligible": false,
+        "responseType": "full_name",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 0,
+        "options": []
+      },
+      {
+        "id": "q16-choice-1",
+        "kind": "choice",
+        "prompt": "What does AWS stand for?",
+        "required": true,
+        "shuffleEligible": true,
+        "responseType": "choice",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 100,
+        "options": [
+          {
+            "id": "q16-opt-1",
+            "text": "Amazon Web Services",
+            "isCorrect": true
+          },
+          {
+            "id": "q16-opt-2",
+            "text": "Amazon Web Systems",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "3r7s890q-v4u1-0q9t-ps8r-7q1t2u3v4w5x",
+    "ownerId": "41d19e3c-7cf0-4782-bc36-5a421b4cb884",
+    "ownerName": "Alen Yeghyan",
+    "ownerQuizCreationBlocked": true,
+    "title": "Psychology 101",
+    "description": "Introduction to psychology",
+    "category": "Psychology",
+    "difficulty": "Easy",
+    "answerMode": "multiple",
+    "shuffleQuestions": true,
+    "shuffleAnswers": true,
+    "scoringMode": "automatic",
+    "manualPointsMode": "integer",
+    "accessType": "public",
+    "isPremium": false,
+    "status": "published",
+    "shareToken": "",
+    "imageName": "",
+    "imageUrl": "",
+    "totalPoints": 100,
+    "questionCount": 1,
+    "createdAt": "2026-03-24T10:46:00.000Z",
+    "updatedAt": "2026-03-24T10:46:00.000Z",
+    "publishedAt": "2026-03-24T10:46:00.000Z",
+    "questions": [
+      {
+        "id": "q17-respondent-name",
+        "kind": "respondent_name",
+        "prompt": "First name and last name",
+        "required": true,
+        "shuffleEligible": false,
+        "responseType": "full_name",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 0,
+        "options": []
+      },
+      {
+        "id": "q17-choice-1",
+        "kind": "choice",
+        "prompt": "Who founded behaviorism?",
+        "required": true,
+        "shuffleEligible": true,
+        "responseType": "choice",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 100,
+        "options": [
+          {
+            "id": "q17-opt-1",
+            "text": "B.F. Skinner",
+            "isCorrect": true
+          },
+          {
+            "id": "q17-opt-2",
+            "text": "Sigmund Freud",
+            "isCorrect": false
+          },
+          {
+            "id": "q17-opt-3",
+            "text": "Carl Jung",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "4s8t901r-w5v2-1r0u-qt9s-8r2u3v4w5x6y",
+    "ownerId": "41d19e3c-7cf0-4782-bc36-5a421b4cb884",
+    "ownerName": "Alen Yeghyan",
+    "ownerQuizCreationBlocked": true,
+    "title": "TypeScript Masterclass",
+    "description": "Advanced TypeScript programming",
+    "category": "Programming",
+    "difficulty": "Hard",
+    "answerMode": "single",
+    "shuffleQuestions": true,
+    "shuffleAnswers": true,
+    "scoringMode": "automatic",
+    "manualPointsMode": "integer",
+    "accessType": "public",
+    "isPremium": true,
+    "status": "published",
+    "shareToken": "",
+    "imageName": "",
+    "imageUrl": "",
+    "totalPoints": 100,
+    "questionCount": 1,
+    "createdAt": "2026-03-24T10:47:00.000Z",
+    "updatedAt": "2026-03-24T10:47:00.000Z",
+    "publishedAt": "2026-03-24T10:47:00.000Z",
+    "questions": [
+      {
+        "id": "q18-respondent-name",
+        "kind": "respondent_name",
+        "prompt": "First name and last name",
+        "required": true,
+        "shuffleEligible": false,
+        "responseType": "full_name",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 0,
+        "options": []
+      },
+      {
+        "id": "q18-choice-1",
+        "kind": "choice",
+        "prompt": "What is a TypeScript interface?",
+        "required": true,
+        "shuffleEligible": true,
+        "responseType": "choice",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 100,
+        "options": [
+          {
+            "id": "q18-opt-1",
+            "text": "A contract for object shape",
+            "isCorrect": true
+          },
+          {
+            "id": "q18-opt-2",
+            "text": "A class inheritance mechanism",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "5t9u012s-x6w3-2s1v-ru0t-9s3v4w5x6y7z",
+    "ownerId": "41d19e3c-7cf0-4782-bc36-5a421b4cb884",
+    "ownerName": "Alen Yeghyan",
+    "ownerQuizCreationBlocked": true,
+    "title": "Sports Trivia",
+    "description": "Test your sports knowledge",
+    "category": "Sports",
+    "difficulty": "Medium",
+    "answerMode": "multiple",
+    "shuffleQuestions": true,
+    "shuffleAnswers": true,
+    "scoringMode": "automatic",
+    "manualPointsMode": "integer",
+    "accessType": "private",
+    "isPremium": false,
+    "status": "published",
+    "shareToken": "sports-token-stu901",
+    "imageName": "",
+    "imageUrl": "",
+    "totalPoints": 100,
+    "questionCount": 1,
+    "createdAt": "2026-03-24T10:48:00.000Z",
+    "updatedAt": "2026-03-24T10:48:00.000Z",
+    "publishedAt": "2026-03-24T10:48:00.000Z",
+    "questions": [
+      {
+        "id": "q19-respondent-name",
+        "kind": "respondent_name",
+        "prompt": "First name and last name",
+        "required": true,
+        "shuffleEligible": false,
+        "responseType": "full_name",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 0,
+        "options": []
+      },
+      {
+        "id": "q19-choice-1",
+        "kind": "choice",
+        "prompt": "How many players are on a basketball team?",
+        "required": true,
+        "shuffleEligible": true,
+        "responseType": "choice",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 100,
+        "options": [
+          {
+            "id": "q19-opt-1",
+            "text": "5",
+            "isCorrect": true
+          },
+          {
+            "id": "q19-opt-2",
+            "text": "9",
+            "isCorrect": false
+          },
+          {
+            "id": "q19-opt-3",
+            "text": "11",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "6u0v123t-y7x4-3t2w-sv1u-0t4w5x6y7z8a",
+    "ownerId": "41d19e3c-7cf0-4782-bc36-5a421b4cb884",
+    "ownerName": "Alen Yeghyan",
+    "ownerQuizCreationBlocked": true,
+    "title": "Web Security",
+    "description": "Web application security essentials",
+    "category": "Programming",
+    "difficulty": "Hard",
+    "answerMode": "single",
+    "shuffleQuestions": true,
+    "shuffleAnswers": true,
+    "scoringMode": "automatic",
+    "manualPointsMode": "integer",
+    "accessType": "public",
+    "isPremium": true,
+    "status": "published",
+    "shareToken": "",
+    "imageName": "",
+    "imageUrl": "",
+    "totalPoints": 100,
+    "questionCount": 1,
+    "createdAt": "2026-03-24T10:49:00.000Z",
+    "updatedAt": "2026-03-24T10:49:00.000Z",
+    "publishedAt": "2026-03-24T10:49:00.000Z",
+    "questions": [
+      {
+        "id": "q20-respondent-name",
+        "kind": "respondent_name",
+        "prompt": "First name and last name",
+        "required": true,
+        "shuffleEligible": false,
+        "responseType": "full_name",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 0,
+        "options": []
+      },
+      {
+        "id": "q20-choice-1",
+        "kind": "choice",
+        "prompt": "What does HTTPS provide?",
+        "required": true,
+        "shuffleEligible": true,
+        "responseType": "choice",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 100,
+        "options": [
+          {
+            "id": "q20-opt-1",
+            "text": "Encrypted communication",
+            "isCorrect": true
+          },
+          {
+            "id": "q20-opt-2",
+            "text": "Faster page loading",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "7v1w234u-z8y5-4u3x-tw2v-1u5x6y7z8a9b",
+    "ownerId": "41d19e3c-7cf0-4782-bc36-5a421b4cb884",
+    "ownerName": "Alen Yeghyan",
+    "ownerQuizCreationBlocked": true,
+    "title": "Machine Learning Basics",
+    "description": "Introduction to machine learning",
+    "category": "Programming",
+    "difficulty": "Medium",
+    "answerMode": "multiple",
+    "shuffleQuestions": true,
+    "shuffleAnswers": true,
+    "scoringMode": "automatic",
+    "manualPointsMode": "integer",
+    "accessType": "private",
+    "isPremium": true,
+    "status": "published",
+    "shareToken": "ml-token-vwx234",
+    "imageName": "",
+    "imageUrl": "",
+    "totalPoints": 100,
+    "questionCount": 1,
+    "createdAt": "2026-03-24T10:50:00.000Z",
+    "updatedAt": "2026-03-24T10:50:00.000Z",
+    "publishedAt": "2026-03-24T10:50:00.000Z",
+    "questions": [
+      {
+        "id": "q21-respondent-name",
+        "kind": "respondent_name",
+        "prompt": "First name and last name",
+        "required": true,
+        "shuffleEligible": false,
+        "responseType": "full_name",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 0,
+        "options": []
+      },
+      {
+        "id": "q21-choice-1",
+        "kind": "choice",
+        "prompt": "What is supervised learning?",
+        "required": true,
+        "shuffleEligible": true,
+        "responseType": "choice",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 100,
+        "options": [
+          {
+            "id": "q21-opt-1",
+            "text": "Learning with labeled data",
+            "isCorrect": true
+          },
+          {
+            "id": "q21-opt-2",
+            "text": "Learning without teacher",
+            "isCorrect": false
+          },
+          {
+            "id": "q21-opt-3",
+            "text": "Reinforcement training",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "8w2x345v-a9z6-5v4y-ux3w-2v6y7z8a9b0c",
+    "ownerId": "41d19e3c-7cf0-4782-bc36-5a421b4cb884",
+    "ownerName": "Alen Yeghyan",
+    "ownerQuizCreationBlocked": true,
+    "title": "Philosophy Questions",
+    "description": "Philosophical thoughts and ideas",
+    "category": "Philosophy",
+    "difficulty": "Hard",
+    "answerMode": "single",
+    "shuffleQuestions": true,
+    "shuffleAnswers": true,
+    "scoringMode": "automatic",
+    "manualPointsMode": "integer",
+    "accessType": "public",
+    "isPremium": false,
+    "status": "published",
+    "shareToken": "",
+    "imageName": "",
+    "imageUrl": "",
+    "totalPoints": 100,
+    "questionCount": 1,
+    "createdAt": "2026-03-24T10:51:00.000Z",
+    "updatedAt": "2026-03-24T10:51:00.000Z",
+    "publishedAt": "2026-03-24T10:51:00.000Z",
+    "questions": [
+      {
+        "id": "q22-respondent-name",
+        "kind": "respondent_name",
+        "prompt": "First name and last name",
+        "required": true,
+        "shuffleEligible": false,
+        "responseType": "full_name",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 0,
+        "options": []
+      },
+      {
+        "id": "q22-choice-1",
+        "kind": "choice",
+        "prompt": "Who wrote 'Critique of Pure Reason'?",
+        "required": true,
+        "shuffleEligible": true,
+        "responseType": "choice",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 100,
+        "options": [
+          {
+            "id": "q22-opt-1",
+            "text": "Immanuel Kant",
+            "isCorrect": true
+          },
+          {
+            "id": "q22-opt-2",
+            "text": "Friedrich Nietzsche",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "9x3y456w-b0a7-6w5z-vy4x-3w7z8a9b0c1d",
+    "ownerId": "41d19e3c-7cf0-4782-bc36-5a421b4cb884",
+    "ownerName": "Alen Yeghyan",
+    "ownerQuizCreationBlocked": true,
+    "title": "Nutrition Science",
+    "description": "Health and nutrition basics",
+    "category": "Health",
+    "difficulty": "Medium",
+    "answerMode": "multiple",
+    "shuffleQuestions": true,
+    "shuffleAnswers": true,
+    "scoringMode": "automatic",
+    "manualPointsMode": "integer",
+    "accessType": "public",
+    "isPremium": false,
+    "status": "published",
+    "shareToken": "",
+    "imageName": "",
+    "imageUrl": "",
+    "totalPoints": 100,
+    "questionCount": 1,
+    "createdAt": "2026-03-24T10:52:00.000Z",
+    "updatedAt": "2026-03-24T10:52:00.000Z",
+    "publishedAt": "2026-03-24T10:52:00.000Z",
+    "questions": [
+      {
+        "id": "q23-respondent-name",
+        "kind": "respondent_name",
+        "prompt": "First name and last name",
+        "required": true,
+        "shuffleEligible": false,
+        "responseType": "full_name",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 0,
+        "options": []
+      },
+      {
+        "id": "q23-choice-1",
+        "kind": "choice",
+        "prompt": "Which vitamin is important for bone health?",
+        "required": true,
+        "shuffleEligible": true,
+        "responseType": "choice",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 100,
+        "options": [
+          {
+            "id": "q23-opt-1",
+            "text": "Vitamin D",
+            "isCorrect": true
+          },
+          {
+            "id": "q23-opt-2",
+            "text": "Vitamin A",
+            "isCorrect": false
+          },
+          {
+            "id": "q23-opt-3",
+            "text": "Vitamin C",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "d3bb1ff4-2dec-4228-a283-de443fe5afdf",
+    "ownerId": "41d19e3c-7cf0-4782-bc36-5a421b4cb884",
+    "ownerName": "Alen Yeghyan",
+    "ownerQuizCreationBlocked": true,
+    "title": "Medicine",
+    "description": "",
+    "category": "Medicin",
+    "difficulty": "Hard",
+    "answerMode": "multiple",
+    "shuffleQuestions": true,
+    "shuffleAnswers": true,
+    "scoringMode": "manual",
+    "manualPointsMode": "integer",
+    "accessType": "private",
+    "isPremium": true,
+    "status": "published",
+    "shareToken": "bf094df4b6c0df00abd111cef8a068bfe0ed0fc90c37feec",
+    "imageName": "",
+    "imageUrl": "",
+    "totalPoints": 100,
+    "questionCount": 1,
+    "createdAt": "2026-03-24T11:09:08.151Z",
+    "updatedAt": "2026-03-24T11:43:18.558Z",
+    "publishedAt": "2026-03-24T11:09:08.151Z",
+    "questions": [
+      {
+        "id": "2ba9ee65-fe1e-4f13-a4db-9b48a762943f",
+        "kind": "respondent_name",
+        "prompt": "First name and last name",
+        "required": true,
+        "shuffleEligible": false,
+        "responseType": "full_name",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 0,
+        "options": []
+      },
+      {
+        "id": "001d4364-d648-4392-8d07-063c3b806df0",
+        "kind": "choice",
+        "prompt": "How is Hipocrat",
+        "required": true,
+        "shuffleEligible": true,
+        "responseType": "choice",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 100,
+        "options": [
+          {
+            "id": "8d26985b-04b6-4478-b8a0-ffa703f9de1a",
+            "text": "Medici",
+            "isCorrect": true
+          },
+          {
+            "id": "f1302553-4dc9-4ea4-b026-eb0093c3c898",
+            "text": "Yog",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "a1b2c3d4-e5f6-4a5b-8c9d-0e1f2a3b4c5d",
+    "ownerId": "ef91e537-c0d8-449f-a64c-2ddc2f70a09b",
+    "ownerName": "Petros",
+    "ownerQuizCreationBlocked": true,
+    "title": "Web Development Basics",
+    "description": "HTML, CSS and JavaScript fundamentals",
+    "category": "Programming",
+    "difficulty": "Easy",
+    "answerMode": "single",
+    "shuffleQuestions": true,
+    "shuffleAnswers": true,
+    "scoringMode": "automatic",
+    "manualPointsMode": "integer",
+    "accessType": "public",
+    "isPremium": false,
+    "status": "published",
+    "shareToken": "",
+    "imageName": "",
+    "imageUrl": "",
+    "totalPoints": 100,
+    "questionCount": 1,
+    "createdAt": "2026-03-24T12:00:00.000Z",
+    "updatedAt": "2026-03-24T12:00:00.000Z",
+    "publishedAt": "2026-03-24T12:00:00.000Z",
+    "questions": [
+      {
+        "id": "q24-respondent-name",
+        "kind": "respondent_name",
+        "prompt": "First name and last name",
+        "required": true,
+        "shuffleEligible": false,
+        "responseType": "full_name",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 0,
+        "options": []
+      },
+      {
+        "id": "q24-choice-1",
+        "kind": "choice",
+        "prompt": "What is HTML?",
+        "required": true,
+        "shuffleEligible": true,
+        "responseType": "choice",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 100,
+        "options": [
+          {
+            "id": "q24-opt-1",
+            "text": "Markup language for web pages",
+            "isCorrect": true
+          },
+          {
+            "id": "q24-opt-2",
+            "text": "Programming language",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "b2c3d4e5-f6a7-5b6c-9d0e-1f2a3b4c5d6e",
+    "ownerId": "8940accc-5b1e-4324-b901-0a824c07d37e",
+    "ownerName": "poghos",
+    "ownerQuizCreationBlocked": false,
+    "title": "Grammar and Vocabulary",
+    "description": "English language test",
+    "category": "Languages",
+    "difficulty": "Medium",
+    "answerMode": "multiple",
+    "shuffleQuestions": true,
+    "shuffleAnswers": true,
+    "scoringMode": "automatic",
+    "manualPointsMode": "integer",
+    "accessType": "private",
+    "isPremium": true,
+    "status": "published",
+    "shareToken": "gram-token-001",
+    "imageName": "",
+    "imageUrl": "",
+    "totalPoints": 100,
+    "questionCount": 1,
+    "createdAt": "2026-03-24T12:01:00.000Z",
+    "updatedAt": "2026-03-24T12:01:00.000Z",
+    "publishedAt": "2026-03-24T12:01:00.000Z",
+    "questions": [
+      {
+        "id": "q25-respondent-name",
+        "kind": "respondent_name",
+        "prompt": "First name and last name",
+        "required": true,
+        "shuffleEligible": false,
+        "responseType": "full_name",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 0,
+        "options": []
+      },
+      {
+        "id": "q25-choice-1",
+        "kind": "choice",
+        "prompt": "Choose the correct tense: 'I ___ to the store yesterday'",
+        "required": true,
+        "shuffleEligible": true,
+        "responseType": "choice",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 100,
+        "options": [
+          {
+            "id": "q25-opt-1",
+            "text": "went",
+            "isCorrect": true
+          },
+          {
+            "id": "q25-opt-2",
+            "text": "go",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "c3d4e5f6-a7b8-6c7d-0e1f-2a3b4c5d6e7f",
+    "ownerId": "d6bd5608-02f0-4a91-8e56-40e66b3a5e22",
+    "ownerName": "poghos",
+    "ownerQuizCreationBlocked": false,
+    "title": "Chemistry Basics",
+    "description": "Introduction to chemistry",
+    "category": "Science",
+    "difficulty": "Medium",
+    "answerMode": "single",
+    "shuffleQuestions": true,
+    "shuffleAnswers": true,
+    "scoringMode": "automatic",
+    "manualPointsMode": "integer",
+    "accessType": "public",
+    "isPremium": false,
+    "status": "published",
+    "shareToken": "",
+    "imageName": "",
+    "imageUrl": "",
+    "totalPoints": 100,
+    "questionCount": 1,
+    "createdAt": "2026-03-24T12:02:00.000Z",
+    "updatedAt": "2026-03-24T12:02:00.000Z",
+    "publishedAt": "2026-03-24T12:02:00.000Z",
+    "questions": [
+      {
+        "id": "q26-respondent-name",
+        "kind": "respondent_name",
+        "prompt": "First name and last name",
+        "required": true,
+        "shuffleEligible": false,
+        "responseType": "full_name",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 0,
+        "options": []
+      },
+      {
+        "id": "q26-choice-1",
+        "kind": "choice",
+        "prompt": "What is the chemical symbol for Gold?",
+        "required": true,
+        "shuffleEligible": true,
+        "responseType": "choice",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 100,
+        "options": [
+          {
+            "id": "q26-opt-1",
+            "text": "Au",
+            "isCorrect": true
+          },
+          {
+            "id": "q26-opt-2",
+            "text": "Go",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "d4e5f6a7-b8c9-7d8e-1f2a-3b4c5d6e7f8g",
+    "ownerId": "9ccf1507-4dc2-4018-9eb8-52b27804776b",
+    "ownerName": "Petros",
+    "ownerQuizCreationBlocked": false,
+    "title": "Astronomy and Space",
+    "description": "Space science fundamentals",
+    "category": "Science",
+    "difficulty": "Medium",
+    "answerMode": "multiple",
+    "shuffleQuestions": true,
+    "shuffleAnswers": true,
+    "scoringMode": "automatic",
+    "manualPointsMode": "integer",
+    "accessType": "public",
+    "isPremium": true,
+    "status": "published",
+    "shareToken": "",
+    "imageName": "",
+    "imageUrl": "",
+    "totalPoints": 100,
+    "questionCount": 1,
+    "createdAt": "2026-03-24T12:03:00.000Z",
+    "updatedAt": "2026-03-24T12:03:00.000Z",
+    "publishedAt": "2026-03-24T12:03:00.000Z",
+    "questions": [
+      {
+        "id": "q27-respondent-name",
+        "kind": "respondent_name",
+        "prompt": "First name and last name",
+        "required": true,
+        "shuffleEligible": false,
+        "responseType": "full_name",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 0,
+        "options": []
+      },
+      {
+        "id": "q27-choice-1",
+        "kind": "choice",
+        "prompt": "Which planet is known as the Red Planet?",
+        "required": true,
+        "shuffleEligible": true,
+        "responseType": "choice",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 100,
+        "options": [
+          {
+            "id": "q27-opt-1",
+            "text": "Mars",
+            "isCorrect": true
+          },
+          {
+            "id": "q27-opt-2",
+            "text": "Venus",
+            "isCorrect": false
+          },
+          {
+            "id": "q27-opt-3",
+            "text": "Jupiter",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "f6a7b8c9-a0b1-9f0a-3b4c-5d6e7f8g9h0i",
+    "ownerId": "ef91e537-c0d8-449f-a64c-2ddc2f70a09b",
+    "ownerName": "Petros",
+    "ownerQuizCreationBlocked": true,
+    "title": "Fitness Training",
+    "description": "Exercise and fitness guide",
+    "category": "Health & Fitness",
+    "difficulty": "Easy",
+    "answerMode": "multiple",
+    "shuffleQuestions": true,
+    "shuffleAnswers": true,
+    "scoringMode": "automatic",
+    "manualPointsMode": "integer",
+    "accessType": "public",
+    "isPremium": false,
+    "status": "published",
+    "shareToken": "",
+    "imageName": "",
+    "imageUrl": "",
+    "totalPoints": 100,
+    "questionCount": 1,
+    "createdAt": "2026-03-24T12:05:00.000Z",
+    "updatedAt": "2026-03-24T12:05:00.000Z",
+    "publishedAt": "2026-03-24T12:05:00.000Z",
+    "questions": [
+      {
+        "id": "q29-respondent-name",
+        "kind": "respondent_name",
+        "prompt": "First name and last name",
+        "required": true,
+        "shuffleEligible": false,
+        "responseType": "full_name",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 0,
+        "options": []
+      },
+      {
+        "id": "q29-choice-1",
+        "kind": "choice",
+        "prompt": "How many times a week should you exercise?",
+        "required": true,
+        "shuffleEligible": true,
+        "responseType": "choice",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 100,
+        "options": [
+          {
+            "id": "q29-opt-1",
+            "text": "3-5 times",
+            "isCorrect": true
+          },
+          {
+            "id": "q29-opt-2",
+            "text": "Once a week",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "a7b8c9a0-b1c2-0a1b-4c5d-6e7f8g9h0i1j",
+    "ownerId": "8940accc-5b1e-4324-b901-0a824c07d37e",
+    "ownerName": "poghos",
+    "ownerQuizCreationBlocked": false,
+    "title": "Cooking and Culinary Arts",
+    "description": "Basic cooking techniques",
+    "category": "Cooking",
+    "difficulty": "Easy",
+    "answerMode": "single",
+    "shuffleQuestions": true,
+    "shuffleAnswers": true,
+    "scoringMode": "automatic",
+    "manualPointsMode": "integer",
+    "accessType": "private",
+    "isPremium": false,
+    "status": "published",
+    "shareToken": "cook-token-001",
+    "imageName": "",
+    "imageUrl": "",
+    "totalPoints": 100,
+    "questionCount": 1,
+    "createdAt": "2026-03-24T12:06:00.000Z",
+    "updatedAt": "2026-03-24T12:06:00.000Z",
+    "publishedAt": "2026-03-24T12:06:00.000Z",
+    "questions": [
+      {
+        "id": "q30-respondent-name",
+        "kind": "respondent_name",
+        "prompt": "First name and last name",
+        "required": true,
+        "shuffleEligible": false,
+        "responseType": "full_name",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 0,
+        "options": []
+      },
+      {
+        "id": "q30-choice-1",
+        "kind": "choice",
+        "prompt": "What is the French cooking technique called sautéing?",
+        "required": true,
+        "shuffleEligible": true,
+        "responseType": "choice",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 100,
+        "options": [
+          {
+            "id": "q30-opt-1",
+            "text": "Quick cooking in a hot pan",
+            "isCorrect": true
+          },
+          {
+            "id": "q30-opt-2",
+            "text": "Slow cooking in oven",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "c9a0b1c2-d3e4-2c3d-6e7f-8g9h0i1j2k3l",
+    "ownerId": "9ccf1507-4dc2-4018-9eb8-52b27804776b",
+    "ownerName": "Petros",
+    "ownerQuizCreationBlocked": false,
+    "title": "Music Theory",
+    "description": "Fundamentals of music theory",
+    "category": "Music",
+    "difficulty": "Medium",
+    "answerMode": "single",
+    "shuffleQuestions": true,
+    "shuffleAnswers": true,
+    "scoringMode": "automatic",
+    "manualPointsMode": "integer",
+    "accessType": "private",
+    "isPremium": true,
+    "status": "published",
+    "shareToken": "music-token-001",
+    "imageName": "",
+    "imageUrl": "",
+    "totalPoints": 100,
+    "questionCount": 1,
+    "createdAt": "2026-03-24T12:08:00.000Z",
+    "updatedAt": "2026-03-24T12:08:00.000Z",
+    "publishedAt": "2026-03-24T12:08:00.000Z",
+    "questions": [
+      {
+        "id": "q32-respondent-name",
+        "kind": "respondent_name",
+        "prompt": "First name and last name",
+        "required": true,
+        "shuffleEligible": false,
+        "responseType": "full_name",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 0,
+        "options": []
+      },
+      {
+        "id": "q32-choice-1",
+        "kind": "choice",
+        "prompt": "How many strings does a standard guitar have?",
+        "required": true,
+        "shuffleEligible": true,
+        "responseType": "choice",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 100,
+        "options": [
+          {
+            "id": "q32-opt-1",
+            "text": "6",
+            "isCorrect": true
+          },
+          {
+            "id": "q32-opt-2",
+            "text": "8",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "a0b1c2d3-e4f5-3d4e-7f8g-9h0i1j2k3l4m",
+    "ownerId": "6bdc2f7a-a04a-40ac-a5a7-93983106034d",
+    "ownerName": "superadmin",
+    "ownerQuizCreationBlocked": false,
+    "title": "Artificial Intelligence",
+    "description": "AI and machine learning concepts",
+    "category": "Programming",
+    "difficulty": "Hard",
+    "answerMode": "multiple",
+    "shuffleQuestions": true,
+    "shuffleAnswers": true,
+    "scoringMode": "automatic",
+    "manualPointsMode": "integer",
+    "accessType": "public",
+    "isPremium": true,
+    "status": "published",
+    "shareToken": "",
+    "imageName": "",
+    "imageUrl": "",
+    "totalPoints": 100,
+    "questionCount": 1,
+    "createdAt": "2026-03-24T12:09:00.000Z",
+    "updatedAt": "2026-03-24T12:09:00.000Z",
+    "publishedAt": "2026-03-24T12:09:00.000Z",
+    "questions": [
+      {
+        "id": "q33-respondent-name",
+        "kind": "respondent_name",
+        "prompt": "First name and last name",
+        "required": true,
+        "shuffleEligible": false,
+        "responseType": "full_name",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 0,
+        "options": []
+      },
+      {
+        "id": "q33-choice-1",
+        "kind": "choice",
+        "prompt": "What is a neural network?",
+        "required": true,
+        "shuffleEligible": true,
+        "responseType": "choice",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 100,
+        "options": [
+          {
+            "id": "q33-opt-1",
+            "text": "Computing system inspired by biological neurons",
+            "isCorrect": true
+          },
+          {
+            "id": "q33-opt-2",
+            "text": "Internet connection protocol",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "b1c2d3e4-f5a6-4e5f-8g9h-0i1j2k3l4m5n",
+    "ownerId": "ef91e537-c0d8-449f-a64c-2ddc2f70a09b",
+    "ownerName": "Petros",
+    "ownerQuizCreationBlocked": true,
+    "title": "Interior Design",
+    "description": "Home decoration and design principles",
+    "category": "Design",
+    "difficulty": "Easy",
+    "answerMode": "single",
+    "shuffleQuestions": true,
+    "shuffleAnswers": true,
+    "scoringMode": "automatic",
+    "manualPointsMode": "integer",
+    "accessType": "public",
+    "isPremium": false,
+    "status": "published",
+    "shareToken": "",
+    "imageName": "",
+    "imageUrl": "",
+    "totalPoints": 100,
+    "questionCount": 1,
+    "createdAt": "2026-03-24T12:10:00.000Z",
+    "updatedAt": "2026-03-24T12:10:00.000Z",
+    "publishedAt": "2026-03-24T12:10:00.000Z",
+    "questions": [
+      {
+        "id": "q34-respondent-name",
+        "kind": "respondent_name",
+        "prompt": "First name and last name",
+        "required": true,
+        "shuffleEligible": false,
+        "responseType": "full_name",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 0,
+        "options": []
+      },
+      {
+        "id": "q34-choice-1",
+        "kind": "choice",
+        "prompt": "What color makes a room look larger?",
+        "required": true,
+        "shuffleEligible": true,
+        "responseType": "choice",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 100,
+        "options": [
+          {
+            "id": "q34-opt-1",
+            "text": "Light colors",
+            "isCorrect": true
+          },
+          {
+            "id": "q34-opt-2",
+            "text": "Dark colors",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "c2d3e4f5-a6b7-5f6a-9h0i-1j2k3l4m5n6o",
+    "ownerId": "8940accc-5b1e-4324-b901-0a824c07d37e",
+    "ownerName": "poghos",
+    "ownerQuizCreationBlocked": false,
+    "title": "Environmental Science",
+    "description": "Ecology and environmental issues",
+    "category": "Environment",
+    "difficulty": "Medium",
+    "answerMode": "multiple",
+    "shuffleQuestions": true,
+    "shuffleAnswers": true,
+    "scoringMode": "automatic",
+    "manualPointsMode": "integer",
+    "accessType": "public",
+    "isPremium": false,
+    "status": "published",
+    "shareToken": "",
+    "imageName": "",
+    "imageUrl": "",
+    "totalPoints": 100,
+    "questionCount": 1,
+    "createdAt": "2026-03-24T12:11:00.000Z",
+    "updatedAt": "2026-03-24T12:11:00.000Z",
+    "publishedAt": "2026-03-24T12:11:00.000Z",
+    "questions": [
+      {
+        "id": "q35-respondent-name",
+        "kind": "respondent_name",
+        "prompt": "First name and last name",
+        "required": true,
+        "shuffleEligible": false,
+        "responseType": "full_name",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 0,
+        "options": []
+      },
+      {
+        "id": "q35-choice-1",
+        "kind": "choice",
+        "prompt": "What is the greenhouse effect?",
+        "required": true,
+        "shuffleEligible": true,
+        "responseType": "choice",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 100,
+        "options": [
+          {
+            "id": "q35-opt-1",
+            "text": "Trapping of heat in atmosphere",
+            "isCorrect": true
+          },
+          {
+            "id": "q35-opt-2",
+            "text": "Growing plants in greenhouse",
+            "isCorrect": false
+          },
+          {
+            "id": "q35-opt-3",
+            "text": "Solar panel technology",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "d3e4f5a6-b7c8-6a7b-0i1j-2k3l4m5n6o7p",
+    "ownerId": "d6bd5608-02f0-4a91-8e56-40e66b3a5e22",
+    "ownerName": "poghos",
+    "ownerQuizCreationBlocked": false,
+    "title": "Business Administration",
+    "description": "Business management basics",
+    "category": "Business",
+    "difficulty": "Medium",
+    "answerMode": "single",
+    "shuffleQuestions": true,
+    "shuffleAnswers": true,
+    "scoringMode": "automatic",
+    "manualPointsMode": "integer",
+    "accessType": "private",
+    "isPremium": true,
+    "status": "published",
+    "shareToken": "biz-token-001",
+    "imageName": "",
+    "imageUrl": "",
+    "totalPoints": 100,
+    "questionCount": 1,
+    "createdAt": "2026-03-24T12:12:00.000Z",
+    "updatedAt": "2026-03-24T12:12:00.000Z",
+    "publishedAt": "2026-03-24T12:12:00.000Z",
+    "questions": [
+      {
+        "id": "q36-respondent-name",
+        "kind": "respondent_name",
+        "prompt": "First name and last name",
+        "required": true,
+        "shuffleEligible": false,
+        "responseType": "full_name",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 0,
+        "options": []
+      },
+      {
+        "id": "q36-choice-1",
+        "kind": "choice",
+        "prompt": "What does ROI stand for?",
+        "required": true,
+        "shuffleEligible": true,
+        "responseType": "choice",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 100,
+        "options": [
+          {
+            "id": "q36-opt-1",
+            "text": "Return on Investment",
+            "isCorrect": true
+          },
+          {
+            "id": "q36-opt-2",
+            "text": "Rate of Increase",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "e4f5a6b7-c8d9-7b8c-1j2k-3l4m5n6o7p8q",
+    "ownerId": "9ccf1507-4dc2-4018-9eb8-52b27804776b",
+    "ownerName": "Petros",
+    "ownerQuizCreationBlocked": false,
+    "title": "Digital Marketing",
+    "description": "Online marketing strategies",
+    "category": "Marketing",
+    "difficulty": "Medium",
+    "answerMode": "multiple",
+    "shuffleQuestions": true,
+    "shuffleAnswers": true,
+    "scoringMode": "automatic",
+    "manualPointsMode": "integer",
+    "accessType": "public",
+    "isPremium": true,
+    "status": "published",
+    "shareToken": "",
+    "imageName": "",
+    "imageUrl": "",
+    "totalPoints": 100,
+    "questionCount": 1,
+    "createdAt": "2026-03-24T12:13:00.000Z",
+    "updatedAt": "2026-03-24T12:13:00.000Z",
+    "publishedAt": "2026-03-24T12:13:00.000Z",
+    "questions": [
+      {
+        "id": "q37-respondent-name",
+        "kind": "respondent_name",
+        "prompt": "First name and last name",
+        "required": true,
+        "shuffleEligible": false,
+        "responseType": "full_name",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 0,
+        "options": []
+      },
+      {
+        "id": "q37-choice-1",
+        "kind": "choice",
+        "prompt": "What does SEO stand for?",
+        "required": true,
+        "shuffleEligible": true,
+        "responseType": "choice",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 100,
+        "options": [
+          {
+            "id": "q37-opt-1",
+            "text": "Search Engine Optimization",
+            "isCorrect": true
+          },
+          {
+            "id": "q37-opt-2",
+            "text": "Social Engine Operator",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "f5a6b7c8-d9a0-8c9d-2k3l-4m5n6o7p8q9r",
+    "ownerId": "6bdc2f7a-a04a-40ac-a5a7-93983106034d",
+    "ownerName": "superadmin",
+    "ownerQuizCreationBlocked": false,
+    "title": "Mobile App Development",
+    "description": "iOS and Android development",
+    "category": "Programming",
+    "difficulty": "Hard",
+    "answerMode": "single",
+    "shuffleQuestions": true,
+    "shuffleAnswers": true,
+    "scoringMode": "automatic",
+    "manualPointsMode": "integer",
+    "accessType": "private",
+    "isPremium": true,
+    "status": "published",
+    "shareToken": "mobile-token-001",
+    "imageName": "",
+    "imageUrl": "",
+    "totalPoints": 100,
+    "questionCount": 1,
+    "createdAt": "2026-03-24T12:14:00.000Z",
+    "updatedAt": "2026-03-24T12:14:00.000Z",
+    "publishedAt": "2026-03-24T12:14:00.000Z",
+    "questions": [
+      {
+        "id": "q38-respondent-name",
+        "kind": "respondent_name",
+        "prompt": "First name and last name",
+        "required": true,
+        "shuffleEligible": false,
+        "responseType": "full_name",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 0,
+        "options": []
+      },
+      {
+        "id": "q38-choice-1",
+        "kind": "choice",
+        "prompt": "What is Flutter?",
+        "required": true,
+        "shuffleEligible": true,
+        "responseType": "choice",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 100,
+        "options": [
+          {
+            "id": "q38-opt-1",
+            "text": "Mobile app development framework",
+            "isCorrect": true
+          },
+          {
+            "id": "q38-opt-2",
+            "text": "Programming language",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "a6b7c8d9-a0b1-9d0a-3l4m-5n6o7p8q9r0s",
+    "ownerId": "ef91e537-c0d8-449f-a64c-2ddc2f70a09b",
+    "ownerName": "Petros",
+    "ownerQuizCreationBlocked": true,
+    "title": "Creative Writing",
+    "description": "Story writing and fiction",
+    "category": "Writing",
+    "difficulty": "Medium",
+    "answerMode": "multiple",
+    "shuffleQuestions": true,
+    "shuffleAnswers": true,
+    "scoringMode": "automatic",
+    "manualPointsMode": "integer",
+    "accessType": "public",
+    "isPremium": false,
+    "status": "published",
+    "shareToken": "",
+    "imageName": "",
+    "imageUrl": "",
+    "totalPoints": 100,
+    "questionCount": 1,
+    "createdAt": "2026-03-24T12:15:00.000Z",
+    "updatedAt": "2026-03-24T12:15:00.000Z",
+    "publishedAt": "2026-03-24T12:15:00.000Z",
+    "questions": [
+      {
+        "id": "q39-respondent-name",
+        "kind": "respondent_name",
+        "prompt": "First name and last name",
+        "required": true,
+        "shuffleEligible": false,
+        "responseType": "full_name",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 0,
+        "options": []
+      },
+      {
+        "id": "q39-choice-1",
+        "kind": "choice",
+        "prompt": "What is the structure of a story?",
+        "required": true,
+        "shuffleEligible": true,
+        "responseType": "choice",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 100,
+        "options": [
+          {
+            "id": "q39-opt-1",
+            "text": "Beginning, middle, end",
+            "isCorrect": true
+          },
+          {
+            "id": "q39-opt-2",
+            "text": "Just dialogue",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "b7c8d9a0-b1c2-0e1f-4m5n-6o7p8q9r0s1t",
+    "ownerId": "8940accc-5b1e-4324-b901-0a824c07d37e",
+    "ownerName": "poghos",
+    "ownerQuizCreationBlocked": false,
+    "title": "Fashion Design",
+    "description": "Fashion trends and clothing design",
+    "category": "Fashion",
+    "difficulty": "Easy",
+    "answerMode": "single",
+    "shuffleQuestions": true,
+    "shuffleAnswers": true,
+    "scoringMode": "automatic",
+    "manualPointsMode": "integer",
+    "accessType": "public",
+    "isPremium": false,
+    "status": "published",
+    "shareToken": "",
+    "imageName": "",
+    "imageUrl": "",
+    "totalPoints": 100,
+    "questionCount": 1,
+    "createdAt": "2026-03-24T12:16:00.000Z",
+    "updatedAt": "2026-03-24T12:16:00.000Z",
+    "publishedAt": "2026-03-24T12:16:00.000Z",
+    "questions": [
+      {
+        "id": "q40-respondent-name",
+        "kind": "respondent_name",
+        "prompt": "First name and last name",
+        "required": true,
+        "shuffleEligible": false,
+        "responseType": "full_name",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 0,
+        "options": []
+      },
+      {
+        "id": "q40-choice-1",
+        "kind": "choice",
+        "prompt": "Which color combination is neutral?",
+        "required": true,
+        "shuffleEligible": true,
+        "responseType": "choice",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 100,
+        "options": [
+          {
+            "id": "q40-opt-1",
+            "text": "Black and white",
+            "isCorrect": true
+          },
+          {
+            "id": "q40-opt-2",
+            "text": "Red and green",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "c8d9a0b1-c2d3-1f2a-5n6o-7p8q9r0s1t2u",
+    "ownerId": "d6bd5608-02f0-4a91-8e56-40e66b3a5e22",
+    "ownerName": "poghos",
+    "ownerQuizCreationBlocked": false,
+    "title": "Data Analysis",
+    "description": "Data analysis and visualization",
+    "category": "Programming",
+    "difficulty": "Medium",
+    "answerMode": "multiple",
+    "shuffleQuestions": true,
+    "shuffleAnswers": true,
+    "scoringMode": "automatic",
+    "manualPointsMode": "integer",
+    "accessType": "private",
+    "isPremium": true,
+    "status": "published",
+    "shareToken": "data-token-001",
+    "imageName": "",
+    "imageUrl": "",
+    "totalPoints": 100,
+    "questionCount": 1,
+    "createdAt": "2026-03-24T12:17:00.000Z",
+    "updatedAt": "2026-03-24T12:17:00.000Z",
+    "publishedAt": "2026-03-24T12:17:00.000Z",
+    "questions": [
+      {
+        "id": "q41-respondent-name",
+        "kind": "respondent_name",
+        "prompt": "First name and last name",
+        "required": true,
+        "shuffleEligible": false,
+        "responseType": "full_name",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 0,
+        "options": []
+      },
+      {
+        "id": "q41-choice-1",
+        "kind": "choice",
+        "prompt": "What does ETL stand for?",
+        "required": true,
+        "shuffleEligible": true,
+        "responseType": "choice",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 100,
+        "options": [
+          {
+            "id": "q41-opt-1",
+            "text": "Extract, Transform, Load",
+            "isCorrect": true
+          },
+          {
+            "id": "q41-opt-2",
+            "text": "Export, Test, Link",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "d9a0b1c2-d3e4-2a3b-6o7p-8q9r0s1t2u3v",
+    "ownerId": "9ccf1507-4dc2-4018-9eb8-52b27804776b",
+    "ownerName": "Petros",
+    "ownerQuizCreationBlocked": false,
+    "title": "Stand-up Comedy",
+    "description": "Comedy writing and performance",
+    "category": "Comedy",
+    "difficulty": "Hard",
+    "answerMode": "single",
+    "shuffleQuestions": true,
+    "shuffleAnswers": true,
+    "scoringMode": "automatic",
+    "manualPointsMode": "integer",
+    "accessType": "public",
+    "isPremium": false,
+    "status": "published",
+    "shareToken": "",
+    "imageName": "",
+    "imageUrl": "",
+    "totalPoints": 100,
+    "questionCount": 1,
+    "createdAt": "2026-03-24T12:18:00.000Z",
+    "updatedAt": "2026-03-24T12:18:00.000Z",
+    "publishedAt": "2026-03-24T12:18:00.000Z",
+    "questions": [
+      {
+        "id": "q42-respondent-name",
+        "kind": "respondent_name",
+        "prompt": "First name and last name",
+        "required": true,
+        "shuffleEligible": false,
+        "responseType": "full_name",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 0,
+        "options": []
+      },
+      {
+        "id": "q42-choice-1",
+        "kind": "choice",
+        "prompt": "What is the setup-punchline structure?",
+        "required": true,
+        "shuffleEligible": true,
+        "responseType": "choice",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 100,
+        "options": [
+          {
+            "id": "q42-opt-1",
+            "text": "Basic joke structure",
+            "isCorrect": true
+          },
+          {
+            "id": "q42-opt-2",
+            "text": "Comedy equipment",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "a0b1c2d3-e4f5-3b4c-7p8q-9r0s1t2u3v4w",
+    "ownerId": "6bdc2f7a-a04a-40ac-a5a7-93983106034d",
+    "ownerName": "superadmin",
+    "ownerQuizCreationBlocked": false,
+    "title": "Cybersecurity Essentials",
+    "description": "Information security and protection",
+    "category": "Programming",
+    "difficulty": "Hard",
+    "answerMode": "multiple",
+    "shuffleQuestions": true,
+    "shuffleAnswers": true,
+    "scoringMode": "automatic",
+    "manualPointsMode": "integer",
+    "accessType": "public",
+    "isPremium": true,
+    "status": "published",
+    "shareToken": "",
+    "imageName": "",
+    "imageUrl": "",
+    "totalPoints": 100,
+    "questionCount": 1,
+    "createdAt": "2026-03-24T12:19:00.000Z",
+    "updatedAt": "2026-03-24T12:19:00.000Z",
+    "publishedAt": "2026-03-24T12:19:00.000Z",
+    "questions": [
+      {
+        "id": "q43-respondent-name",
+        "kind": "respondent_name",
+        "prompt": "First name and last name",
+        "required": true,
+        "shuffleEligible": false,
+        "responseType": "full_name",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 0,
+        "options": []
+      },
+      {
+        "id": "q43-choice-1",
+        "kind": "choice",
+        "prompt": "What is encryption?",
+        "required": true,
+        "shuffleEligible": true,
+        "responseType": "choice",
+        "imageName": "",
+        "imageUrl": "",
+        "points": 100,
+        "options": [
+          {
+            "id": "q43-opt-1",
+            "text": "Converting data to unreadable form",
+            "isCorrect": true
+          },
+          {
+            "id": "q43-opt-2",
+            "text": "Deleting files",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  }
+]

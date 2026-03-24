@@ -11,7 +11,10 @@ import { createQuizBuilderActions } from "./actions";
 import { initialState } from "./state";
 import type { QuizBuilderStore } from "./types";
 
-type PersistedQuizBuilderStore = Pick<QuizBuilderStore, "draft">;
+type PersistedQuizBuilderStore = Pick<
+    QuizBuilderStore,
+    "draft" | "isSettingsSaved"
+>;
 
 const quizBuilderPersistOptions: PersistOptions<
     QuizBuilderStore,
@@ -21,6 +24,7 @@ const quizBuilderPersistOptions: PersistOptions<
     storage: createJSONStorage(() => localStorage),
     partialize: (state) => ({
         draft: state.draft,
+        isSettingsSaved: state.isSettingsSaved,
     }),
     onRehydrateStorage: () => (state) => {
         state?.setHasHydrated(true);
